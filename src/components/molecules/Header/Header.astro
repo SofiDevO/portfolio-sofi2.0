@@ -1,0 +1,25 @@
+---
+import { menuData } from "@src/data/menuData";
+import  getUserInfo from "@controllers/getUserData";
+
+
+---
+
+<header class="header">
+  <div class="header__container">
+    <img class="header__logo" src={getUserInfo.logo} alt={`lgoo de ${getUserInfo.userName}`} />
+    <nav class="header__menu">
+      <ul class="header__list">
+        {
+          menuData.map((data) => (
+            <li class="header__item">
+              <a class="header__link" href={data.enlace}>
+                {data.texto}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

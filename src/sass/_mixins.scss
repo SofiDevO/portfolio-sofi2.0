@@ -1,0 +1,155 @@
+
+
+@mixin reset-pm {
+	padding: 0;
+	margin: 0;
+}
+
+@mixin centerFlex($justify: center) {
+	display: flex;
+	align-items: center;
+	justify-content: $justify;
+}
+@mixin typography($font-size, $line-height, $font-weight: normal) {
+	font-size: $font-size;
+	line-height: $line-height;
+	font-weight: $font-weight;
+}
+@mixin font-family($type) {
+	@if $type == "montserrat" {
+		font-family: "Montserrat Variable", sans-serif;
+	} @else if $type == "preahvihear" {
+		font-family: "Preahvihear", sans-serif;
+	}
+}
+
+
+@mixin transition-all{
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 500ms;
+}
+
+/* responsive breakpoints */
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == "small" {
+		@media (max-width: 320px) {
+			@content;
+		}
+	}@else if $breakpoint == "medium" {
+		@media (max-width: 768px) {
+			@content;
+		}
+	} @else if $breakpoint == "large" {
+		@media (max-width: 1024px) {
+			@content;
+		}
+	}
+}
+
+
+
+/* bg color gradient for hero section. dark ligth theme */
+@mixin theme-gradient($mode) {
+	@if $mode == "dark" {
+		content: "";
+		position: absolute;
+		background-color: v.$color-background-before;
+		background-image: radial-gradient(
+				37.88% 68.62% at 50% 0,
+				v.$color-gradient1-start 0%,
+				v.$color-gradient1-end 80%
+			),
+			radial-gradient(
+				10% 10% at 50% 10%,
+				v.$color-gradient2-start 0%,
+				v.$color-gradient2-middle 90%,
+				v.$color-gradient2-end 100%
+			),
+			radial-gradient(
+				100% 28.09% at 100% 10%,
+				v.$color-gradient3-start 0%,
+				v.$color-gradient3-middle 80%,
+				v.$color-gradient3-end 100%
+			),
+			linear-gradient(
+				180deg,
+				v.$color-gradient4-start 35.79%,
+				v.$color-gradient4-end 80%,
+				v.$color-background-gradient5 80%
+			),
+			radial-gradient(
+				74.84% 135.56% at 100% 10%,
+				v.$color-gradient6-start 0%,
+				v.$color-background-gradient6 80%
+			);
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100svh;
+		z-index: -2;
+		filter: blur(50px);
+		top: -50px;
+		left: -50px;
+		right: -50px;
+		width: 100%;
+	}/*  @else if $mode == "ligth" {
+		content: "";
+		position: absolute;
+		background-color: v.$color-background-before-ligth;
+		background-image: radial-gradient(
+				37.88% 68.62% at 50% 0,
+				v.$color-gradient1-start-ligth 0%,
+				v.$color-gradient1-end-ligth 80%
+			),
+			radial-gradient(
+				10% 10% at 50% 10%,
+				v.$color-gradient2-start-ligth 0%,
+				v.$color-gradient2-middle-ligth 90%,
+				v.$color-gradient2-end-ligth 100%
+			),
+			radial-gradient(
+				100% 28.09% at 100% 10%,
+				v.$color-gradient3-start-ligth 0%,
+				v.$color-gradient3-middle-ligth 80%,
+				v.$color-gradient3-end-ligth 100%
+			),
+			linear-gradient(
+				180deg,
+				v.$color-gradient4-start-ligth 35.79%,
+				v.$color-gradient4-end-ligth 80%,
+				v.$color-background-gradient5-ligth 80%
+			),
+			radial-gradient(
+				74.84% 135.56% at 100% 10%,
+				v.$color-gradient6-start-ligth 0%,
+				v.$color-background-gradient6-ligth 80%
+			);
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100svh;
+		z-index: -2;
+		filter: blur(50px);
+		top: -50px;
+		left: -50px;
+		right: -50px;
+		width: 100%;
+	} */
+}
+
+@mixin text-gradient($mode){
+	@if  $mode == "ligth"{
+		background: v.$text-over-light;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+}@else if $mode  == "dark"{
+	background: v.$text-over-dark;
+	  background-clip: text;
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+
+}
+
+
+}

@@ -1,0 +1,45 @@
+@use "./variables" as v;
+@import "@atoms/Title/title";
+@import "./mixins";
+@import "@layouts/BackgroundGradient/background-gradient";
+@import "@molecules/Header/header";
+
+
+
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+html {
+   margin: 0;
+   font-size: 62.5%;
+   font-family: "Inter", sans-serif;
+   font-optical-sizing: auto;
+ }
+
+ body {
+   overflow-x: hidden;
+   @include font-family("montserrat");
+   background: v.$mainColor;
+
+   color: v.$mainColor;
+  }
+
+  .dark body{
+    color: v.$secundaryColor;
+    background: v.$mainColor;
+
+ }
+
+ a {
+   text-decoration: none;
+   font-size: 1.6rem;
+   color: v.$secundaryColor;
+ }
+
+ li {
+   list-style: none;
+ }

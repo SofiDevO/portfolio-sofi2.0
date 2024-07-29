@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-sofi2.0",
+  "version": "1.0.0",
+  "description": "Nueva version del poratfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/react": "^3.6.0",
+    "@fontsource-variable/fira-code": "^5.0.18",
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "astro": "^4.12.2",
+    "sass": "^1.77.8"
+  }
+}

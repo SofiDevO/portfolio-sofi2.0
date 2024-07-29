@@ -1,0 +1,18 @@
+@import "../../../sass/mixins";
+
+.title {
+  font-size: 45px;
+}
+.title-light{
+    @include text-gradient("ligth");
+  }
+  .dark .title-light{
+    @include text-gradient("dark");
+  }
+  .title-dark{
+    @include text-gradient("dark");
+  }
+
+  .dark .title-dark{
+  @include text-gradient("ligth");
+}

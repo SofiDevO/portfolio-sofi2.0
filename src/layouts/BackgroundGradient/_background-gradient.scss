@@ -1,0 +1,41 @@
+@use "@sass/variables" as v;
+@import "../../sass/mixins" ;
+
+.background{
+	position: relative;
+	z-index: 1;
+	overflow-x: hidden;
+	width: 100%;
+	background: v.$color-background-body;
+
+}
+
+
+.backgroud:after,
+.backgroud:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	z-index: -10;
+
+}
+.backgroud:before{
+	@include theme-gradient("dark");
+	/* @include theme-gradient("ligth"); */
+}
+/* .dark{
+	.backgroud:before  {
+	  @include theme-gradient("dark");
+  }
+  .background:after {
+    content: "";
+    background-color:v.$color-background-after;
+    z-index: -3;
+    }
+  } */

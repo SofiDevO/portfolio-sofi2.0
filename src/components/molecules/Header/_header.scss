@@ -1,0 +1,31 @@
+@use "@sass/variables" as v;
+@import "@sass/mixins";
+
+.header {
+  width: 100%;
+  @include centerFlex(center);
+  .header__container {
+    margin-top: 10rem;
+    position: fixed;
+    background: #0000005c;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem 2rem;
+    width: 70vw;
+    @include centerFlex(space-between);
+    .header__logo {
+      max-width: 4.5rem;
+      flex-basis: 10%;
+    }
+    .header__menu {
+      flex-basis: auto;
+      .header__list {
+        display: flex;
+      }
+    }
+    .header__list > *:not(a) {
+      margin-right: 1.5rem;
+    }
+  }
+}
