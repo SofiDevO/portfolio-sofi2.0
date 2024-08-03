@@ -2,30 +2,90 @@
 @import "@sass/mixins";
 
 .header {
-  width: 100%;
   @include centerFlex(center);
-  .header__container {
-    margin-top: 10rem;
-    position: fixed;
-    background: #0000005c;
-    border-radius: 16px;
+  width: 100%;
+  position: fixed;
+  padding: 1rem 2rem;
+  .blur{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 1rem 2rem;
-    width: 70vw;
+  }
+  .header__container {
     @include centerFlex(space-between);
-    .header__logo {
-      max-width: 4.5rem;
-      flex-basis: 10%;
-    }
-    .header__menu {
-      flex-basis: auto;
-      .header__list {
-        display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.3607843137);
+    border-radius: 16px;
+    padding: 1rem 2rem;
+  }
+  .header__logo {
+    max-width: 4.5rem;
+    flex-basis: 10%;
+  }
+
+  .header__list > *:not(a) {
+    margin-right: 1.5rem;
+    @include respond-to("medium") {
+      margin-bottom: 2rem;
+      .header__link {
+        font-size: 2rem;
       }
     }
-    .header__list > *:not(a) {
-      margin-right: 1.5rem;
+  }
+}
+.header__menu {
+  @include centerFlex(flex-start);
+  .header__list {
+    display: flex;
+  }
+  .header__link {
+    font-weight: bold;
+  }
+}
+
+@include respond-to("medium") {
+  .header {
+    .header__container {
+      max-width: 30rem;
+      min-width: 80%;
+      align-self: center;
+      height: 8.4dvh;
+      padding: 0.5rem 1.4rem;
     }
+    .blur:has(.header__menu.is-active) {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+
+  .header__list {
+    width: 100%;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 14rem;
+  }
+  .header__menu {
+    transition: all 0.4s ease;
+    position: absolute;
+    transform: translateX(100%);
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100dvh;
+    padding-left: 3rem;
+
+  }
+  .header__menu.is-active {
+    transform: translateX(0%);
+    background: rgba(0, 0, 0, 0.4705882353);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+.dark {
+  .header__link {
+    color: aqua;
   }
 }
