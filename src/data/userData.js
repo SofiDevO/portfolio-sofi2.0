@@ -1,4 +1,4 @@
-export const userData = [
+export const userData =
     {
         name: "Sofi",
         lastName: "Dev",
@@ -8,4 +8,3 @@ export const userData = [
         about:"Me llamo Ángela Sofía Osorio. Soy desarrolladora web con 1 año y medio de experiencia. <br><br> Puedes encontrarme en mis redes sociales  ",
         sloganHero1: "A developer that Judges a book by its cover...",
     }
-]

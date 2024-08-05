@@ -27,9 +27,9 @@
 }
 .backgroud:before{
 	@include theme-gradient("dark");
-	/* @include theme-gradient("ligth"); */
+	@include theme-gradient("ligth");
 }
-/* .dark{
+.dark{
 	.backgroud:before  {
 	  @include theme-gradient("dark");
   }
@@ -38,4 +38,4 @@
     background-color:v.$color-background-after;
     z-index: -3;
     }
-  } */
+  }

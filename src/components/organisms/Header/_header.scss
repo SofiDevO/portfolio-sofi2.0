@@ -1,26 +1,22 @@
-@use "@sass/variables" as v;
-@import "@sass/mixins";
+@import "@atoms/Logo/logo";
+@import "@atoms/hamburgerBtn/hamburger";
 
 .header {
   @include centerFlex(center);
   width: 100%;
   position: fixed;
-  padding: 1rem 2rem;
-  .blur{
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
+  padding: 0 2rem;
+
   .header__container {
     @include centerFlex(space-between);
     width: 100%;
+    min-height: 8dvh;
+    margin-top: 2rem;
     max-width: 1200px;
-    background: rgba(0, 0, 0, 0.3607843137);
+    background: black;
+    background: rgba(0, 0, 0, 0.364);
     border-radius: 16px;
     padding: 1rem 2rem;
-  }
-  .header__logo {
-    max-width: 4.5rem;
-    flex-basis: 10%;
   }
 
   .header__list > *:not(a) {
@@ -40,19 +36,47 @@
   }
   .header__link {
     font-weight: bold;
+    &:hover{
+      color:v.$ufo-green;
+    }
+  }
+  .header__link {
+    position: relative;
+  }
+
+  .header__link::after {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    content: "";
+    width: 100%;
+    transform: scale(0);
+    transform-origin: 1;
+    height: 2px;
+    transition: 0.35s transform;
+    background: v.$ufo-green;
+  }
+
+  .header__link:hover::after {
+    transform: scale(1);
   }
 }
 
+
+
 @include respond-to("medium") {
   .header {
+    padding: 0 1rem;
     .header__container {
-      max-width: 30rem;
-      min-width: 80%;
+      justify-content: space-between;
       align-self: center;
-      height: 8.4dvh;
-      padding: 0.5rem 1.4rem;
+      width: 95%;
+      height: auto;
+      margin-top: 1.5rem;
+      min-width: 24rem;
+      padding: .8rem 1rem;
     }
-    .blur:has(.header__menu.is-active) {
+    .header__container:has(.header__menu.is-active) {
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
     }
@@ -66,7 +90,7 @@
     padding-top: 14rem;
   }
   .header__menu {
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
     position: absolute;
     transform: translateX(100%);
     left: 0;
@@ -74,13 +98,14 @@
     width: 100vw;
     height: 100dvh;
     padding-left: 3rem;
-
   }
   .header__menu.is-active {
     transform: translateX(0%);
-    background: rgba(0, 0, 0, 0.4705882353);
+    background: black;
+    background: rgba(0, 0, 0, 0.734);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px 0 0 30px;
   }
 }
 

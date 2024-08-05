@@ -1,8 +1,8 @@
 export const menuData = [
-    { enlace: "#", texto: "Home" },
-    { enlace: "#", texto: "About" },
-    { enlace: "#", texto: "Skills" },
-    { enlace: "#", texto: "Portfolio" },
-    { enlace: "#", texto: "Social" },
-    { enlace: "#", texto: "Blog" },
+    { enlace: "/", texto: "Home" },
+    { enlace: "#about", texto: "About" },
+    { enlace: "#skills", texto: "Skills" },
+    { enlace: "#portfolio", texto: "Portfolio" },
+    { enlace: "#social", texto: "Social" },
+    { enlace: "#blog", texto: "Blog" },
   ];

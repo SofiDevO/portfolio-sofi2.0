@@ -1,8 +1,8 @@
 ---
-import { menuData } from "@src/data/menuData";
-import getUserInfo from "@controllers/getUserData";
+import { menuData } from "@data/menuData";
+import Logo from "@atoms/Logo/Logo.astro";
+import HamburgerButton from "@atoms/hamburgerBtn/HamburgerBtn.astro";
 ---
-
 
 <script>
 import "@controllers/hamburger.js";
@@ -10,11 +10,7 @@ import "@controllers/hamburger.js";
 
 <header class="header">
   <div class="header__container blur">
-    <img
-      class="header__logo"
-      src={getUserInfo.logo}
-      alt={`lgoo de ${getUserInfo.userName}`}
-    />
+    <Logo/>
     <nav class="header__menu">
       <ul class="header__list">
         {
@@ -28,10 +24,6 @@ import "@controllers/hamburger.js";
         }
       </ul>
     </nav>
-    <button class="hamburger hamburger--collapse" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
+    <HamburgerButton/>
   </div>
 </header>

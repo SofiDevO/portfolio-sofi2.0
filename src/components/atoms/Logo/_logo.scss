@@ -1,0 +1,11 @@
+.logo{
+    @include centerFlex(space-between);
+    gap:1rem;
+  }
+  .logo:hover span{
+    color:aqua;
+  }
+  .logo__img {
+    max-width: 4.5rem;
+    flex-basis: 10%;
+  }

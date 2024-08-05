@@ -1,14 +1,8 @@
-@use "@sass/variables" as v;
-@import "@sass/mixins";
+.hamburger {
+  display: none;
+}
 
-
-.hamburger{
-    display: none;
-  }
-
-
-  @include respond-to("medium") {
-
+@include respond-to("medium") {
   .hamburger {
     font: inherit;
     display: inline-block;
@@ -102,4 +96,4 @@
       opacity 0.1s linear 0.22s;
     opacity: 0;
   }
-  }
+}
