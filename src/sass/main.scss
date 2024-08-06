@@ -1,9 +1,10 @@
 @use "./variables" as v;
 @import "@atoms/Title/title";
 @import "./mixins";
+@import "@sass/functions";
 @import "@layouts/BackgroundGradient/background-gradient";
 @import "@organisms/Header/header";
-
+@import "@organisms/Hero/hero";
 
 
 
@@ -25,7 +26,6 @@ html {
    overflow-x: hidden;
    @include font-family("montserrat");
    background: v.$mainColor;
-
    color: v.$mainColor;
   }
 

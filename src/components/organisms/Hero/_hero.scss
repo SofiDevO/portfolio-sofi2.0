@@ -1,0 +1,50 @@
+.hero {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__container {
+  @include centerFlex(space-evenly);
+  gap: 10rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1300px;
+}
+.hero__content{
+    @include centerFlex(flex-start);
+    flex-direction: column;
+    .hero__title{
+        color: white;
+        font-size: 9.5rem;
+        }
+        span:hover{
+            color:aqua;
+        }
+        .hero__slogan{
+            color: v.$ufo-green;
+            font-size: 2rem;
+        }
+    }
+
+
+
+.image__container {
+  width: 34rem;
+  height: 34rem;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.hero-profile-img {
+  background: url("public/img/sofi-pic-1.webp");
+  background-size: cover;
+}
+
+.dark .hero-profile-img {
+  background: url("public/img/sofi-pic-2.webp");
+  background-size: cover;
+}
