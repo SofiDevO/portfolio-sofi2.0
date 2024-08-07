@@ -1,0 +1,36 @@
+.image__container {
+    @include centerFlex();
+    flex-direction: column;
+
+  }
+
+  .image__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 34rem;
+    max-height: 34rem;
+    border-radius: 50%;
+    background: none;
+    border: 2px solid aqua;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .image__button:hover .hero__img {
+    transform: scale(0.95);
+  }
+  .image__button:active .hero__img {
+    transform: scale(0.9);
+  }
+  .hero__img {
+    padding: 1rem;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .skills {
+    @include centerFlex();
+  }

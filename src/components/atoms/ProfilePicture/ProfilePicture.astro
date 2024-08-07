@@ -1,0 +1,26 @@
+---
+import { userData as data } from "@src/data/userData";
+---
+
+<script >
+    import { profilePicture } from "@src/controllers/profileImage.controller.js";
+    import { shuffle, buttonShuffle} from "@controllers/shuffleSkills.controller.js"
+  </script>
+
+<div class="image__container">
+    <button class="image__button">
+        {
+            data.profilePicture && (
+                <img
+                src="../img/sofi-pic-1.webp"
+                id="profile-picture"
+                class="hero__img hero-profile-img"
+                alt="Profile Picture"
+                />
+            )
+        }
+  </button>
+  <div class="skills">
+      <!-- Iconos -->
+    </div>
+</div>

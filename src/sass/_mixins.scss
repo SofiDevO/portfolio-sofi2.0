@@ -93,7 +93,7 @@
 		left: -50px;
 		right: -50px;
 		width: 100%;
-	}/*  @else if $mode == "ligth" {
+	} @else if $mode == "ligth" {
 		content: "";
 		position: absolute;
 		background-color: v.$color-background-before-ligth;
@@ -134,7 +134,7 @@
 		left: -50px;
 		right: -50px;
 		width: 100%;
-	} */
+	}
 }
 
 @mixin text-gradient($mode){

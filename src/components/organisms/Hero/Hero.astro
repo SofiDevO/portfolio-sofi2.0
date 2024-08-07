@@ -1,26 +1,17 @@
 ---
+import ProfilePicture from "@src/components/atoms/ProfilePicture/ProfilePicture.astro";
 import { userData as data } from "@src/data/userData";
-import { shuffle, skillsData } from "@data/skillsData.js";
 ---
 
+
+
 <section class="hero">
-  <dv class="hero__container">
+  <div class="hero__container">
     <div class="hero__content">
-      <h1 class="hero__title">{data.name}<span>{data.lastName}</span></h1>
+      <h1 class="hero__title">Hi! I'm {data.name}<span>{data.lastName}</span>🦝</h1>
       <p class="hero__slogan">{data.sloganHero1}</p>
       <!-- redes sociales -->
     </div>
-    <div class="image__container">
-      <div class="hero__img hero-profile-img"></div>
-
-      {
-        //Llame a la función de shuffle aquí y le pase la data, ya que esto si se ejecuta en el front
-        shuffle(skillsData)
-          .slice(0, 7)
-          .map((skill) => (
-            <iconify-icon icon={skill.icon} width="32" height="32" />
-          ))
-      }
-    </div>
-  </dv>
+    <ProfilePicture/>
+  </div>
 </section>

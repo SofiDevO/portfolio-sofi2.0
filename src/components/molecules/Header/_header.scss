@@ -6,8 +6,9 @@
   width: 100%;
   position: fixed;
   padding: 0 2rem;
-
+  z-index: 100;
   .header__container {
+    backdrop-filter: blur(20px);
     @include centerFlex(space-between);
     width: 100%;
     min-height: 8dvh;
@@ -36,8 +37,8 @@
   }
   .header__link {
     font-weight: bold;
-    &:hover{
-      color:v.$ufo-green;
+    &:hover {
+      color: v.$ufo-green;
     }
   }
   .header__link {
@@ -62,8 +63,6 @@
   }
 }
 
-
-
 @include respond-to("medium") {
   .header {
     padding: 0 1rem;
@@ -74,7 +73,7 @@
       height: auto;
       margin-top: 1.5rem;
       min-width: 24rem;
-      padding: .8rem 1rem;
+      padding: 0.8rem 1rem;
     }
     .header__container:has(.header__menu.is-active) {
       backdrop-filter: none;
