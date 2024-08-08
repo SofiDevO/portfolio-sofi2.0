@@ -1,4 +1,5 @@
 .image__container {
+  position: relative;
     @include centerFlex();
     flex-direction: column;
 
@@ -12,9 +13,10 @@
     max-height: 34rem;
     border-radius: 50%;
     background: none;
-    border: 2px solid aqua;
+    border: none;
     overflow: hidden;
     cursor: pointer;
+
   }
 
   .image__button:hover .hero__img {
@@ -24,13 +26,74 @@
     transform: scale(0.9);
   }
   .hero__img {
+    aspect-ratio: 1/1;
     padding: 1rem;
     object-fit: cover;
     border-radius: 50%;
     width: 100%;
     height: 100%;
+    @include respond-to("medium") {
+      width: 28rem;
+    }
   }
+
+  .icon__container{
+  position: absolute;
+  background-image: url(/public/img/icons/circle.png);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  padding: 3.5rem;
+  display: grid;
+  place-content: center;
+  animation: rotateCircle 8s infinite linear;
+}
+
+
+
+
 
   .skills {
     @include centerFlex();
+  }
+
+.skills__icons{
+  animation: noRotate 8s infinite linear;
+  transform: rotate(0deg);
+  font-size: 4.5rem;
+  @include respond-to("medium") {
+    font-size: 3.5rem;
+  }
+}
+
+  .skill-0{
+    top: -13%;
+    right: 41%;
+  }
+  .skill-1{
+    top: 9%;
+    left: 78%;
+  }
+  .skill-2{
+    bottom: 26%;
+    left: 87%;
+    @include respond-to("medium")  {
+      left: 78%;
+    }
+  }
+  .skill-3{
+    bottom: -6%;
+    right: 19%;
+  }
+  .skill-4{
+    bottom: -5%;
+    left: 19%;
+  }
+  .skill-5{
+    bottom: 22%;
+    left: -8%;
+  }
+  .skill-6{
+    bottom: 64%;
+    right: 78%;
   }

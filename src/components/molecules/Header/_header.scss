@@ -38,7 +38,7 @@
   .header__link {
     font-weight: bold;
     &:hover {
-      color: v.$ufo-green;
+      @include text-gradient("ligth");
     }
   }
   .header__link {

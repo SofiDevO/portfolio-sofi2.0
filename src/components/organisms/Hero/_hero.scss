@@ -13,6 +13,9 @@
   flex-wrap: wrap-reverse;
   width: 100%;
   max-width: 1300px;
+  @include respond-to("medium"){
+    gap:4rem;
+  }
 }
 .hero__content {
   @include centerFlex(flex-start);
@@ -21,14 +24,50 @@
     color: white;
     font-size: 7rem;
     @include respond-to("medium") {
-      font-size: 5.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 3.9rem;
     }
   }
   span:hover {
     color: aqua;
   }
+
+
+  .text__container{
+    display: inline-block;
+  }
   .hero__slogan {
+    @include text-gradient("ligth");
     color: v.$ufo-green;
     font-size: 2rem;
+    letter-spacing:10px;
+    border-right: 5px solid;
+    width:100%;
+    white-space:nowrap;
+    overflow: hidden;
+    animation:
+      typing 2s steps(25),
+      cursor .4s step-end infinite alternate;
+      @media screen and (max-width:728px) {
+        font-size: 1.8rem;
+        letter-spacing: normal;
+      }
+  }
+}
+.dark .hero__title span{
+  color: aqua;
+}
+/* animation cursor blinking */
+@keyframes cursor {
+  50%{
+    border-color:transparent;
+  }
+}
+/*  animation typing effect*/
+
+@keyframes typing {
+  from{
+    width:0;
   }
 }

@@ -2,7 +2,7 @@ export const userData = {
     name: "Sofi",
     lastName: "Dev",
     userName: "SofiDev",
-    sloganHero1: "Frontend Developer in mexico",
+    sloganHero1: "Frontend Developer in Mexico",
     profilePicture: "../img/sofi-pic-1.webp",
     profilePicture2: "../img/sofi-pic-2.webp",
     logo: "../img/icons/sofi-icon.png",
