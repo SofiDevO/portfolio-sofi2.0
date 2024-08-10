@@ -5,6 +5,7 @@ import { userData as data } from "@src/data/userData";
 <script >
     import { profilePicture } from "@src/controllers/profileImage.controller.js";
     import { shuffle, buttonShuffle} from "@controllers/shuffleSkills.controller.js"
+    import {clickHandler} from "@controllers/shuffleBtnCounter.controller";
   </script>
 
 <div class="image__container">
@@ -21,6 +22,6 @@ import { userData as data } from "@src/data/userData";
         }
   </button>
   <div class="skills">
-      <!-- Iconos -->
+      <!-- Iconos rendered by a template string -->
     </div>
 </div>

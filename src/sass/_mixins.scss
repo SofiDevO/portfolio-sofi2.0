@@ -18,8 +18,8 @@
 @mixin font-family($type) {
 	@if $type == "montserrat" {
 		font-family: "Montserrat Variable", sans-serif;
-	} @else if $type == "preahvihear" {
-		font-family: "Preahvihear", sans-serif;
+	} @else if $type == "fira-code" {
+		font-family: "fira-code", sans-serif;
 	}
 }
 

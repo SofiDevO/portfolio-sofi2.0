@@ -1,64 +1,56 @@
 .image__container {
   position: relative;
-    @include centerFlex();
-    flex-direction: column;
+  @include centerFlex();
+  flex-direction: column;
+}
 
-  }
+.image__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 34rem;
+  max-height: 34rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+}
 
-  .image__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 34rem;
-    max-height: 34rem;
-    border-radius: 50%;
-    background: none;
-    border: none;
-    overflow: hidden;
-    cursor: pointer;
+.image__button:hover .hero__img {
+  transform: scale(0.95);
+}
+.image__button:active .hero__img {
+  transform: scale(0.9);
+}
+.hero__img {
+  aspect-ratio: 1/1;
+  padding: 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  @include respond-to("medium") {
+    width: 28rem;
+  }
+}
 
-  }
-
-  .image__button:hover .hero__img {
-    transform: scale(0.95);
-  }
-  .image__button:active .hero__img {
-    transform: scale(0.9);
-  }
-  .hero__img {
-    aspect-ratio: 1/1;
-    padding: 1rem;
-    object-fit: cover;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    @include respond-to("medium") {
-      width: 28rem;
-    }
-  }
-
-  .icon__container{
+.icon__container {
   position: absolute;
-  background-image: url(/public/img/icons/circle.png);
+  filter: drop-shadow(0 0 12px rgba(124, 88, 255, 0.622));
   background-size: contain;
   width: 50px;
   height: 50px;
   padding: 3.5rem;
   display: grid;
   place-content: center;
-  animation: rotateCircle 8s infinite linear;
 }
 
+.skills {
+  @include centerFlex();
+}
 
-
-
-
-  .skills {
-    @include centerFlex();
-  }
-
-.skills__icons{
-  animation: noRotate 8s infinite linear;
+.skills__icons {
   transform: rotate(0deg);
   font-size: 4.5rem;
   @include respond-to("medium") {
@@ -66,37 +58,49 @@
   }
 }
 
-  .skill-0{
-    top: -13%;
-    right: 41%;
-  }
-  .skill-1{
-    top: 9%;
+.skill-0 {
+  top: -13%;
+  right: 41%;
+  animation: from-top 1s ease-in-out forwards 0.4s, floating 5s ease-in-out 2s infinite;
+  transform: translateX(-1600px) scale(6.2);
+}
+.skill-1 {
+  top: 9%;
+  left: 78%;
+  animation: from-rigth 1s ease-in-out forwards 0.4s,  floating 5s ease-in-out 1.5s infinite;
+  transform: translateX(-1600px) scale(6.2);
+}
+.skill-2 {
+  bottom: 26%;
+  left: 87%;
+  animation: from-rigth 1s ease-in-out forwards 0.3s,  floating 5s ease-in-out 3.2s infinite;
+  transform: translateX(-1600px) scale(6.2);
+  @include respond-to("medium") {
     left: 78%;
   }
-  .skill-2{
-    bottom: 26%;
-    left: 87%;
-    @include respond-to("medium")  {
-      left: 78%;
-    }
-  }
-  .skill-3{
-    bottom: -6%;
-    right: 19%;
-  }
-  .skill-4{
-    bottom: -5%;
-    left: 19%;
-  }
-  .skill-5{
-    bottom: 22%;
-    left: -8%;
-  }
-  .skill-6{
-  //   animation: from-left 1s ease-in-out forwards;
-  // animation-delay:.1s;
-  //   transform: translateX(-600px) scale(6.2);
-    bottom: 64%;
-    right: 78%;
-  }
+}
+.skill-3 {
+  bottom: -6%;
+  right: 19%;
+  animation: from-bottom 1s ease-in-out forwards 0.2s,  floating 5s ease-in-out 2.1s infinite;
+  transform: translateX(-1600px) scale(6.2);
+}
+.skill-4 {
+  bottom: -5%;
+  left: 19%;
+  animation: from-left 1s ease-in-out forwards 0.4s,  floating 5s ease-in-out 1.2s infinite;
+  transform: translateX(-9600px) scale(6.2);
+}
+.skill-5 {
+  bottom: 22%;
+  left: -8%;
+  animation: from-left 1s ease-in-out forwards 0.2s,  floating 5s ease-in-out 1s infinite;
+
+  transform: translateX(-9600px) scale(6.2);
+}
+.skill-6 {
+  animation: from-left 1s ease-in-out forwards 0.2s,  floating 5s ease-in-out 2.1s infinite;
+  transform: translateX(-9600px) scale(6.2);
+  bottom: 64%;
+  right: 78%;
+}

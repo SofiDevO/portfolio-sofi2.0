@@ -1,18 +1,13 @@
 ---
-const socialIconsData = [
-  { icon: "fa:github-alt", name: "GitHub", link: "#" },
-  { icon: "simple-icons:linkedin", name: "LinkedIn", link: "#" },
-  { icon: "entypo-social:youtube-with-circle", name: "YouTube", link: "#" },
-
-];
+import { socialIconsData } from "@src/data/socialIconsData"
 ---
 
 <div class="social__container">
   {
-    socialIconsData.map((data) => (
-      <a href="#" class="social__link">
+    socialIconsData.map((data, index) => (
+      <a href={data.link} class={`social__link social__link-${index+1}`} target="_blank">
         <iconify-icon
-          class="social__icon"
+          class={`social__icon `}
           icon={data.icon}
           width="25"
           height="25"

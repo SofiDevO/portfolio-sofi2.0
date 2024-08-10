@@ -2,18 +2,26 @@
 import { menuData } from "@data/menuData";
 import Logo from "@atoms/Logo/Logo.astro";
 import HamburgerButton from "@atoms/hamburgerBtn/HamburgerBtn.astro";
-import SocialIcons from "@atoms/SocialIcons/SocialIcons.astro"
+import SocialIcons from "@atoms/SocialIcons/SocialIcons.astro";
+const pagePathname = Astro.url.pathname;
 ---
 
 <script>
-import "@src/controllers/hamburger.controller.js";
+
+  import "@src/controllers/hamburger.controller.js";
 </script>
 
 <header class="header">
   <div class="header__container blur">
-    <Logo/>
+    <Logo />
     <nav class="header__menu">
       <ul class="header__list">
+        { pagePathname !== "/"
+       &&
+       <li class="header__item">
+        <a class="header__link" href="/">Home</a>
+        </li>
+        }
         {
           menuData.map((data) => (
             <li class="header__item">
@@ -24,10 +32,10 @@ import "@src/controllers/hamburger.controller.js";
           ))
         }
         <div class="header__icons">
-          <SocialIcons/>
+          <SocialIcons />
         </div>
       </ul>
     </nav>
-    <HamburgerButton/>
+    <HamburgerButton />
   </div>
 </header>

@@ -28,9 +28,14 @@
       text-align: center;
       font-size: 3.9rem;
     }
+    span{
+      animation: flicker-v-2 3s ease;
+    }
   }
+
   span:hover {
     color: aqua;
+
   }
 
 
@@ -64,6 +69,7 @@
 }
 .dark .hero__title span{
   color: aqua;
+  filter: drop-shadow(0 0 12px aqua);
 }
 /* animation cursor blinking */
 @keyframes cursor {

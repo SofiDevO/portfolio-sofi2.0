@@ -9,6 +9,8 @@
 @import "@organisms/Hero/hero";
 @import "@atoms/DividerBottom/divider-bottom";
 @import "@organisms/About/about";
+@import "@atoms/BackgroundIconsFloat/bg-icons";
+@import "@atoms/ButtonAbout/button-about";
 
 
 
@@ -23,7 +25,6 @@
 html {
    margin: 0;
    font-size: 62.5%;
-   font-family: "Inter", sans-serif;
    font-optical-sizing: auto;
  }
 
