@@ -1,14 +1,15 @@
 @use "@sass/variables" as v;
 @import "../../sass/mixins" ;
 
-.background{
+.backgroud{
+	min-height: 100dvh;
 	position: relative;
 	z-index: 1;
-	overflow-x: hidden;
+	overflow: hidden;
 	width: 100%;
 	background: black;
-
 }
+
 
 
 .backgroud:after,
@@ -27,7 +28,7 @@
 }
 .backgroud:before{
 	@include theme-gradient("dark");
-	@include theme-gradient("ligth");
+
 }
 .dark{
 	.backgroud:before  {

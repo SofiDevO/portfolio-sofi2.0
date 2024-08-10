@@ -4,8 +4,11 @@
 @import "@sass/functions";
 @import "@sass/animations";
 @import "@layouts/BackgroundGradient/background-gradient";
+@import "@atoms/SocialIcons/social-icons";
 @import "@molecules/Header/header";
 @import "@organisms/Hero/hero";
+@import "@atoms/DividerBottom/divider-bottom";
+@import "@organisms/About/about";
 
 
 
@@ -14,6 +17,7 @@
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+   scroll-behavior: smooth;
  }
 
 html {
@@ -27,7 +31,7 @@ html {
    overflow-x: hidden;
    @include font-family("montserrat");
    color: v.$mainColor;
-   background: v.$mainColor;
+   background: v.$secundaryColor;
   }
 
   .dark body{

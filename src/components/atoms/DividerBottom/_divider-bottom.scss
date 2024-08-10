@@ -1,0 +1,39 @@
+
+
+
+
+.wrapper{
+    position: relative;
+    z-index: 40;
+    min-height: 7dvh;
+}
+.custom-shape-divider-bottom-1723178641 {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1723178641 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 547.3px);
+    height: 179px;
+    @include respond-to("medium"){
+        height: 67px;
+    }
+}
+
+.custom-shape-divider-bottom-1723178641 .shape-fill {
+    fill: v.$secundaryColor;
+}
+.custom-shape-divider-bottom-1723178641 .shape-fill-2 {
+    fill: #0E0E0E;
+}
+
+
+.dark .custom-shape-divider-bottom-1723178641 .shape-fill {
+    fill: v.$mainColor;
+}

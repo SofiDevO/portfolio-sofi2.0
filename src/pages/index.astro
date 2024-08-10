@@ -1,15 +1,17 @@
 ---
 import BackgroundGradient from "@src/layouts/BackgroundGradient/BackgroundGradient.astro";
 import Layout from "../layouts/Layout.astro";
-import Title from "@atoms/Title/Title";
 import Hero from "@src/components/organisms/Hero/Hero.astro";
-
+import DividerBottom from "@src/components/atoms/DividerBottom/DividerBottom.astro";
+import About from "@src/components/organisms/About/About.astro";
 ---
+
 <Layout>
+  <BackgroundGradient >
 
-    <BackgroundGradient/>
-    <Hero/>
-    <section class="about">
+    <Hero />
+  </BackgroundGradient>
+  <DividerBottom/>
+    <About/>
 
-    </section>
 </Layout>

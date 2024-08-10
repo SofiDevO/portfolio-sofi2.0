@@ -1,0 +1,24 @@
+---
+const socialIconsData = [
+  { icon: "fa:github-alt", name: "GitHub", link: "#" },
+  { icon: "simple-icons:linkedin", name: "LinkedIn", link: "#" },
+  { icon: "entypo-social:youtube-with-circle", name: "YouTube", link: "#" },
+
+];
+---
+
+<div class="social__container">
+  {
+    socialIconsData.map((data) => (
+      <a href="#" class="social__link">
+        <iconify-icon
+          class="social__icon"
+          icon={data.icon}
+          width="25"
+          height="25"
+        />
+        <span class="social__tooltip">{data.name}</span>
+      </a>
+    ))
+  }
+</div>

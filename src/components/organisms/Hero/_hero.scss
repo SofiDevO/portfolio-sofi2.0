@@ -55,6 +55,13 @@
       }
   }
 }
+
+
+.container__icons{
+  @include respond-to("medium"){
+    display: none;
+  }
+}
 .dark .hero__title span{
   color: aqua;
 }

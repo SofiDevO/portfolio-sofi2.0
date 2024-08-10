@@ -2,6 +2,7 @@
 import { menuData } from "@data/menuData";
 import Logo from "@atoms/Logo/Logo.astro";
 import HamburgerButton from "@atoms/hamburgerBtn/HamburgerBtn.astro";
+import SocialIcons from "@atoms/SocialIcons/SocialIcons.astro"
 ---
 
 <script>
@@ -22,6 +23,9 @@ import "@src/controllers/hamburger.controller.js";
             </li>
           ))
         }
+        <div class="header__icons">
+          <SocialIcons/>
+        </div>
       </ul>
     </nav>
     <HamburgerButton/>

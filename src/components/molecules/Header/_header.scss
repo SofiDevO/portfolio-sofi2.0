@@ -15,7 +15,7 @@
     margin-top: 2rem;
     max-width: 1200px;
     background: black;
-    background: rgba(0, 0, 0, 0.364);
+    background:rgba(0, 0, 0, 0.613);
     border-radius: 16px;
     padding: 1rem 2rem;
   }
@@ -34,7 +34,15 @@
   @include centerFlex(flex-start);
   .header__list {
     display: flex;
+    .header__icons{
+      display: none;
+      @include respond-to("medium"){
+        display: block;
+      }
+    }
   }
+
+
   .header__link {
     font-weight: bold;
     &:hover {
