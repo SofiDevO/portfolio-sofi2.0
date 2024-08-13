@@ -16,17 +16,6 @@ function Calendar() {
   };
 
 
-  const theme = createTheme({
-    components: {
-      MuiTooltip: {
-        styleOverrides: {
-          root: {
-            fontSize: '1rem',
-          },
-        },
-      },
-    },
-  });
 
 
   return (
@@ -43,6 +32,7 @@ function Calendar() {
             }}
             renderBlock={(block, activity) => (
               <MuiTooltip
+
                 title={`${activity.count} activities on ${activity.date}`}
               >
                 {block}
