@@ -54,53 +54,79 @@
   transform: rotate(0deg);
   font-size: 4.5rem;
   @include respond-to("medium") {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 }
 
 .skill-0 {
   top: -13%;
   right: 41%;
-  animation: from-top 1s ease-in-out forwards 0.4s, floating 5s ease-in-out 2s infinite;
+  animation: from-top 1s ease-in-out forwards 0.4s,
+    floating 5s ease-in-out 2s infinite;
   transform: translateX(-1600px) scale(6.2);
+
+  @include respond-to("medium") {
+    top: -6%;
+    right: 38%;
+  }
 }
 .skill-1 {
   top: 9%;
   left: 78%;
-  animation: from-rigth 1s ease-in-out forwards 0.4s,  floating 5s ease-in-out 1.5s infinite;
+  animation: from-rigth 1s ease-in-out forwards 0.4s,
+    floating 5s ease-in-out 1.5s infinite;
   transform: translateX(-1600px) scale(6.2);
+  @include respond-to("medium") {
+    top: 13%;
+    left: 74%;
+  }
 }
 .skill-2 {
   bottom: 26%;
   left: 87%;
-  animation: from-rigth 1s ease-in-out forwards 0.3s,  floating 5s ease-in-out 3.2s infinite;
+  animation: from-rigth 1s ease-in-out forwards 0.3s,
+    floating 5s ease-in-out 3.2s infinite;
   transform: translateX(-1600px) scale(6.2);
   @include respond-to("medium") {
-    left: 78%;
+    left: 77%;
   }
 }
 .skill-3 {
   bottom: -6%;
   right: 19%;
-  animation: from-bottom 1s ease-in-out forwards 0.2s,  floating 5s ease-in-out 2.1s infinite;
+  animation: from-bottom 1s ease-in-out forwards 0.2s,
+    floating 5s ease-in-out 2.1s infinite;
   transform: translateX(-1600px) scale(6.2);
+  @include respond-to("medium") {
+  }
 }
 .skill-4 {
   bottom: -5%;
   left: 19%;
-  animation: from-left 1s ease-in-out forwards 0.4s,  floating 5s ease-in-out 1.2s infinite;
+  animation: from-left 1s ease-in-out forwards 0.4s,
+    floating 5s ease-in-out 1.2s infinite;
   transform: translateX(-9600px) scale(6.2);
+  @include respond-to("medium") {
+  }
 }
 .skill-5 {
   bottom: 22%;
   left: -8%;
-  animation: from-left 1s ease-in-out forwards 0.2s,  floating 5s ease-in-out 1s infinite;
-
+  animation: from-left 1s ease-in-out forwards 0.2s,
+    floating 5s ease-in-out 1s infinite;
   transform: translateX(-9600px) scale(6.2);
+  @include respond-to("medium") {
+    left: -3%;
+  }
 }
 .skill-6 {
-  animation: from-left 1s ease-in-out forwards 0.2s,  floating 5s ease-in-out 2.1s infinite;
+  animation: from-left 1s ease-in-out forwards 0.2s,
+    floating 5s ease-in-out 2.1s infinite;
   transform: translateX(-9600px) scale(6.2);
   bottom: 64%;
   right: 78%;
+  @include respond-to("medium") {
+    bottom: 61%;
+    right: 74%;
+  }
 }

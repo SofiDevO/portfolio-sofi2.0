@@ -1,16 +1,18 @@
 @use "./variables" as v;
-@import "@atoms/Title/title";
 @import "./mixins";
 @import "@sass/functions";
 @import "@sass/animations";
-@import "@layouts/BackgroundGradient/background-gradient";
+@import "@atoms/Title/title";
 @import "@atoms/SocialIcons/social-icons";
 @import "@molecules/Header/header";
-@import "@organisms/Hero/hero";
-@import "@atoms/DividerBottom/divider-bottom";
-@import "@organisms/About/about";
 @import "@atoms/BackgroundIconsFloat/bg-icons";
 @import "@atoms/ButtonAbout/button-about";
+@import "@molecules/GithubCalendar/github-calendar";
+@import "@organisms/Hero/hero";
+@import "@atoms/DividerBottom/divider-bottom";
+@import "@atoms/YearButton/year-button";
+@import "@organisms/About/about";
+@import "@layouts/BackgroundGradient/background-gradient";
 
 
 

@@ -22,7 +22,8 @@
     width: calc(100% + 547.3px);
     height: 179px;
     @include respond-to("medium"){
-        height: 67px;
+        height: 168px;
+        width: calc(100% + 247.3px);
     }
 }
 

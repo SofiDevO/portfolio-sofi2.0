@@ -1,0 +1,54 @@
+.calendar {
+  @include centerFlex();
+  gap: 1rem;
+  min-height: 30dvh;
+  width: 100%;
+  flex-shrink: 1;
+  margin-top: 8rem;
+  padding: 0 2rem;
+  @include respond-to("medium") {
+    flex-direction: column;
+  }
+}
+
+.calendar__container {
+  padding: 1rem 2rem;
+  background: #19013a;
+  border: 1px solid rgba(8, 214, 255, 0.418);
+  box-shadow: -1px 1px 6px -1px rgba(43, 43, 43, 0.768627451);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 15px;
+  font-weight: 600;
+  width: 100%;
+  max-width: 89rem;
+  min-height: 176px;
+  flex-shrink: initial;
+  flex-basis: 70%;
+  color: white;
+  @include respond-to("medium") {
+    flex-basis: content;
+    max-width: none;
+  }
+
+  .dark .calendar__container {
+    background: rgba(29, 1, 56, 0.411);
+    border: 1px solid rgba(72, 252, 198, 0.151);
+    box-shadow: -1px 1px 6px -1px #4d008069;
+  }
+}
+.year__buttons {
+  display: flex;
+  flex-direction: column;
+  flex-basis: fit-content;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  @media screen and (max-width: 728px) {
+    flex-direction: row;
+  }
+}
+// .MuiTooltip-tooltip {
+//   font-size: 1.5rem!important;
+// }
