@@ -1,10 +1,9 @@
 .calendar {
   @include centerFlex();
   gap: 1rem;
-  min-height: 30dvh;
   width: 100%;
   flex-shrink: 1;
-  margin-top: 8rem;
+  margin-top: 3rem;
   padding: 0 2rem;
   @include respond-to("medium") {
     flex-direction: column;

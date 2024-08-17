@@ -5,9 +5,9 @@
 	margin: 0;
 }
 
-@mixin centerFlex($justify: center) {
+@mixin centerFlex($justify: center,  $align:center) {
 	display: flex;
-	align-items: center;
+	align-items: $align;
 	justify-content: $justify;
 }
 @mixin typography($font-size, $line-height, $font-weight: normal) {
@@ -20,6 +20,8 @@
 		font-family: "Montserrat Variable", sans-serif;
 	} @else if $type == "fira-code" {
 		font-family: "fira-code", sans-serif;
+	}@else if $type == "textos" {
+		font-family: 'Questrial', sans-serif;
 	}
 }
 

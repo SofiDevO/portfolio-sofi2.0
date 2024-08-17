@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/fira-code": "^5.0.18",
     "@fontsource-variable/montserrat": "^5.0.19",
+    "@fontsource/questrial": "^5.0.13",
     "@mui/material": "^5.16.7",
     "astro": "^4.13.2",
     "react-github-calendar": "^4.2.2",

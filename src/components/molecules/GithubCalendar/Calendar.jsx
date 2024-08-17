@@ -27,8 +27,8 @@ function Calendar() {
             year={selectedYear}
             weekStart={1}
             theme={{
-              light: ["hsl(0, 0%, 9.411764705882353%)", "green"],
-              dark: ["hsl(0, 0%, 16.07843137254902%)", "green"],
+              light: ["hsl(0, 0%, 9.411764705882353%)", "hsl(263.1034482758621, 72.5%, 52.94117647058824%)"],
+              dark: ["hsl(0, 0%, 16.07843137254902%)", "hsl(263.1034482758621, 72.5%, 52.94117647058824%)"],
             }}
             renderBlock={(block, activity) => (
               <MuiTooltip

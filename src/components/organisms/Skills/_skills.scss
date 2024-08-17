@@ -1,0 +1,28 @@
+.skills {
+  width: 100%;
+  background: v.$cetacean-purple;
+  display: flex;
+  justify-content: center;
+  writing-mode: horizontal-tb;
+  min-height: 100dvh;
+  .skills__container {
+    @include centerFlex(center, flex-start);
+    flex-direction: column;
+    max-width: 1300px;
+    .skills__info {
+      @include centerFlex();
+      flex-wrap: wrap-reverse;
+      max-width: 950px;
+      gap: 7rem;
+      .skills__description {
+        @include font-family("textos");
+        flex: 1;
+        color: #f1f1f1;
+        font-size: 1.7rem;
+        max-width: 52rem;
+        line-height: 1.5;
+        align-self: center;
+      }
+    }
+  }
+}

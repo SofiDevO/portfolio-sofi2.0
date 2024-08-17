@@ -1,8 +1,7 @@
 .about {
   width: 100%;
-  min-height: 100dvh;
-
-  padding: 0 0 2rem 0;
+  padding-block: 75px;
+  writing-mode: horizontal-tb;
   @include centerFlex();
   flex-direction: column;
   color: v.$mainColor;

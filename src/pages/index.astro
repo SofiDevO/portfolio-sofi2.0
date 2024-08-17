@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "@src/components/organisms/Hero/Hero.astro";
 import DividerBottom from "@src/components/atoms/DividerBottom/DividerBottom.astro";
 import About from "@src/components/organisms/About/About.astro";
+import DividerTop from "@src/components/atoms/DividerTop/DividerTop.astro";
+import Skills from "@src/components/organisms/Skills/Skills.astro";
 ---
 
 <Layout>
@@ -11,7 +13,9 @@ import About from "@src/components/organisms/About/About.astro";
 
     <Hero />
   </BackgroundGradient>
-  <DividerBottom/>
-    <About/>
+  <DividerTop/>
+  <About/>
+  <DividerBottom fill="shape-fill-3"/>
+  <Skills/>
 
 </Layout>

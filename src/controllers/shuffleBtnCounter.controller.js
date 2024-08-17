@@ -1,6 +1,6 @@
 const shuffleButton = document.querySelector(".image__button");
 const themeToggleButton = document.getElementById("themeToggle");
-const hideSkills = document.querySelectorAll(".skills")
+const hideSkills = document.querySelectorAll(".hero__skills")
 let botonShuffle = 0;
 
 export  function clickHandler() {

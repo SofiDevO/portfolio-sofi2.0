@@ -1,0 +1,14 @@
+---
+import Title from "@src/components/atoms/Title/Title";
+import { userData as data} from "@src/data/userData";
+---
+
+<section class="skills" id="skills">
+    <div class="skills__container">
+        <Title titleDesc="Skills"  clase="title-dark" />
+        <div class="skills__info">
+            <p class="skills__description">{data.about}</p>
+            <img src="../img/funkoSofi.png" alt=`avatar funko of ${data.userName}` >
+        </div>
+    </div>
+</section>

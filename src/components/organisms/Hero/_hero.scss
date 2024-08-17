@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: center;
   padding: 0 2rem;
+  padding-block: 75px;
+  writing-mode: horizontal-tb;
 }
 .hero__container {
   @include centerFlex(space-evenly);
