@@ -15,6 +15,7 @@
   flex-wrap: wrap-reverse;
   width: 100%;
   max-width: 1300px;
+  padding-block: 10rem;
   @include respond-to("medium"){
     gap:4rem;
   }

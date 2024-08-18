@@ -1,22 +1,21 @@
 ---
-const {data, text,clase} = Astro.props;
+const { text, clase, link, typeMail = false } = Astro.props;
 ---
 
 <a
-class={`about__links about__links--${clase}`}
-href={data.cv}
-class="link "
-target="_blank"
+  class={`about__links about__links--${clase} link`}
+  href={typeMail ? `mailto:${link}` : link}
+  target={typeMail ? "" : "_blank"}
 >
-<iconify-icon
-  class="about__iconify"
-  icon="uil:arrow-up-left"
-  width="25"
-  height="25"></iconify-icon>
-{text}
-<iconify-icon
-  class="about__iconify"
-  icon="iwwa:file-pdf"
-  width="25"
-  height="25"></iconify-icon>
+  <iconify-icon
+    class="about__iconify"
+    icon="uil:arrow-up-left"
+    width="25"
+    height="25"></iconify-icon>
+  {text}
+  <iconify-icon
+    class="about__iconify"
+    icon="iwwa:file-pdf"
+    width="25"
+    height="25"></iconify-icon>
 </a>

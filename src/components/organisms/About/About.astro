@@ -17,8 +17,8 @@ import Calendar from "@src/components/molecules/GithubCalendar/Calendar";
           height="100"
         />
       </div>
-      <ButtonAbout data={data.cv}  text="Download cv" clase="cv"/>
-      <ButtonAbout data={data.cv}  text="email" clase="email"/>
+      <ButtonAbout typeMail="true" data={data.email} link={data.email}  text="email" clase="email"/>
+      <ButtonAbout link={data.cv}  text="Download cv" clase="cv"/>
     </div>
     <div class="about__content">
       <Title titleDesc="About Me" clase="title-dark" />
