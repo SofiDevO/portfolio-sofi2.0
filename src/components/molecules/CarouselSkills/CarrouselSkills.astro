@@ -1,0 +1,16 @@
+---
+import Carousel from "@molecules/Carousel/Carousel.astro";
+import { skillsData } from "@src/data/skillsData";
+---
+
+
+<Carousel clase="slide__track--skills">
+    {
+        [...skillsData, ...skillsData].map((data) => (
+          <div class="slide">
+            <div class="tag">{data.name}</div>
+            <iconify-icon icon={data.icon} width="60" height="60" />
+          </div>
+        ))
+      }
+</Carousel>

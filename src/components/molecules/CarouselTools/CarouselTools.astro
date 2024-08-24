@@ -1,0 +1,18 @@
+---
+import Carousel from "@molecules/Carousel/Carousel.astro";
+import { toolsData } from "@src/data/ToolsData";
+
+
+---
+
+<Carousel clase="slide__track--tools">
+    {
+        [...toolsData, ...toolsData].map((data) => (
+          <div class="slide">
+            <div class="tag">{data.name}</div>
+            <iconify-icon icon={data.icon} width="60" height="60" />
+          </div>
+        ))
+      }
+
+</Carousel>

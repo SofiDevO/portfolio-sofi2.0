@@ -1,16 +1,17 @@
 .skills {
-  width: 100%;
   background: v.$cetacean-purple;
+  width: 100%;
   display: flex;
   justify-content: center;
   writing-mode: horizontal-tb;
-  min-height: 100dvh;
+  padding-block: 17rem;
   .skills__container {
     @include centerFlex(center, flex-start);
     flex-direction: column;
     max-width: 1300px;
     .skills__info {
       @include centerFlex();
+      align-self: center;
       flex-wrap: wrap-reverse;
       max-width: 950px;
       gap: 7rem;
@@ -24,5 +25,16 @@
         align-self: center;
       }
     }
+  }
+}
+
+.skills__carousel--tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  margin-top: 5rem;
+  h2{
+    margin-left: 22rem;
   }
 }

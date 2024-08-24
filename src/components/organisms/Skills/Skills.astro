@@ -1,14 +1,29 @@
 ---
 import Title from "@src/components/atoms/Title/Title";
 import { userData as data} from "@src/data/userData";
+import CarrouselSkills from "@src/components/molecules/CarouselSkills/CarrouselSkills.astro";
+import CarouselTools from "@src/components/molecules/CarouselTools/CarouselTools.astro";
+import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
+
 ---
 
 <section class="skills" id="skills">
     <div class="skills__container">
-        <Title titleDesc="Skills"  clase="title-dark" />
         <div class="skills__info">
-            <p class="skills__description">{data.about}</p>
+            <div class="skills__textos">
+                <Title titleDesc="Skills"  clase="title-dark" />
+                <p class="skills__description">{data.about}</p>
+            </div>
+            <CardTerminal>
+                <p>Holi</p>
+            </CardTerminal>
             <img src="../img/funkoSofi.png" alt=`avatar funko of ${data.userName}` >
+        </div>
+        <CarrouselSkills/>
+        <div class="skills__carousel--tools">
+            <Title titleDesc="Tools"  clase="title-dark" />
+            <CarouselTools/>
+
         </div>
     </div>
 </section>

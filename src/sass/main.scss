@@ -5,9 +5,11 @@
 @import "@atoms/Title/title";
 @import "@atoms/SocialIcons/social-icons";
 @import "@molecules/Header/header";
+@import "@molecules/Carousel/carousel";
 @import "@atoms/BackgroundIconsFloat/bg-icons";
 @import "@atoms/ButtonAbout/button-about";
 @import "@molecules/GithubCalendar/github-calendar";
+@import "@molecules/CardTerminal/card-terminal";
 @import "@organisms/Hero/hero";
 @import "@organisms/Skills/skills";
 @import "@atoms/DividerBottom/divider-bottom";
@@ -50,7 +52,9 @@ html {
    font-size: 1.6rem;
    color: v.$secundaryColor;
  }
-
+p{
+  font-size: 1.6rem;
+}
  li {
    list-style: none;
  }

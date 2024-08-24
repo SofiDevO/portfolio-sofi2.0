@@ -299,3 +299,25 @@
     transform: translateY(0) scale(1);
   }
 }
+
+
+/* Animations for infinite sliders */
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
