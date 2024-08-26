@@ -5,24 +5,42 @@
   justify-content: center;
   writing-mode: horizontal-tb;
   padding-block: 17rem;
-  .skills__container {
+  &__container {
     @include centerFlex(center, flex-start);
     flex-direction: column;
     max-width: 1300px;
+    width: 100%;
+    padding: 2rem 1rem;
+
     .skills__info {
       @include centerFlex();
       align-self: center;
-      flex-wrap: wrap-reverse;
       max-width: 950px;
       gap: 7rem;
+      @include respond-to("medium") {
+        flex-wrap: wrap-reverse;
+      }
+      .skills__textos {
+        max-width: 46rem;
+        width: 100%;
+      }
       .skills__description {
         @include font-family("textos");
-        flex: 1;
         color: #f1f1f1;
         font-size: 1.7rem;
         max-width: 52rem;
         line-height: 1.5;
         align-self: center;
+        white-space: pre-line;
+        margin-bottom: 1rem;
+
+      }
+      .skills__description--subtitle {
+        font-weight: bold;
+        @include text-gradient("dark");
+      }
+      .skills__avatar__container {
+        flex: 1;
       }
     }
   }
@@ -34,7 +52,11 @@
   justify-content: center;
   max-width: 100%;
   margin-top: 5rem;
-  h2{
+  h2 {
     margin-left: 22rem;
+    @include respond-to("medium") {
+      margin: 0;
+      text-align: center;
+    }
   }
 }

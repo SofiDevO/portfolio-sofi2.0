@@ -5,6 +5,7 @@
   flex-shrink: 1;
   margin-top: 3rem;
   padding: 0 2rem;
+  flex-wrap: wrap;
   @include respond-to("medium") {
     flex-direction: column;
   }
@@ -20,7 +21,7 @@
   border-radius: 15px;
   font-weight: 600;
   width: 100%;
-  max-width: 89rem;
+  max-width: 88.6rem;
   min-height: 176px;
   flex-shrink: initial;
   flex-basis: 70%;
@@ -44,7 +45,8 @@
   justify-content: center;
   align-items: center;
   font-size: 1.7rem;
-  @media screen and (max-width: 728px) {
+
+  @media screen and (max-width: 1014px) {
     flex-direction: row;
   }
 }

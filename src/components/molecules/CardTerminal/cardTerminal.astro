@@ -1,9 +1,9 @@
 ---
 import BarraTerminal from "@atoms/BarraTerminal/BarraTerminal.astro";
-const {animation} = Astro.props;
+const {clase} = Astro.props;
 ---
 
-<div class="caja__terminal" data-aos={animation} >
+<div class={`caja__terminal ${clase}`}  >
   <BarraTerminal />
   <div class="caja__cristal caja__dark">
     <slot />

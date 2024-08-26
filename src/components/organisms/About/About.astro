@@ -22,7 +22,13 @@ import Calendar from "@src/components/molecules/GithubCalendar/Calendar";
     </div>
     <div class="about__content">
       <Title titleDesc="About Me" clase="title-dark" />
-      <p>{data.about}</p>
+      <p class="about__description">
+          {data.about.intro}
+        </p>
+        <h5 class="about__highlighted">{data.about.highlighted}</h5>
+        <p class="about__description">
+          {data.about.continuation}
+        </p>
     </div>
   </article>
   <Calendar  client:only/>

@@ -1,4 +1,6 @@
-
+---
+import { userData as data } from "@src/data/userData"
+---
 
 <div class="terminal_toolbar">
     <div class="butt">
@@ -6,5 +8,5 @@
         <div class="btn btn__yellow"></div>
         <div class="btn btn__green"></div>
     </div>
-    <p class="user">sofidev@admin: ~</p>
+    <p class="user">{data.userName}@admin: ~</p>
 </div>
