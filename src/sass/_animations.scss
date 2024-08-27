@@ -309,7 +309,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-9.5rem * 15 ));
   }
 }
 
@@ -318,6 +318,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-9.5rem * 9));
+
   }
 }

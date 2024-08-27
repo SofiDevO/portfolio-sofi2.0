@@ -4,7 +4,12 @@
   display: flex;
   justify-content: center;
   writing-mode: horizontal-tb;
-  padding-block: 17rem;
+  padding-block: 20rem;
+  min-height: 100dvh;
+  @include respond-to("medium"){
+    padding-block: 10rem;
+
+  }
   &__container {
     @include centerFlex(center, flex-start);
     flex-direction: column;
@@ -21,7 +26,7 @@
         flex-wrap: wrap-reverse;
       }
       .skills__textos {
-        max-width: 46rem;
+        max-width: 62rem;
         width: 100%;
       }
       .skills__description {
@@ -33,14 +38,20 @@
         align-self: center;
         white-space: pre-line;
         margin-bottom: 1rem;
-
       }
       .skills__description--subtitle {
         font-weight: bold;
         @include text-gradient("dark");
       }
       .skills__avatar__container {
-        flex: 1;
+        position: relative;
+        flex-shrink: 1;
+      }
+      .skills__popup {
+        bottom: 70%;
+        left: 50%;
+        z-index: 20;
+        transform: translateX(-50%);
       }
     }
   }

@@ -13,11 +13,11 @@ export const userData = {
         continuation: "I genuinely love what I do! 💙 I thrive on transforming  ideas into unique digital solutions. 💡 \n\n  My focus goes beyond coding—it's about creating experiences that captivate and solve real-world problems in innovative ways. 🚀"
     },
     aboutSkills: {
-        intro: "Javascript Fan 😍. Always looking for new skills to learn. \n",
-        highlighted: "What sets me apart?",
-        continuation: "I genuinely love what I do! 💙 I thrive on transforming  ideas into unique digital solutions. 💡 My focus goes beyond coding—it's about creating experiences that captivate and solve real-world problems in innovative ways. 🚀"
+        intro: "Skilled in modern web technologies, I create dynamic and user-centric digital solutions. My expertise in both front-end and back-end development allows for the seamless integration of design and functionality, ensuring impactful and engaging applications.\n",
+        highlighted: "Tools",
+        continuation: "Leveraging advanced tools and platforms, I streamline both design and development processes. This approach ensures high-quality results, blending technical proficiency with creative design to enhance project outcomes.🚀"
     },
-    terminalInfo: "Frontend Designer/Developer with experience in designing and developing attractive and functional user interfaces. \n\nProficient in a variety of web technologies including CSS, Sass, JavaScript, React, WordPress, and more. With a solid foundation in Data Entry and analytical skills.",
+    terminalInfo: "Adept at remote teamwork, I utilize collaborative tools and version control systems to manage projects effectively. My experience with communication platforms and project management tools supports smooth coordination and productive, distributed team environments.",
     cv: "../docs/Angela_Sofia_Osorio_CV2024_updated.pdf",
     email: "sofi.dev@outlook.com"
 };

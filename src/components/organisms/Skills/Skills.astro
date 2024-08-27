@@ -4,6 +4,7 @@ import { userData as data } from "@src/data/userData";
 import CarrouselSkills from "@src/components/molecules/CarouselSkills/CarrouselSkills.astro";
 import CarouselTools from "@src/components/molecules/CarouselTools/CarouselTools.astro";
 import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
+import PopUp from "@src/components/atoms/PopUp/PopUp.astro";
 ---
 
 <section class="skills" id="skills">
@@ -14,7 +15,9 @@ import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
         <p class="skills__description">
           {data.aboutSkills.intro}
         </p>
-        <h5 class="skills__description skills__description--subtitle">{data.aboutSkills.highlighted}</h5>
+        <h5 class="skills__description skills__description--subtitle">
+          {data.aboutSkills.highlighted}
+        </h5>
         <p class="skills__description">
           {data.aboutSkills.continuation}
         </p>
@@ -25,11 +28,13 @@ import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
           src="../img/funkoSofi.png"
           alt={`avatar funko of ${data.userName}`}
         />
-        <CardTerminal clase="skills__terminal">
-          <p class="skills__terminal__content">
-            {data.aboutSkills.continuation}
-          </p>
-        </CardTerminal>
+        <PopUp clase="skills__popup">
+          <CardTerminal clase="skills__terminal">
+            <p class="skills__terminal__content">
+              {data.aboutSkills.continuation}
+            </p>
+          </CardTerminal>
+        </PopUp>
       </div>
     </div>
     <CarrouselSkills />
