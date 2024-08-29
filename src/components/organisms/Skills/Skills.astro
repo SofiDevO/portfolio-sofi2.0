@@ -7,6 +7,10 @@ import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
 import PopUp from "@src/components/atoms/PopUp/PopUp.astro";
 ---
 
+<script>
+  import timerTerminal from "@src/controllers/TerminalSkills.controller";
+</script>
+
 <section class="skills" id="skills">
   <div class="skills__container">
     <div class="skills__info">
@@ -28,13 +32,12 @@ import PopUp from "@src/components/atoms/PopUp/PopUp.astro";
           src="../img/funkoSofi.png"
           alt={`avatar funko of ${data.userName}`}
         />
-        <PopUp clase="skills__popup">
-          <CardTerminal clase="skills__terminal">
-            <p class="skills__terminal__content">
-              {data.aboutSkills.continuation}
-            </p>
-          </CardTerminal>
-        </PopUp>
+
+        <CardTerminal clase="skills__terminal skills__popup">
+          <p class="skills__terminal__content">
+            {data.aboutSkills.continuation}
+          </p>
+        </CardTerminal>
       </div>
     </div>
     <CarrouselSkills />

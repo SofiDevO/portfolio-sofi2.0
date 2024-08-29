@@ -6,9 +6,8 @@
   writing-mode: horizontal-tb;
   padding-block: 20rem;
   min-height: 100dvh;
-  @include respond-to("medium"){
+  @include respond-to("medium") {
     padding-block: 10rem;
-
   }
   &__container {
     @include centerFlex(center, flex-start);
@@ -47,14 +46,22 @@
         position: relative;
         flex-shrink: 1;
       }
-      .skills__popup {
-        bottom: 70%;
-        left: 50%;
-        z-index: 20;
-        transform: translateX(-50%);
-      }
     }
   }
+}
+.skills__popup {
+  bottom: 72%;
+  left: 50%;
+  z-index: 20;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skills__popup.active {
+  display: block;
+  opacity: 1;
 }
 
 .skills__carousel--tools {

@@ -1,12 +1,13 @@
 ---
 import BarraTerminal from "@atoms/BarraTerminal/BarraTerminal.astro";
-const {clase} = Astro.props;
+const { clase } = Astro.props;
 ---
 
 
-  <div class={`caja__terminal ${clase}`}  >
-    <BarraTerminal />
-    <div class="caja__cristal caja__dark">
-      <slot />
-    </div>
+
+<div class={`caja__terminal ${clase}`}>
+  <BarraTerminal />
+  <div class="caja__cristal caja__dark">
+    <slot />
   </div>
+</div>
