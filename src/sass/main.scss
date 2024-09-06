@@ -4,22 +4,22 @@
 @import "@sass/animations";
 @import "@atoms/Title/title";
 @import "@atoms/SocialIcons/social-icons";
-@import "@molecules/Header/header";
-@import "@molecules/Carousel/carousel";
-@import "@atoms/BackgroundIconsFloat/bg-icons";
-@import "@atoms/ButtonAbout/button-about";
-@import "@molecules/GithubCalendar/github-calendar";
-@import "@molecules/CardTerminal/card-terminal";
-@import "@organisms/Hero/hero";
-@import "@organisms/Skills/skills";
 @import "@atoms/DividerBottom/divider-bottom";
 @import "@atoms/DividerTop/divider-top";
 @import "@atoms/YearButton/year-button";
+@import "@atoms/BackgroundIconsFloat/bg-icons";
+@import "@atoms/ButtonAbout/button-about";
+@import "@molecules/Header/header";
+@import "@molecules/Carousel/carousel";
+@import "@molecules/GithubCalendar/github-calendar";
+@import "@molecules/CardTerminal/card-terminal";
+@import "@molecules/CardPortfolio/card-portfolio";
+@import "@organisms/Hero/hero";
+@import "@organisms/Skills/skills";
 @import "@organisms/About/about";
+@import "@organisms/Portfolio/portfolio";
 @import "@layouts/BackgroundGradient/background-gradient";
-
-
-
+@import "@molecules/CardDiscord/card-discord";
 
 * {
    box-sizing: border-box;

@@ -1,0 +1,22 @@
+---
+import CardPortfolio from "../../molecules/CardPortfolio/CardPortfolio.astro";
+import { skillsIconsMapped} from "@src/data/portfolioData";
+---
+
+<section class="portfolio" id="portfolio">
+  <h2></h2>
+  <div class="card__section">
+    {skillsIconsMapped.slice(0,6).map((data) =>(
+
+    <CardPortfolio
+    titulo={data.titulo}
+    imgSrc={data.imgSrc}
+    demoURL={data.demoURL}
+    repoURL={data.repoURL}
+    descripcion={data.descripcion}
+    skills={data.skills}
+    />
+    ))
+}
+  </div>
+</section>

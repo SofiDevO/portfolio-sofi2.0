@@ -1,0 +1,28 @@
+---
+const { titulo, imgSrc, demoURL, repoURL, descripcion, skills } = Astro.props;
+---
+
+<article class="card">
+  <div class="card__cara--A">
+    <img
+      class="card__img"
+      alt={`Imagen de portada de ${titulo}`}
+      src={imgSrc}
+    />
+    <div class="card__cara--B">
+      <div class="thecnology">
+        {
+          skills.map((skill) => (
+            <iconify-icon icon={skill} width="20" height="20" />
+          ))
+        }
+      </div>
+      <h3 class="card__title">{titulo}</h3>
+      <p class="card__description" >{descripcion}</p>
+      <div class="card__links">
+        <a href={demoURL}>ver Demo</a>
+        <a href={repoURL}>ver Repo</a>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,105 @@
+.card {
+  height: 246px;
+  border-radius: 15px;
+  overflow: hidden;
+  min-height: 250px;
+  background: black;
+  color: white;
+  position: relative;
+  box-shadow: 2px 1px 5px 1.1px rgba(0, 0, 0, 0.68);
+  width: 100%;
+}
+.card__img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  -o-object-position: center 0;
+  object-position: center 0;
+  background: #000;
+}
+
+.card__cara--B {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background: #140030;
+  transform: translateY(-25px);
+  height: 247px;
+  transition: transform 0.3s linear;
+  padding: 0.2rem 2rem 0.2rem 2rem;
+  .card__title {
+    font-size: 2.1rem;
+    text-align: left;
+    @include text-gradient("ligth");
+  }
+  .card__description {
+    width: 28rem;
+    max-height: 9dvh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    transition: 0.35s height;
+  }
+}
+.card__title,
+.card__description {
+  transform: translateY(-37px);
+  transition: transform 0.3s ease;
+}
+.card:hover .card__title {
+  transform: translateY(0px);
+}
+
+.card:hover .card__description {
+  transform: translateY(0px);
+  overflow: auto;
+  white-space: pre-line;
+  height: 90px;
+  max-height: 90px;
+  width: 100%;
+}
+
+.card__description::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.card__description::-webkit-scrollbar-track {
+  background: #7d37df;
+}
+.card__description::-webkit-scrollbar-thumb {
+  background: #3aada3;
+}
+
+.card__cara--B > *:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.card:hover .card__cara--B {
+  transform: translateY(-164px);
+}
+.card:hover .thecnology {
+  transform: translateY(0px);
+}
+
+.thecnology {
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.6rem 2rem;
+  transform: translate(2px, -33px);
+  background: #1400302b;
+  width: fit-content;
+  align-self: self-end;
+  border-radius: 15px 0 0;
+  align-items: center;
+  gap: 9px;
+  backdrop-filter: blur(17px);
+}
+
+.card__links {
+  @include centerFlex(space-between);
+  width: 100%;
+  max-width: 20rem;
+  gap: 1rem;
+  align-self: center;
+}

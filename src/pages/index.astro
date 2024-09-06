@@ -6,16 +6,21 @@ import DividerBottom from "@src/components/atoms/DividerBottom/DividerBottom.ast
 import About from "@src/components/organisms/About/About.astro";
 import DividerTop from "@src/components/atoms/DividerTop/DividerTop.astro";
 import Skills from "@src/components/organisms/Skills/Skills.astro";
+import Portfolio from "@src/components/organisms/Portfolio/Portfolio.astro";
+import Social from "@src/components/organisms/Social/Social.astro";
 ---
 
 <Layout>
   <BackgroundGradient >
-
     <Hero />
   </BackgroundGradient>
   <DividerTop/>
   <About/>
   <DividerBottom fill="shape-fill-3"/>
   <Skills/>
+  <DividerTop fill="shape-fill-purple "/>
+  <Portfolio/>
+  <DividerBottom fill="shape-fill-3"/>
+  <Social />
 
 </Layout>

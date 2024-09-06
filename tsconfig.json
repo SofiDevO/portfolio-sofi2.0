@@ -15,6 +15,7 @@
 			"@controllers/*": ["src/controllers/*"],
 			"@data/*": ["src/data/*"],
 			"@sass/*": ["src/sass/*"],
+			"@img/*": ["public/img/*"],
 		}
   }
 }
