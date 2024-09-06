@@ -1,0 +1,55 @@
+.social {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+  }
+  .social__grid {
+    margin-top: 6rem;
+    max-width: 1300px;
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(4, 120px);
+    max-width: 1300px;
+    width: 100%;
+    gap: 24px;
+    grid-template-areas:
+      "CardDiscord CardDiscord CardDiscord CardDiscord    CardYoutube CardYoutube  CardYoutube  CardYoutube"
+      "CardDiscord CardDiscord CardDiscord CardDiscord    CardYoutube CardYoutube  CardYoutube  CardYoutube"
+
+      "CardContact CardContact CardContact CardContact CardContact     CardVsc CardVsc CardVsc"
+
+      "CardContact CardContact CardContact CardContact CardContact   CardVsc CardVsc CardVsc";
+  }
+  .social__item {
+
+    width: 100%;
+  }
+  .social__item-1 {
+    grid-area: CardDiscord;
+
+  }
+  .social__item-2 {
+    grid-area: CardYoutube;
+
+  }
+  .social__item-3 {
+    grid-area: CardContact;
+
+  }
+  .social__item-4 {
+    grid-area: CardVsc;
+  }
+  .social__title{
+    margin-bottom: 2rem;
+  }
+
+.social__background {
+  background:  linear-gradient(180deg, rgb(20, 0, 48) 6%, rgba(34, 2, 80, 0.103) 10%), url("/img/cuadriculaDifuminada.png");
+  background-size: cover;
+  width: 100%;
+  min-height: 100dvh;
+  position: absolute;
+  z-index: -1;
+}

@@ -103,4 +103,12 @@
   max-width: 20rem;
   gap: 1rem;
   align-self: center;
+  a{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    &:hover{
+      @include text-gradient("ligth");
+    }
+  }
 }

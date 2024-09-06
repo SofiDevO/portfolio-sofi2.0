@@ -1,17 +1,18 @@
 .card-social {
-
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   padding: 2rem 1rem;
-  backdrop-filter: blur(17px);
-  background: rgb(58 153 166 / 14%);
+  backdrop-filter: blur(3px);
+  background: rgba(38, 144, 176, 0.161);
+  width: 100%;
   height: 100%;
   border-radius: 18.5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.318);
   position: relative;
   overflow: hidden;
-  border: 0.5px solid rgba(57, 255, 255, 0.2196078431);
+  border: 0.5px solid rgba(57, 255, 255, 0.305);
+  transition:background 0.5s ease-in-out;
   .card-social__title {
     @include text-gradient("ligth");
     font-size: 2.76rem;
@@ -50,9 +51,9 @@
   height: 100%;
   background: radial-gradient(
     circle at top,
-    #4506ff 20%,
-    rgb(62, 0, 149),
-    #24034961 50%
+    #501deb 10%,
+    rgba(82, 30, 253, 0.654),
+    #2403492c 45%
   );
   background-size: 100%;
   opacity: .3;
@@ -68,18 +69,12 @@
   transform: rotate(30deg);
   transition: all 0.3s linear;
 }
+.card-social:hover {
+  background: #0e0528ea;
+}
 
 .card-social:hover .card-social__image {
   top: 33%;
   left: 53%;
   transform: rotate(0deg);
-}
-
-.social__background {
-  background:  linear-gradient(180deg, rgb(20, 0, 48) 6%, rgba(34, 2, 80, 0.103) 10%), url("/img/cuadriculaDifuminada.png");
-  background-size: cover;
-  width: 100%;
-  min-height: 100dvh;
-  position: absolute;
-  z-index: -1;
 }

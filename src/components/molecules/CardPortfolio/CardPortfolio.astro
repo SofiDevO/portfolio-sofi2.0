@@ -20,8 +20,8 @@ const { titulo, imgSrc, demoURL, repoURL, descripcion, skills } = Astro.props;
       <h3 class="card__title">{titulo}</h3>
       <p class="card__description" >{descripcion}</p>
       <div class="card__links">
-        <a href={demoURL}>ver Demo</a>
-        <a href={repoURL}>ver Repo</a>
+        <a href={demoURL}>ver Demo <iconify-icon icon="quill:link-out" width="15" height="15"  style="color: aqua"></iconify-icon></a>
+        <a href={repoURL}>ver Repo <iconify-icon icon="quill:link-out" width="15" height="15"  style="color: aqua"></iconify-icon></a>
       </div>
     </div>
   </div>
