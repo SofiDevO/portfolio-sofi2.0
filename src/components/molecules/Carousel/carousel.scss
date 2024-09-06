@@ -4,6 +4,7 @@
   height: auto;
   overflow-x: hidden;
   position: relative;
+  padding: 3.5rem;
 }
 
 .slider::before {
@@ -56,8 +57,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #9237ee75;
-  backdrop-filter: blur(10px);
+  background: #ceacff3d;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -71,11 +71,12 @@
 
 .slide .tag {
   position: absolute;
-  background: #222831;
-  color: #fff;
+  background: #240269;
+  box-shadow: 0px 0px 3px 1px #3c03a5c4;
+  color: v.$ufo-green;
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
-  z-index: 2;
+  z-index: 20;
   transition: all 0.2s ease-in-out;
   opacity: 0;
   font-size: 1.5rem;
@@ -83,7 +84,7 @@
 }
 
 .slide:hover .tag {
-  transform: translateY(-4.2rem);
+  transform: translateY(-6rem);
   opacity: 1;
 }
 

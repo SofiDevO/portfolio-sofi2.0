@@ -77,16 +77,14 @@
 .card:hover .card__cara--B {
   transform: translateY(-164px);
 }
-.card:hover .thecnology {
-  transform: translateY(0px);
-}
+
 
 .thecnology {
   transition: transform 0.3s ease;
   display: flex;
   justify-content: flex-end;
   padding: 0.6rem 2rem;
-  transform: translate(2px, -33px);
+  transform: translate(20px, -33px);
   background: #1400302b;
   width: fit-content;
   align-self: self-end;
@@ -94,8 +92,11 @@
   align-items: center;
   gap: 9px;
   backdrop-filter: blur(17px);
+  left: 74%;
 }
-
+.card:hover .thecnology {
+  transform: translate(20px, 0px);
+}
 .card__links {
   @include centerFlex(space-between);
   width: 100%;
