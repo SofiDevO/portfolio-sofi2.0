@@ -1,6 +1,9 @@
 ---
 import Title from "@atoms/Title/Title";
 import SocialCard from "@molecules/SocialCard/SocialCard.astro";
+import DiscordCardContent from "@src/components/molecules/DiscordCardContent/DiscordCardContent.astro";
+import YoutubeCardContent from "@src/components/molecules/YoutubeCardContent/YoutubeCardContent.astro";
+import YoutubeModal from "@src/components/molecules/YoutubeModal/YoutubeModal.astro";
 ---
 
 <section id="social" class="social">
@@ -12,42 +15,22 @@ import SocialCard from "@molecules/SocialCard/SocialCard.astro";
   <div class="social__grid">
     <div class="social__item social__item-1">
       <SocialCard>
-        <h3 class="card-social__title">Join our Discord community</h3>
-        <p class="card-social__content">
-          Connect with web developers, share resources, and get help on your
-          frontend projects.
-        </p>
-        <a class="card-social__link" href="/">
-          Join our community <iconify-icon
-            icon="quill:link-out"
-            width="15"
-            height="15"
-            style="color: aqua"></iconify-icon></a
-        >
-        <img
-          class="card-social__image"
-          src="../img/icons/DiscordLogo.svg"
-          alt="Discord logo"
-        />
+        <DiscordCardContent />
       </SocialCard>
     </div>
     <div class="social__item social__item-2">
-      <SocialCard>
+      <SocialCard extrClass="youtube__card">
+        <YoutubeCardContent />
 
       </SocialCard>
     </div>
     <div class="social__item social__item-3">
-      <SocialCard>
-
-      </SocialCard>
+      <SocialCard />
     </div>
     <div class="social__item social__item-4">
-      <SocialCard>
-
-      </SocialCard>
+      <SocialCard />
     </div>
   </div>
-  <div class="social__background">
-
-  </div>
+  <div class="social__background"></div>
+  <YoutubeModal />
 </section>

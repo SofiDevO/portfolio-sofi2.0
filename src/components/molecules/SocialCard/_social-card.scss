@@ -13,11 +13,7 @@
   overflow: hidden;
   border: 0.5px solid rgba(57, 255, 255, 0.305);
   transition:background 0.5s ease-in-out;
-  .card-social__title {
-    @include text-gradient("ligth");
-    font-size: 2.76rem;
-    font-weight: bold;
-  }
+
   .card-social__content{
     color: white;
     font-weight: 400;
