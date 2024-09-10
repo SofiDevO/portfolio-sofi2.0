@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@astrojs/node": "^8.3.3",
     "@astrojs/react": "^3.6.2",
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/fira-code": "^5.0.18",
@@ -20,7 +21,12 @@
     "@fontsource/questrial": "^5.0.13",
     "@mui/material": "^5.16.7",
     "astro": "^4.15.2",
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.15",
     "react-github-calendar": "^4.2.2",
     "sass": "^1.77.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4"
   }
 }

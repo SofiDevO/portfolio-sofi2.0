@@ -4,11 +4,11 @@ import { userData as data } from "@src/data/userData";
 import CarrouselSkills from "@src/components/molecules/CarouselSkills/CarrouselSkills.astro";
 import CarouselTools from "@src/components/molecules/CarouselTools/CarouselTools.astro";
 import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
-import PopUp from "@src/components/atoms/PopUp/PopUp.astro";
+
 ---
 
 <script>
-  import timerTerminal from "@src/controllers/TerminalSkills.controller";
+  import {d} from "@src/controllers/TerminalSkills.controller";
 </script>
 
 <section class="skills" id="skills">
@@ -28,6 +28,7 @@ import PopUp from "@src/components/atoms/PopUp/PopUp.astro";
       </div>
       <div class="skills__avatar__container">
         <img
+        id="skills__avatar"
           class="skills__avatar"
           src="../img/funkoSofi.png"
           alt={`avatar funko of ${data.userName}`}
@@ -35,7 +36,7 @@ import PopUp from "@src/components/atoms/PopUp/PopUp.astro";
 
         <CardTerminal clase="skills__terminal skills__popup">
           <p class="skills__terminal__content">
-            {data.aboutSkills.continuation}
+            {data.terminalInfo}
           </p>
         </CardTerminal>
       </div>

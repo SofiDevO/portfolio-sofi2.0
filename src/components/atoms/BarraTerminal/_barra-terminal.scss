@@ -1,0 +1,84 @@
+/* Botones terminal */
+.terminal_toolbar {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: linear-gradient(#504b45 0%, #3c3b37 100%);
+  z-index: 700;
+}
+.butt {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 23%;
+  max-width: 9rem;
+  min-width: 6rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-right: 5px;
+  font-size: 1.8rem;
+  height: 1.4rem;
+  width: 1.4rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 100%;
+  background: linear-gradient(#7d7871 0%, #595953 100%);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
+}
+
+.btn__red {
+  background: #ee411a;
+  animation: blink 1s infinite;
+  animation-delay: 4s;
+  transition: all 0.3s;
+}
+
+.btn__yellow {
+  background: #ffae00;
+}
+.btn__green {
+  background: #15ff00;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.butt--exit {
+  background: linear-gradient(#f37458 0%, #de4c12 100%);
+}
+.user {
+  color: #d5d0ce;
+  margin-left: 6px;
+  font-size: 1.5rem;
+  line-height: 15px;
+  @include font-family("fira-code");
+}
+
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

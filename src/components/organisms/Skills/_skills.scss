@@ -50,13 +50,25 @@
   }
 }
 .skills__popup {
-  bottom: 72%;
+  bottom: 78%;
   left: 50%;
-  z-index: 20;
+  z-index: 200;
   transform: translateX(-50%);
   position: absolute;
   opacity: 0;
   transition: opacity 0.4s ease;
+  .skills__terminal__content{
+    white-space: pre-line;
+    @include font-family("fira-code");
+  }
+  @include respond-to("medium"){
+    .skills__popup{
+      bottom: 67%;
+    }
+    .skills__terminal__content{
+      font-size: 1.7rem;
+    }
+  }
 }
 
 .skills__popup.active {
