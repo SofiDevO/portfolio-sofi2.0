@@ -1,12 +1,12 @@
 export const userData = {
-    logo: "/img/icons/sofi-icon.png",
+    logo: "/img/icons/sofi-icon.webp",
     name: "Sofi",
     lastName: "Dev",
     userName: "SofiDev",
     sloganHero1: "Frontend Developer in Mexico",
     profilePicture: "/img/sofi-pic-1.webp",
     profilePicture2: "/img/sofi-pic-2.webp",
-    aboutPicture: "/img/sofi-selfie.png",
+    aboutPicture: "/img/sofi-selfie.webp",
     about: {
         intro: "Javascript Fan 😍. Always looking for new skills to learn. \n",
         highlighted: "What sets me apart?",

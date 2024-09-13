@@ -1,11 +1,13 @@
 ---
 import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
----
 
+
+---
 <script>
+  import  {YT_API_KEY} from 'astro:env/client';
   const loadVideo = async (iframe) => {
     const cid = "UC36_js-krsAHAEAWpEDhHtw"; //this is the Channel ID from your Youtube channel URL
-    const API_key = "&api_key=wmbjfv0ybbzjsaceaojxrbm9aaelzzq2bbe7mgws"; //in order to get your free public API_key, you will need to create an acc. in https://rss2json.com/
+    const API_key =`${YT_API_KEY}`; //in order to get your free public API_key, you will need to create an acc. in https://rss2json.com/
     const channelURL = encodeURIComponent(
       `https://www.youtube.com/feeds/videos.xml?channel_id=${cid}`
     );
@@ -17,6 +19,7 @@ import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
       }
       const result = await response.json();
 
+
       if (result.items && result.items.length > 0) {
         const videoNumber = iframe.getAttribute("vnum");
         const link = result.items[videoNumber].link;
@@ -27,15 +30,14 @@ import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
           `https://youtube.com/embed/${id}?controls=1&autoplay=0`
         );
 
-        const videoResponse = result.feed;
-        console.log(videoResponse);
+        const videoResponse = result.items[0];
         const videoThumbnail = document.querySelector(
           ".youtubeThumbnail"
         ) as HTMLElement;
-        if (videoResponse.image === "") {
-          videoThumbnail.style.backgroundImage = `url('https://i3.ytimg.com/vi/28ATCe8AUAQ/hqdefault.jpg')`;
+        if (videoResponse.thumbnail === "") {
+          videoThumbnail.style.backgroundImage = `url('/img/portadaLIVE.png')`;
         } else {
-          videoThumbnail.style.backgroundImage = `url(${videoResponse.image})`;
+          videoThumbnail.style.backgroundImage = `url(${videoResponse.thumbnail})`;
         }
       } else {
         throw new Error("No videos found in the feed.");
@@ -52,6 +54,8 @@ import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
 </script>
 
 <Subtitle content="My Latest Youtube video" />
+<p class="card-social__content">I love sharing the knowledge I've gained over the years on my YouTube channel. Check out my latest video and join me on this learning journey!</p>
+
 <div class="youtubeThumbnail"></div>
 <button class="youtube__button" >
   <img class="youtube__button__play" src="/img/icons/btn-play.svg" alt="boton to play" />
@@ -67,7 +71,8 @@ import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
     z-index: -1;
     top: -17%;
     left: 0;
-    filter: opacity(0.3);
+    mix-blend-mode: multiply;
+    filter: opacity(0.1);
     overflow: hidden;
   }
 
@@ -77,7 +82,7 @@ import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
   }
   .youtube__button__play{
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80px;

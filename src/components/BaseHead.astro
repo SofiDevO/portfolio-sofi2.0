@@ -14,14 +14,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {
   title,
   description,
-  image = "../../public/img/icons/sofi-icon.png",
+  image = "/public/img/icons/sofi-icon.webp",
 } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" href="../../img/icons/sofi-icon.png"/>
+<link rel="icon" type="image/png" href="/img/icons/sofi-icon.webp"/>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->

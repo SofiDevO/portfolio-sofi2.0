@@ -9,7 +9,6 @@ export default defineConfig({
   site: "https:/Frida-ai.com",
   integrations: [react()],
   output: "server",
-
   adapter: node({
     mode: "standalone",
   }),
@@ -34,6 +33,11 @@ export default defineConfig({
         EMAIL_PORT: envField.number({
           context: "server",
           access: "secret",
+          optional: false,
+        }),
+        YT_API_KEY: envField.string({
+          context: "client",
+          access: "public",
           optional: false,
         }),
       },

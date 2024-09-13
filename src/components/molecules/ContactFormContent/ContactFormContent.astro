@@ -1,9 +1,12 @@
 ---
+import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
 import { sendEmail } from "server";
 let errors = { name: "", email: "", message: "", subject: "" };
+let successMessage = "";
+
+  // cala esto aver si sirve sofi
 
 if (Astro.request.method === "POST") {
-
   try {
     const data = await Astro.request.formData();
     const name = data.get("name")?.toString();
@@ -12,21 +15,26 @@ if (Astro.request.method === "POST") {
     const subject = data.get("subject")?.toString();
 
     // Validation logic
-    if (!name) errors.name = "Name is required";
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Valid email is required";
+    if (!name) {
+      errors.name = "Name is required";
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = "Valid email is required";
+    }
     if (!message) errors.message = "Message is required";
     if (!subject) errors.subject = "Subject is required";
 
-    const hasErrors = Object.values(errors).some(msg => msg);
+    const hasErrors = Object.values(errors).some((msg) => msg);
 
     if (!hasErrors) {
       const payload = {
         name,
         email,
-        html: message, // You can skip JSON.stringify if it's plain text
+        html: message,
         subject,
       };
       await sendEmail(payload);
+      successMessage = "Email sent successfully!";
       console.log("Email sent successfully");
     }
   } catch (error) {
@@ -37,8 +45,38 @@ if (Astro.request.method === "POST") {
 }
 ---
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
 
-<form method="POST" novalidate>
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log(result.message || "Form submitted successfully!");
+          // Aquí puedes manejar el resultado de manera dinámica, por ejemplo:
+          // Mostrar un mensaje de éxito, limpiar el formulario, etc.
+        } else {
+          console.error("Form submission failed.");
+        }
+      } catch (error) {
+        console.error("Error submitting the form:", error);
+      }
+    });
+  });
+</script>
+
+<Subtitle content="Get in touch with Me " />
+<form method="POST" action="/" novalidate>
   <div>
     <label for="name">Your Name: * </label>
     <input type="text" id="name" name="name" required />
@@ -48,33 +86,20 @@ if (Astro.request.method === "POST") {
   <div>
     <label for="email">Your Email: *</label>
     <input type="email" id="email" name="email" required />
-    {errors &&
-    <div class="error__msg">{errors.email}</div>
-    }
+    {errors && <div class="error__msg">{errors.email}</div>}
   </div>
 
   <div>
     <label for="subject">Subject: *</label>
     <input type="text" id="subject" name="subject" required />
-    {errors &&
-    <div class="error__msg">{errors.subject}</div>
-    }
+    {errors && <div class="error__msg">{errors.subject}</div>}
   </div>
 
   <div>
     <label for="message">Message: *</label>
     <textarea id="message" name="message" rows="4" required></textarea>
-    {errors &&
-    <div class="error__msg">{errors.message}</div>
-    }
+    {errors && <div class="error__msg">{errors.message}</div>}
   </div>
 
   <input class="form__submit" type="submit" value="Send" />
 </form>
-
-<style lang="scss">
-  .error__msg {
-    color: tomato;
-    font-size: 1.4rem;
-  }
-</style>

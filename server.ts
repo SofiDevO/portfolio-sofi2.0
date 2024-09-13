@@ -20,7 +20,6 @@ async function sendEmail(props: ISendEmail) {
     },
   });
 
-
   let message = {
     from: process.env.EMAIL,
     to: EMAIL,
