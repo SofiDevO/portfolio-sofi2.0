@@ -35,6 +35,11 @@ export default defineConfig({
           access: "secret",
           optional: false,
         }),
+        PUBLIC_BACKEND_URL: envField.string({
+          context: "server",
+          access: "secret",
+          optional: false,
+        }),
         YT_API_KEY: envField.string({
           context: "client",
           access: "public",
