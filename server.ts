@@ -1,6 +1,7 @@
 import {EMAIL, EMAIL_HOST, EMAIL_PASS, EMAIL_PORT} from 'astro:env/server';
 
 import nodemailer from "nodemailer";
+
 interface ISendEmail {
   email: string;
   html: string;
@@ -21,7 +22,7 @@ async function sendEmail(props: ISendEmail) {
 
 
   let message = {
-    from: props.email,
+    from: process.env.EMAIL,
     to: EMAIL,
     subject: props.subject,
     html: `<h1>Contact Form 🦝</h1><br>
