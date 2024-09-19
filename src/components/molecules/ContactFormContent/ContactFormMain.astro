@@ -1,64 +1,39 @@
 ---
 import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
 ---
+<script>
+  import {formValidation} from "@controllers/formValidation.controller";
+  formValidation();
+
+</script>
 
 <Subtitle content="Get in touch with Me " />
+
 <form method="POST" novalidate>
   <div>
     <label for="name">Your Name: * </label>
     <input type="text" id="name" name="name" required />
-    <div class="error__msg">{}</div>
+    <div class="error__msg" id="nameError"></div>
   </div>
 
   <div>
     <label for="email">Your Email: *</label>
     <input type="email" id="email" name="email" required />
-    <div class="error__msg">{}</div>
+    <div class="error__msg" id="emailError"></div>
   </div>
 
   <div>
     <label for="subject">Subject: *</label>
     <input type="text" id="subject" name="subject" required />
-   <div class="error__msg">{}</div>
+    <div class="error__msg" id="subjectError"></div>
   </div>
 
   <div>
     <label for="message">Message: *</label>
     <textarea id="message" name="message" rows="4" required></textarea>
+    <div class="error__msg" id="messageError"></div>
   </div>
 
-  <button class="form__submit" type="submit" value="Send" >Send</button>
-  <div class="error__msg-validate"></div>
+  <div class="loader"></div>
+  <button class="form__submit" type="submit" value="Send">Send</button>
 </form>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      try {
-        const response = await fetch('/api/email-sender', {
-          method: "POST",
-          body: formData,
-        });
-        if (response.ok) {
-          const result = await response.json();
-          console.log(result.message || "Form submitted successfully!");
-          form.reset();
-
-          alert("Mensaje enviado correctamente.")
-          // Me deconecto espero haberte ayudado ! 😊
-          // Aquí puedes manejar el resultado de manera dinámica, por ejemplo:
-          // Mostrar un mensaje de éxito, limpiar el formulario, etc.
-        } else {
-          console.error("Form submission failed.");
-        }
-      } catch (error) {
-        console.error("Error submitting the form:", error);
-      }
-    });
-  });
-</script>

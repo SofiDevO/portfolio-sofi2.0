@@ -10,7 +10,7 @@
     "preview": "astro preview"
   },
   "keywords": [],
-  "author": "",
+  "author": "SofiDev",
   "license": "ISC",
   "dependencies": {
     "@astrojs/node": "^8.3.3",

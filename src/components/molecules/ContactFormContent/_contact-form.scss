@@ -1,4 +1,11 @@
 .error__msg {
-    color: tomato;
-    font-size: 1.4rem;
-  }
+  color: tomato;
+  font-size: 1.4rem;
+}
+
+.input-error {
+  border-color: tomato;
+}
+.form__submit {
+  margin-top: 1rem;
+}
