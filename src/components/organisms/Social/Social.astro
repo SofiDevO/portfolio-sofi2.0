@@ -1,12 +1,10 @@
 ---
 import Title from "@atoms/Title/Title";
 import SocialCard from "@molecules/SocialCard/SocialCard.astro";
-import ContactFormContent from "@src/components/molecules/ContactFormContent/ContactFormContent.astro";
-import FormContact from "@src/components/molecules/ContactFormContent/FormContact.astro";
-import ContactFormCopy from "@src/components/molecules/ContactFormContent/ContactFormCopy.astro";
-import DiscordCardContent from "@src/components/molecules/DiscordCardContent/DiscordCardContent.astro";
-import YoutubeCardContent from "@src/components/molecules/YoutubeCardContent/YoutubeCardContent.astro";
-import YoutubeModal from "@src/components/molecules/YoutubeModal/YoutubeModal.astro";
+import DiscordCardContent from "@molecules/DiscordCardContent/DiscordCardContent.astro";
+import YoutubeCardContent from "@molecules/YoutubeCardContent/YoutubeCardContent.astro";
+import YoutubeModal from "@molecules/YoutubeModal/YoutubeModal.astro";
+import ContactFormMain from "@molecules/ContactFormContent/ContactFormMain.astro";
 ---
 
 <section id="social" class="social">
@@ -29,7 +27,7 @@ import YoutubeModal from "@src/components/molecules/YoutubeModal/YoutubeModal.as
     </div>
     <div class="social__item social__item-3">
       <SocialCard>
-        <ContactFormCopy />
+        <ContactFormMain />
       </SocialCard>
     </div>
     <div class="social__item social__item-4">
