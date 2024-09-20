@@ -4,7 +4,6 @@ const loader = document.querySelector(".loader"); // Seleccionamos el elemento c
 let succesMsg = "el mensaje se envió correctamente 🚀"; // Mensaje de éxito
 let errorMsg = "debes completar todos los campos 🙄"; // Mensaje de error
 let alertMsg = "No cumple con el formato requerido 🤔"; // Mensaje de alerta
-
 // Función principal que valida el formulario
 export const formValidation = () => {
   document.addEventListener("DOMContentLoaded", () => {
