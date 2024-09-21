@@ -2,16 +2,26 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: .4rem 1rem;
 }
 .form__group{
   display: flex;
   flex-direction: column;
   color: white;
+  input{
+    padding: .6rem;
+  }
+  label{
+    font-size: 1.3rem;
+  }
+  textarea{
+    padding: .6rem;
+    resize: none;
+  }
 }
 .form__container{
   display: flex;
 }
-
 .error__msg {
   color: tomato;
   font-size: 1.4rem;
