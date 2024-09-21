@@ -1,10 +1,9 @@
 ---
 import Title from "@src/components/atoms/Title/Title";
-import { userData as data } from "@src/data/userData";
 import CarrouselSkills from "@src/components/molecules/CarouselSkills/CarrouselSkills.astro";
 import CarouselTools from "@src/components/molecules/CarouselTools/CarouselTools.astro";
 import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
-
+const { data, skills, tools } = Astro.props
 ---
 
 <script>
@@ -41,10 +40,10 @@ import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
         </CardTerminal>
       </div>
     </div>
-    <CarrouselSkills />
+    <CarrouselSkills skillsData={skills} />
     <div class="skills__carousel--tools">
       <Title titleDesc="Tools" clase="title-dark" />
-      <CarouselTools />
+      <CarouselTools toolsData={tools}/>
     </div>
   </div>
 </section>

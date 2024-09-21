@@ -1,8 +1,9 @@
 ---
-import { userData as data } from "@src/data/userData";
 import Title from "@atoms/Title/Title";
 import ButtonAbout from "@atoms/ButtonAbout/ButtonAbout.astro";
 import Calendar from "@src/components/molecules/GithubCalendar/Calendar";
+
+const { data } = Astro.props
 ---
 
 <section class="about" id="about">
