@@ -52,5 +52,8 @@
   padding: 1rem;
   width: 100%;
   font-size: 1.4rem;
-  background: v.$bg-image;
+  background: v.$text-over-dark;
+  &:hover {
+    background: v.$french-violet;
+  }
 }
