@@ -6,36 +6,30 @@
   overflow-x: hidden;
 }
 .social__grid {
-  padding: 0 1rem;
-  margin-top: 6rem;
-  max-width: 1300px;
-  display: grid;
-  align-content: center;
-  grid-template-columns: repeat(8, 100px);
-  grid-template-rows: repeat(4, 120px);
-  width: 100%;
-  gap: 24px;
-  grid-template-areas:
-    "CardDiscord CardDiscord CardDiscord CardDiscord CardYoutube CardYoutube CardYoutube CardYoutube"
-    "CardDiscord CardDiscord CardDiscord CardDiscord CardYoutube CardYoutube CardYoutube CardYoutube"
-    "CardContact CardContact CardContact CardContact CardContact CardVsc CardVsc CardVsc"
-    "CardContact CardContact CardContact CardContact CardContact CardVsc CardVsc CardVsc";
+      padding: 0 1rem;
+      max-width: 1300px;
+      display: grid;
+      align-content: center;
+      grid-template-columns: repeat(8, minmax(100px, 1fr));
+      grid-template-rows: repeat(5, minmax(90px, auto));
+      width: 100%;
+      gap: 24px;
+      grid-template-areas:
+          "CardDiscord CardDiscord CardDiscord CardDiscord CardYoutube CardYoutube CardYoutube CardYoutube"
+          "CardDiscord CardDiscord CardDiscord CardDiscord CardYoutube CardYoutube CardYoutube CardYoutube"
+
+          "CardContact CardContact CardContact CardContact CardContact CardVsc CardVsc CardVsc"
+          "CardContact CardContact CardContact CardContact CardContact CardVsc CardVsc CardVsc"
+          "CardContact CardContact CardContact CardContact CardContact CardVsc CardVsc CardVsc";
 }
 
-/* Para móviles: todas en columna y de igual tamaño */
+
 @media (max-width: 1002px) {
   .social__grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 120px); /* Todas las filas del mismo tamaño */
-    grid-template-areas:
-      "CardDiscord"
-      "CardDiscord"
-      "CardYoutube"
-      "CardYoutube"
-      "CardContact"
-      "CardContact"
-      "CardVsc"
-      "CardVsc";
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    padding: 1rem 2rem;
   }
 
   /* Asegurar que todos los elementos ocupen el 100% de la columna */
@@ -76,8 +70,8 @@
 
   z-index: -1;
   @media screen and (max-width: 980px) {
-    background-size: fill;
     min-height: 200%;
+    overflow: hidden;
     height: auto;
   }
 }

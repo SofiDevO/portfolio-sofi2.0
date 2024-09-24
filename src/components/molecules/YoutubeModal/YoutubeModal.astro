@@ -22,16 +22,16 @@
   <iconify-icon
     class="modal__close__button"
     icon="lets-icons:close-round-duotone"
-    width="40"
-    height="40"
-    style="color: #05ffee"></iconify-icon>
+    width="50"
+    height="50"
+    ></iconify-icon>
   <div class="modal__container">
     <iframe
       id="ytchannel"
       class="latestVideoEmbed"
       vnum="0"
-      width="80%"
-      height="80%"
+      width="100%"
+      height="100%"
       frameborder="0"
       allowfullscreen
       id="ytchannel"
@@ -48,7 +48,9 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background-color: #00000096;
+    max-width: 1200px;
+    max-height: 780px;
+    background-color: #000000df;
     z-index: 1000;
     backdrop-filter: blur(21px);
     @media screen and (max-width: 768px) {
@@ -65,9 +67,16 @@
   }
   .modal__close__button {
     position: absolute;
-    top: 10px;
+    top: 80px;
     right: 10px;
     cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    color:#00bbf5;
+    &:hover {
+      color: #ff0000;
+      transform: scale(1.2);
+    }
   }
   .modal__container {
     display: flex;
