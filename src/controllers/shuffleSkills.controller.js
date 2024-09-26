@@ -1,4 +1,7 @@
-import { skillsData } from "@data/skillsData.js";
+import { getData } from "@src/services/data"
+const {skills} = await getData();
+
+// import { skillsData } from "@data/skillsData.js";
 
 /* Shuffle initial function */
 export const shuffle = (array) => {
@@ -11,7 +14,7 @@ export const shuffle = (array) => {
 /* shuffle on click */
 export const buttonShuffle = document.querySelector(".image__button");
 const skillIcons = document.querySelector(".hero__skills");
-const inicialSkills = shuffle(skillsData).slice(0, 7);
+const inicialSkills = shuffle(skills).slice(0, 7);
 skillIcons.innerHTML = inicialSkills
   .map(
     (skill, index) => `
@@ -25,7 +28,7 @@ skillIcons.innerHTML = inicialSkills
   )
   .join("");
 buttonShuffle.addEventListener("click", () => {
-  const shuffledSkills = shuffle(skillsData).slice(0, 7);
+  const shuffledSkills = shuffle(skills).slice(0, 7);
   skillIcons.innerHTML = shuffledSkills
     .map(
       (skill, index) => `
