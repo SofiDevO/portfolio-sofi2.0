@@ -1,5 +1,12 @@
 ---
 import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
+const discordData  = {
+  title: "Join our Discord community",
+  content: "Connect with web developers, share resources, and get help on your frontend projects.",
+  link: "https://discord.com/invite/VYDj8pvfE4",
+  image: "../img/icons/DiscordLogo.svg",
+};
+
 ---
 
 <div class="card-social__container">
@@ -8,7 +15,7 @@ import Subtitle from "@src/components/atoms/Subtitle/Subtitle.astro";
     Connect with web developers, share resources, and get help on your frontend
     projects.
   </p>
-  <a class="card-social__link" href="/">
+  <a class="card-social__link" href="https://discord.com/invite/VYDj8pvfE4" target="_blank" rel="noreferrer noopener nofollow">
     Join our community <iconify-icon
       icon="quill:link-out"
       width="15"

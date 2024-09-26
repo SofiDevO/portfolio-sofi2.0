@@ -1,0 +1,15 @@
+.toggleLang {
+  @include centerFlex();
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: v.$french-violet;
+  padding: 1.5rem;
+}
+
+.toggleLang:hover {
+    transform: scale(.95);
+}
+.toggleLang:active {
+    transform: scale(.85);
+}

@@ -3,28 +3,24 @@
 ---
 
 <script>
-  const btnOpenModal = document.querySelector(".youtube__button");
-  const closeModalBtn = document.querySelector(".modal__close__button");
+  import {loadVideo} from "@controllers/VideoModal.controller";
 
-  const stopVideo = document.querySelector("video");
-  btnOpenModal.addEventListener("click", () => {
-    const dialog = document.querySelector("dialog");
-    dialog.showModal();
-  });
-  closeModalBtn.addEventListener("click", () => {
-    const dialog = document.querySelector("dialog");
-    dialog.close();
-    stopVideo.pause();
-  });
+
+
+
+
+
+
+
 </script>
 
 <dialog class="youtube__modal__box">
   <iconify-icon
     class="modal__close__button"
-    icon="lets-icons:close-round-duotone"
+    icon="ant-design:close-circle-twotone"
     width="50"
     height="50"
-    ></iconify-icon>
+    style="color: #00c8f0"></iconify-icon>
   <div class="modal__container">
     <iframe
       id="ytchannel"
@@ -43,7 +39,7 @@
 <style lang="scss">
   .youtube__modal__box {
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -67,15 +63,15 @@
   }
   .modal__close__button {
     position: absolute;
-    top: 80px;
-    right: 10px;
+    top: -1px;
+    right: 50%;
     cursor: pointer;
     width: 5rem;
     height: 5rem;
-    color:#00bbf5;
+    color: #00bbf5;
     &:hover {
       color: #ff0000;
-      transform: scale(1.2);
+      transform: scale(.95);
     }
   }
   .modal__container {
