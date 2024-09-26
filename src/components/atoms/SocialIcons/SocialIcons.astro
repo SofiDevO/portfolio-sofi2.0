@@ -1,10 +1,11 @@
 ---
-import { socialIconsData } from "@src/data/socialIconsData"
+import { getData } from "@src/services/data"
+const {socialIcons } = await getData()
 ---
 
 <div class="social__container">
   {
-    socialIconsData.map((data, index) => (
+    socialIcons.map((data, index) => (
       <a href={data.link} class={`social__link social__link-${index+1}`} target="_blank">
         <iconify-icon
           class={`social__icon `}

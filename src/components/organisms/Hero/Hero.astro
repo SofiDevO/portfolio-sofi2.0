@@ -2,7 +2,7 @@
 import BackgroundIconsFloat from "@src/components/atoms/BackgroundIconsFloat/BackgroundIconsFloat.astro";
 import ProfilePicture from "@src/components/atoms/ProfilePicture/ProfilePicture.astro";
 import SocialIcons from "@src/components/atoms/SocialIcons/SocialIcons.astro";
-import { userData as data } from "@src/data/userData";
+const { data} = Astro.props
 ---
 
 
@@ -19,6 +19,6 @@ import { userData as data } from "@src/data/userData";
         <SocialIcons/>
       </div>
     </div>
-    <ProfilePicture/>
+    <ProfilePicture data={data.profilePicture}/>
   </div>
 </section>
