@@ -1,7 +1,7 @@
-import { PUBLIC_YT_API_KEY } from 'astro:env/client';
+import { API_KEY } from 'astro:env/client';
 
 export const fetchYouTubeVideos = async (channelId) => {
-  const API_key = PUBLIC_YT_API_KEY;
+  const API_key = API_KEY;
   const channelURL = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
   const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}&api_key=${API_key}`;
 
