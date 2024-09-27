@@ -4,11 +4,11 @@ import react from "@astrojs/react";
 
 import node from "@astrojs/node";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https:/Frida-ai.com",
+  site: "https://portfolio-sofi2-0.vercel.app/",
   integrations: [react()],
   output: "server",
   adapter: vercel(),
