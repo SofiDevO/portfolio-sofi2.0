@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://portfolio-sofi2-0.vercel.app/",
   integrations: [react()],
-  output: "server",
+  output: "hybrid",
   adapter: vercel(),
   experimental: {
     env: {
