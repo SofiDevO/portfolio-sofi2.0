@@ -4,14 +4,14 @@ import react from "@astrojs/react";
 
 import node from "@astrojs/node";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https:/Frida-ai.com",
   integrations: [react()],
   output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: vercel(),
   experimental: {
     env: {
       schema: {
@@ -35,9 +35,9 @@ export default defineConfig({
           access: "secret",
           optional: false,
         }),
-        PUBLIC_BACKEND_URL: envField.string({
-          context: "server",
-          access: "secret",
+        SITE_URL: envField.string({
+          context: "client",
+          access: "public",
           optional: false,
         }),
         YT_API_KEY: envField.string({

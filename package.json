@@ -4,7 +4,7 @@
   "description": "Nueva version del poratfolio",
   "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 4322",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/node": "^8.3.3",
     "@astrojs/react": "^3.6.2",
+    "@astrojs/vercel": "^7.8.1",
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/fira-code": "^5.0.18",
     "@fontsource-variable/montserrat": "^5.0.19",
