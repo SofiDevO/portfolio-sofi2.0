@@ -40,7 +40,7 @@ export default defineConfig({
           access: "public",
           optional: false,
         }),
-        YT_API_KEY: envField.string({
+        PUBLIC_YT_API_KEY: envField.string({
           context: "client",
           access: "public",
           optional: false,
