@@ -1,6 +1,5 @@
 // Importamos el tipo APIRoute de Astro, que define el formato de una ruta API en Astro.
 import type { APIRoute } from 'astro';
-
 // Importamos los diferentes datos desde sus respectivos archivos.
 // Cada archivo contiene información estructurada, como las habilidades, el menú, el portafolio, etc.
 import { skillsData } from '@data/skillsData';
