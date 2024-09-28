@@ -7,10 +7,7 @@ import Loader from "@src/components/atoms/Loader/Loader.astro";
 <script>
   import { formValidation } from "../../../controllers/ValidationForm";
 
-
-
-    formValidation();
-
+  formValidation();
 </script>
 
 <Subtitle content="Get in touch with Me" />
@@ -38,6 +35,6 @@ import Loader from "@src/components/atoms/Loader/Loader.astro";
     <textarea id="message" name="message" rows="4" required></textarea>
     <span class="error__msg" id="messageError"></span>
   </div>
-  <Loader/>
+  <Loader />
   <Button content="Send" type="submit" id="button-send-email-form" />
 </form>

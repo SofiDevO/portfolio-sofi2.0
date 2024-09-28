@@ -23,8 +23,6 @@ export default function ToastNotification(msg, type = "info") {
       alertType = "info";
   }
 
-
-
   // Create the toast
   const toast = document.createElement("div");
   toast.classList.add("toast-message", alertType);
@@ -34,10 +32,8 @@ export default function ToastNotification(msg, type = "info") {
   toastBox.appendChild(toast);
   toastBox.classList.add("show");
 
-
-const toastMessages = document.querySelectorAll('.toast-message');
   // Eliminar el toast después de 5 segundos
   setTimeout(() => {
-      toast.remove();
+    toast.remove();
   }, 5000);
 }

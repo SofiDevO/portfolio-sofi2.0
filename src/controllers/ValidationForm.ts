@@ -40,13 +40,15 @@ export const formValidation = () => {
   }
 
   function clearErrors() {
-    ["nameError", "emailError", "subjectError", "messageError"].forEach((id) => {
-      document.querySelector(`#${id}`).textContent = "";
-    });
+    ["nameError", "emailError", "subjectError", "messageError"].forEach(
+      (id) => {
+        document.querySelector(`#${id}`).textContent = "";
+      }
+    );
   }
 
   function validateField(field) {
-    const inputElement = form.querySelector(`#${field}`);
+    const inputElement = form.querySelector(`#${field}`) as HTMLInputElement;
     const fieldValue = inputElement.value.trim();
     const errorElement = document.getElementById(`${field}Error`);
     let errorMsg = "";
@@ -55,7 +57,7 @@ export const formValidation = () => {
     switch (field) {
       case "name":
         if (fieldValue === "") {
-          errorMsg = "Please enter your name.";
+          errorMsg = "Por favor, introduzca su nombre.";
         } else {
           inputElement.classList.add("input-success");
         }
@@ -63,23 +65,23 @@ export const formValidation = () => {
       case "email":
         const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
         if (fieldValue === "") {
-          errorMsg = "Please enter your email address.";
+          errorMsg = "Por favor, introduzca su correo electrónico.";
         } else if (!emailPattern.test(fieldValue)) {
-          errorMsg = "Please enter a valid email address.";
+          errorMsg = "Por favor, introduzca un correo electrónico válido.";
         } else {
           inputElement.classList.add("input-success");
         }
         break;
       case "subject":
         if (fieldValue === "") {
-          errorMsg = "Please enter a subject.";
+          errorMsg = "Por favor ingrese un asunto.";
         } else {
           inputElement.classList.add("input-success");
         }
         break;
       case "message":
         if (fieldValue === "") {
-          errorMsg = "Please enter a message.";
+          errorMsg = "Por favor ingresa un mensaje.";
         } else {
           inputElement.classList.add("input-success");
         }
@@ -96,7 +98,9 @@ export const formValidation = () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent form submission
 
-    const isValid = ["name", "email", "subject", "message"].every(field => validateField(field));
+    const isValid = ["name", "email", "subject", "message"].every((field) =>
+      validateField(field)
+    );
 
     if (isValid) {
       handleSubmit(); // Only submit if all fields are valid
