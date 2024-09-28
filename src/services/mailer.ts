@@ -8,17 +8,27 @@ interface ISendEmail {
 }
 
 async function sendEmail(props: ISendEmail) {
+  const data = {
+    email: import.meta.env.EMAIL,
+    host: import.meta.env.EMAIL_HOST,
+    port: import.meta.env.EMAIL_PORT,
+    user: import.meta.env.EMAIL,
+    pass: import.meta.env.EMAIL_PASS,
+  };
+
   let transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: data.host,
+    port: data.port,
+    secure: false,
     auth: {
-      user: import.meta.env.EMAIL,
-      pass: import.meta.env.EMAIL_PASS,
+      user: data.email,
+      pass: data.pass,
     },
   });
 
   let message = {
-    from: process.env.EMAIL,
-    to: import.meta.env.EMAIL,
+    from: data.email,
+    to: data.email,
     subject: props.subject,
     html: `
       <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
