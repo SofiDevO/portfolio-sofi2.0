@@ -1,25 +1,32 @@
-
 // Definimos una variable 'url' que se usará para la solicitud a la API.
-// Si 'http://localhost:4322' está disponible, se usa como valor; si no, se usa 'import.meta.env.SITE'.
-// 'import.meta.env.SITE' es útil en entornos de producción donde el valor de la URL puede variar.
-const url = "http://localhost:4322"   || import.meta.env.SITE_URL
+// Si estamos en un entorno de desarrollo (local), usamos 'http://localhost:4322'.
+// Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
+const url = "http://localhost:4322" || import.meta.env.SITE_URL;
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
 export async function getData(dataType: string = "data") {
-
     // Si el valor de 'dataType' no es "data", lo usamos como endpoint; de lo contrario, el endpoint será "all".
     // Esto decide a qué parte de la API llamar.
-    const endpoint = dataType !== "data" ? dataType : "all"
+    const endpoint = dataType !== "data" ? dataType : "all";
 
-    // Hacemos una solicitud a la API usando la función 'fetch'.
-    // Se construye la URL con el valor de 'url' y el endpoint.
-    const res = await fetch(`${url}/api/${endpoint}`)
+    try {
+        // Hacemos una solicitud a la API usando la función 'fetch'.
+        // Se construye la URL con el valor de 'url' y el endpoint.
+        const res = await fetch(`${url}/api/${endpoint}`);
 
-    // Esperamos a que la respuesta se convierta en JSON.
-    const data = await res.json()
+        // Verificamos si la respuesta es exitosa antes de convertirla en JSON.
+        if (!res.ok) {
+            throw new Error(`Error fetching data: ${res.status}`);
+        }
 
-    // Devolvemos los datos que corresponden al tipo de datos solicitado ('dataType').
-    // 'data[dataType]' extrae la parte específica de la respuesta que necesitamos.
-    return data[dataType]
+        // Esperamos a que la respuesta se convierta en JSON.
+        const data = await res.json();
+
+        // Devolvemos los datos que corresponden al tipo de datos solicitado ('dataType').
+        return data[dataType];
+    } catch (error) {
+        console.error(`Failed to fetch ${dataType} from ${url}:`, error);
+        return null;
+    }
 }

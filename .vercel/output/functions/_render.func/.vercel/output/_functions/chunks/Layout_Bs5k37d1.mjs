@@ -35,9 +35,17 @@ const $$HamburgerBtn = createComponent(($$result, $$props, $$slots) => {
 const url = "http://localhost:4322";
 async function getData(dataType = "data") {
   const endpoint = dataType !== "data" ? dataType : "all";
-  const res = await fetch(`${url}/api/${endpoint}`);
-  const data = await res.json();
-  return data[dataType];
+  try {
+    const res = await fetch(`${url}/api/${endpoint}`);
+    if (!res.ok) {
+      throw new Error(`Error fetching data: ${res.status}`);
+    }
+    const data = await res.json();
+    return data[dataType];
+  } catch (error) {
+    console.error(`Failed to fetch ${dataType} from ${url}:`, error);
+    return null;
+  }
 }
 
 const $$SocialIcons = createComponent(async ($$result, $$props, $$slots) => {
