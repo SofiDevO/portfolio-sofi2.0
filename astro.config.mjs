@@ -11,7 +11,7 @@ export default defineConfig({
   site: "https://itssofi.dev/",
   integrations: [react()],
   output: "server",
-  adapter: vercel(),
+  adapter: node({mode: 'standalone',}),
   experimental: {
     env: {
       schema: {
