@@ -189,7 +189,6 @@ const $$Social = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section id="social" class="social"> ${renderComponent($$result, "Title", Title, { "titleDesc": "Find me on   My social media", "clase": "title-dark social__title" })} <div class="social__grid"> <div class="social__item social__item-1"> ${renderComponent($$result, "SocialCard", $$SocialCard, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "DiscordCardContent", $$DiscordCardContent, {})} ` })} </div> <div class="social__item social__item-2"> ${renderComponent($$result, "SocialCard", $$SocialCard, { "extrClass": "youtube__card" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "YoutubeCardContent", $$YoutubeCardContent, {})} ` })} </div> <div class="social__item social__item-3"> ${renderComponent($$result, "SocialCard", $$SocialCard, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "ContactFormMain", $$ContactFormMain, {})} ` })} </div> <div class="social__item social__item-4"> ${renderComponent($$result, "SocialCard", $$SocialCard, {})} </div> </div> <div class="social__background"></div> ${renderComponent($$result, "YoutubeModal", $$YoutubeModal, {})} </section> ${renderComponent($$result, "ToastNotification", $$ToastNotification, {})}`;
 }, "/home/sofidev/laboratorio/portfolio-sofi2.0/src/components/organisms/Social/Social.astro", void 0);
 
-const prerender = true;
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const { user, skills, tools, socialIcons } = await getData();
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "BackgroundGradient", $$BackgroundGradient, {}, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Hero", $$Hero, { "data": user, "socialIcons": socialIcons })} ` })} ${renderComponent($$result2, "DividerTop", $$DividerTop, {})} ${renderComponent($$result2, "About", $$About, { "data": user })} ${renderComponent($$result2, "DividerBottom", $$DividerBottom, { "fill": "shape-fill-3" })} ${renderComponent($$result2, "Skills", $$Skills, { "data": user, ",": true, "skills": skills, "tools": tools })} ${renderComponent($$result2, "DividerTop", $$DividerTop, { "fill": "shape-fill-purple " })} ${renderComponent($$result2, "Portfolio", $$Portfolio, {})} ${renderComponent($$result2, "DividerBottom", $$DividerBottom, { "fill": "shape-fill-3" })} ${renderComponent($$result2, "Social", $$Social, {})} ` })}`;
@@ -202,7 +201,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: $$Index,
     file: $$file,
-    prerender,
     url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
