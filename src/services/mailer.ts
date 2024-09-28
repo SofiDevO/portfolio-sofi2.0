@@ -16,7 +16,6 @@ async function sendEmail(props: ISendEmail) {
     pass: import.meta.env.EMAIL_PASS,
   };
 
-
   let transporter = nodemailer.createTransport({
     host: data.host,
     port: data.port,

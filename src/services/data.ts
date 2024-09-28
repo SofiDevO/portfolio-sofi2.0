@@ -8,11 +8,9 @@
 
 // const url = "https://itssofi.dev/";
 
-
-
 const url = import.meta.env.SITE_URL
   ? import.meta.env.SITE_URL
-  : `${window.location.origin}`;
+  : "https://itssofi.dev/";
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.

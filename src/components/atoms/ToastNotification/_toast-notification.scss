@@ -2,7 +2,7 @@
   position: fixed;
   left: 3rem;
   z-index: 1000;
-  border-radius: 7px;
+
   @include respond-to("medium") {
     top: 0;
     height: min-content;
@@ -13,9 +13,8 @@
 }
 
 .toast-message {
-    min-width: 29.6rem;
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: 12px;
+  border-radius: 4px;
   color: white;
   font-size: 1.5rem;
   margin-left: 1rem;
@@ -36,7 +35,6 @@
   }
 }
 
-
 .toast-message.success {
   display: block;
   background-color: limegreen;
@@ -46,6 +44,7 @@
   display: block;
   background-color: tomato;
 }
+
 .toast-message.info {
   display: block;
   background-color: rgb(15, 88, 206);
@@ -54,6 +53,7 @@
 .toast-message.warning {
   display: block;
   background-color: orange;
+
   @include respond-to("medium") {
     display: none;
   }
