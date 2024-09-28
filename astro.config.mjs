@@ -4,6 +4,8 @@ import react from "@astrojs/react";
 
 // import node from "@astrojs/node";
 
+
+
 import vercelServerless from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
@@ -48,4 +50,9 @@ export default defineConfig({
       },
     },
   },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+  }
+
 });

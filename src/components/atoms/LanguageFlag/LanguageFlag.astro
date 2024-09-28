@@ -1,4 +1,7 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+
 
 ---
 
@@ -38,7 +41,7 @@
     setLanguageIcon();
 </script>
 
-<a href="#" class="toggleLang">
+<a href={getRelativeLocaleUrl('es', '/')} class="toggleLang">
     <iconify-icon
         class="flag flag-en"
         icon="emojione:flag-for-us-outlying-islands"
