@@ -36,10 +36,7 @@
   }
 }
 
-.toast-message.info {
-  background-color: transparent;
-  display: block;
-}
+
 .toast-message.success {
   display: block;
   background-color: limegreen;
@@ -48,6 +45,10 @@
 .toast-message.error {
   display: block;
   background-color: tomato;
+}
+.toast-message.info {
+  display: block;
+  background-color: rgb(15, 88, 206);
 }
 
 .toast-message.warning {

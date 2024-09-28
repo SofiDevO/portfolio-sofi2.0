@@ -9,12 +9,18 @@ import Skills from "@src/components/organisms/Skills/Skills.astro";
 import Portfolio from "@src/components/organisms/Portfolio/Portfolio.astro";
 import Social from "@src/components/organisms/Social/Social.astro";
 import { getData } from "@src/services/data";
+import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
 const { user, skills, tools, socialIcons } = await getData();
----
 
+---
+<script>
+  import ToastNotification from "@src/controllers/toastAlerts.controller";
+  ToastNotification("This site is under construction 🚧🏗️", "info");
+</script>
 <Layout>
   <BackgroundGradient>
     <Hero data={user} socialIcons={socialIcons} />
+    <ToastNotification/>
   </BackgroundGradient>
   <DividerTop />
   <About data={user} />
