@@ -32,7 +32,7 @@ const $$HamburgerBtn = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<button class="hamburger hamburger--collapse" type="button"> <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> </button>`;
 }, "/home/sofidev/laboratorio/portfolio-sofi2.0/src/components/atoms/hamburgerBtn/HamburgerBtn.astro", void 0);
 
-const url = "http://localhost:4322";
+const url = "http://localhost:4322" ;
 async function getData(dataType = "data") {
   const endpoint = dataType !== "data" ? dataType : "all";
   try {
