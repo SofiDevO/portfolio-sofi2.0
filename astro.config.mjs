@@ -11,9 +11,7 @@ export default defineConfig({
   site: "https://portfolio-sofi2-0.vercel.app/",
   integrations: [react()],
   output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: vercel(),
   experimental: {
     env: {
       schema: {
