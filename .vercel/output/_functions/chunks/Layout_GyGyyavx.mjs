@@ -32,18 +32,17 @@ const $$HamburgerBtn = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<button class="hamburger hamburger--collapse" type="button"> <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> </button>`;
 }, "/home/sofidev/laboratorio/portfolio-sofi2.0/src/components/atoms/hamburgerBtn/HamburgerBtn.astro", void 0);
 
-const url = "http://localhost:4322" ;
 async function getData(dataType = "data") {
   const endpoint = dataType !== "data" ? dataType : "all";
   try {
-    const res = await fetch(`${url}/api/${endpoint}`);
+    const res = await fetch(`https://portfolio-sofi2-0.vercel.app/api/${endpoint}`);
     if (!res.ok) {
       throw new Error(`Error fetching data: ${res.status}`);
     }
     const data = await res.json();
     return data[dataType];
   } catch (error) {
-    console.error(`Failed to fetch ${dataType} from ${url}:`, error);
+    console.error(`Failed to fetch ${dataType} :`, error);
     return null;
   }
 }

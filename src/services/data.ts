@@ -3,7 +3,7 @@
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
 import {SITE_URL} from 'astro:env/client';
 
-const url =  SITE_URL ;
+// const url =  SITE_URL ?  "http://localhost:4322" :  SITE_URL;
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
@@ -15,7 +15,7 @@ export async function getData(dataType: string = "data") {
     try {
         // Hacemos una solicitud a la API usando la función 'fetch'.
         // Se construye la URL con el valor de 'url' y el endpoint.
-        const res = await fetch(`${url}/api/${endpoint}`);
+        const res = await fetch(`https://portfolio-sofi2-0.vercel.app/api/${endpoint}`);
 
         // Verificamos si la respuesta es exitosa antes de convertirla en JSON.
         if (!res.ok) {
@@ -28,7 +28,7 @@ export async function getData(dataType: string = "data") {
         // Devolvemos los datos que corresponden al tipo de datos solicitado ('dataType').
         return data[dataType];
     } catch (error) {
-        console.error(`Failed to fetch ${dataType} from ${url}:`, error);
+        console.error(`Failed to fetch ${dataType} :`, error);
         return null;
     }
 }
