@@ -4,14 +4,14 @@ import Button from "@atoms/Button/Button.astro";
 ---
 
 <script>
-  // import { formValidation } from "@controllers/formValidation.controller";
+  import { formValidation } from "./ValidationForm";
+
   const button = document.querySelector(
     "#button-send-email-form"
   ) as HTMLButtonElement;
+
   button.addEventListener("click", () => {
-    // formValidation();
-    // e.preventDefault();
-    alert("hola");
+    formValidation();
   });
 </script>
 
