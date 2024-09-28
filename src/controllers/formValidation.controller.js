@@ -94,6 +94,7 @@ export const formValidation = () => {
     ["name", "email", "subject", "message"].forEach((field) => {
       const inputElement = form.querySelector(`#${field}`); // Seleccionamos cada campo
       // Añadimos un evento que valida el campo cuando el usuario deja de enfocarlo (blur)
+      console.log(inputElement)
       inputElement.addEventListener("blur", () => validateField(field));
     });
   });
