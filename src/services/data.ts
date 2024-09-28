@@ -2,7 +2,10 @@
 // Si estamos en un entorno de desarrollo (local), usamos 'http://localhost:4322'.
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
 const localUrl = "http://localhost:4322" ;
-const url = localUrl ? localUrl : import.meta.env.SITE_URL;
+ const url = !localUrl ?  import.meta.env.SITE_URL :localUrl ;
+// const url = "https://itssofi.dev/";
+
+
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
