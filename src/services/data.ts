@@ -2,7 +2,9 @@
 // Si estamos en un entorno de desarrollo (local), usamos 'http://localhost:4322'.
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
 
-const url = import.meta.env.SITE_URL ? import.meta.env.SITE_URL : "/";
+const url = import.meta.env.SITE_URL
+  ? import.meta.env.SITE_URL
+  : `${window.location.origin}`;
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
