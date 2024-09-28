@@ -30,10 +30,6 @@
 		{
 			"src": "^\\/builtwith\\.json\\/?$",
 			"dest": "_render"
-		},
-		{
-			"src": "^\\/$",
-			"dest": "_render"
 		}
 	]
 }
