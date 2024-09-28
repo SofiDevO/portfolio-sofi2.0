@@ -17,8 +17,6 @@
 		"@sass/*": ["src/sass/*"],
 		"@img/*": ["public/img/*"]
 	  },
-	  "target": "es2020",
-	  "module": "es2020",
 	  "moduleResolution": "node"
 	}
   }
