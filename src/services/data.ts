@@ -1,9 +1,12 @@
 // Definimos una variable 'url' que se usará para la solicitud a la API.
 // Si estamos en un entorno de desarrollo (local), usamos 'http://localhost:4322'.
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
-// const localUrl = "http://localhost:4322" ;
-//  const url = localUrl ?  import.meta.env.SITE_URL :localUrl ;
-const url = "https://itssofi.dev/";
+import { SITE_URL} from 'astro:env/client';
+
+ const localUrl = "http://localhost:4322" ;
+const url = localUrl  ||   SITE_URL;
+console.log( "🐛", SITE_URL )
+// const url = "https://itssofi.dev/";
 
 
 
