@@ -4,7 +4,7 @@
 import { SITE_URL} from 'astro:env/client';
 
  const localUrl = "http://localhost:4322" ;
-const url = SITE_URL ;
+const url = localUrl ?  localUrl : SITE_URL;
 console.log( "🐛", SITE_URL )
 // const url = "https://itssofi.dev/";
 
