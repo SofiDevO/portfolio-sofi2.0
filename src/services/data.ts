@@ -1,10 +1,8 @@
 // Definimos una variable 'url' que se usará para la solicitud a la API.
 // Si estamos en un entorno de desarrollo (local), usamos 'http://localhost:4322'.
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
-import {SITE_URL} from 'astro:env/client';
-const localUrl =  "http://localhost:4322";
-
-const url =  localUrl ? localUrl :   SITE_URL;
+const localUrl = "http://localhost:4322" ;
+const url = localUrl ? localUrl : import.meta.env.SITE_URL;
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
