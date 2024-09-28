@@ -7,21 +7,22 @@
 // const url = localUrl ?  localUrl : SITE_URL;
 
 // const url = "https://itssofi.dev/";
-
 const url = import.meta.env.SITE_URL
-  ? import.meta.env.SITE_URL
-  : "https://itssofi.dev/";
+? import.meta.env.SITE_URL
+: "https://itssofi.dev/";
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
-export async function getData(dataType: string = "data") {
+export async function getData(dataType: string = "data", local: boolean = false) {
+  
+  const siteUrl = local ? "" : url; 
   // Si el valor de 'dataType' no es "data", lo usamos como endpoint; de lo contrario, el endpoint será "all".
   // Esto decide a qué parte de la API llamar.
   const endpoint = dataType !== "data" ? dataType : "all";
   try {
     // Hacemos una solicitud a la API usando la función 'fetch'.
     // Se construye la URL con el valor de 'url' y el endpoint.
-    const res = await fetch(`${url}/api/${endpoint}`);
+    const res = await fetch(`${siteUrl}/api/${endpoint}`);
     // Verificamos si la respuesta es exitosa antes de convertirla en JSON.
     if (!res.ok) {
       throw new Error(`Error fetching data: ${res.status}`);

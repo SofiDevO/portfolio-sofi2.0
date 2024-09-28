@@ -1,7 +1,5 @@
-// import { userData as data } from "@src/data/userData";
 import { getData } from "@src/services/data"
-const {user} = await getData();
-
+const user = await getData("user", true);
 
 export const profilePicture = document.getElementById("profile-picture");
   function updateProfilePicture(isDark) {

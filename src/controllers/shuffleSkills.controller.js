@@ -1,7 +1,6 @@
-// import { getData } from "@src/services/data"
-// const {skills} = await getData();
+import { getData } from "@src/services/data"
 
-import { skillsData } from "@data/skillsData.js";
+const skillsData = await getData( "skills",  true);
 
 /* Shuffle initial function */
 export const shuffle = (array) => {
