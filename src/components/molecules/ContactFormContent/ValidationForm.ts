@@ -17,8 +17,27 @@ export const formValidation = () => {
     // obtenemos todos los datos insertados en el formulario
     const formData = new FormData(form);
 
-    console.log(formData);
-    console.log(ms200);
+    try {
+      // mostramos el loader mientras se procesa la solicitud
+      loader.classList.add("success");
+
+      // enviamos la solicitud a la api
+      const response = await fetch("api/email-sender", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        loader.classList.remove("success");
+
+        form.reset();
+        alert(ms200);
+      } else {
+        alert(ms400);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }
 
   if (
