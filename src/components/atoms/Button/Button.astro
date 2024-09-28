@@ -1,5 +1,15 @@
 ---
-const { type="button", value="value", content , extraClass } = Astro.props;
+interface Props {
+  type?: "submit" | "reset" | "button";
+  value?: string;
+  content?: string;
+  extraClass?: string;
+  id?: string;
+}
+
+const { type, value, content, extraClass, id } = Astro.props;
 ---
 
-<button class={`form__submit  ${extraClass}`} type={type} value={value}>{content}</button>
+<button class={`form__submit  ${extraClass}`} type={type} value={value} id={id}>
+  {content}
+</button>
