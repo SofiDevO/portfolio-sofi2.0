@@ -8,7 +8,7 @@ const $$ThemeIcon = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate` ${maybeRenderHead()}<button id="themeToggle" data-astro-cid-hsoaq6cp> ${renderComponent($$result, "iconify-icon", "iconify-icon", { "class": "sun", "icon": "line-md:sun-rising-loop", "width": "32", "height": "32", "style": "color: #ad8700", "data-astro-cid-hsoaq6cp": true })} ${renderComponent($$result, "iconify-icon", "iconify-icon", { "class": "moon", "icon": "line-md:moon-loop", "width": "27", "height": "27", "style": "color: #00ffff", "data-astro-cid-hsoaq6cp": true })} </button> `;
 }, "/home/sofidev/laboratorio/portfolio-sofi2.0/src/components/atoms/ThemeIcon.astro", void 0);
 
-const $$Astro$1 = createAstro("https://portfolio-sofi2-0.vercel.app/");
+const $$Astro$1 = createAstro("https://itssofi.dev/");
 const $$BaseHead = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$BaseHead;
@@ -32,17 +32,18 @@ const $$HamburgerBtn = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<button class="hamburger hamburger--collapse" type="button"> <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> </button>`;
 }, "/home/sofidev/laboratorio/portfolio-sofi2.0/src/components/atoms/hamburgerBtn/HamburgerBtn.astro", void 0);
 
+const url = "http://localhost:4322" ;
 async function getData(dataType = "data") {
   const endpoint = dataType !== "data" ? dataType : "all";
   try {
-    const res = await fetch(`https://portfolio-sofi2-0.vercel.app/api/${endpoint}`);
+    const res = await fetch(`${url}/api/${endpoint}`);
     if (!res.ok) {
       throw new Error(`Error fetching data: ${res.status}`);
     }
     const data = await res.json();
     return data[dataType];
   } catch (error) {
-    console.error(`Failed to fetch ${dataType} :`, error);
+    console.error(`Failed to fetch ${dataType} from ${url}:`, error);
     return null;
   }
 }
@@ -56,7 +57,7 @@ const $$LanguageFlag = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate` ${maybeRenderHead()}<a href="#" class="toggleLang"> ${renderComponent($$result, "iconify-icon", "iconify-icon", { "class": "flag flag-en", "icon": "emojione:flag-for-us-outlying-islands", "width": "23", "height": "23" })} </a>`;
 }, "/home/sofidev/laboratorio/portfolio-sofi2.0/src/components/atoms/LanguageFlag/LanguageFlag.astro", void 0);
 
-const $$Astro = createAstro("https://portfolio-sofi2-0.vercel.app/");
+const $$Astro = createAstro("https://itssofi.dev/");
 const $$Header = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Header;
