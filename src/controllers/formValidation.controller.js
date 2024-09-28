@@ -38,6 +38,8 @@ export const formValidation = () => {
       }
     }
 
+    console.log(form);
+
     // Evento que captura el envío del formulario
     form.addEventListener("submit", (e) => {
       e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
@@ -94,7 +96,6 @@ export const formValidation = () => {
     ["name", "email", "subject", "message"].forEach((field) => {
       const inputElement = form.querySelector(`#${field}`); // Seleccionamos cada campo
       // Añadimos un evento que valida el campo cuando el usuario deja de enfocarlo (blur)
-      console.log(inputElement)
       inputElement.addEventListener("blur", () => validateField(field));
     });
   });

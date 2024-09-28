@@ -8,6 +8,8 @@ interface ISendEmail {
 }
 
 async function sendEmail(props: ISendEmail) {
+  console.log(props);
+
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -23,7 +25,7 @@ async function sendEmail(props: ISendEmail) {
     html: `
       <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
         <header style="background-color: aliceblue; padding: 1rem; margin-bottom: 1rem;">
-            <h1 style="text-align: center; font-size: 3rem; font-weight: 700; color: rgb(51, 0, 128);">Nuevo mensaje desde el portafolio 🦝</h1>
+            <h1 style="text-align: center; font-size: 3rem; font-weight: 700; color: rgb(51, 0, 128);">Portfolio</h1>
         </header>
         <main>
             <p style="font-size: 18px;  font-weigth: bold color: rgb(51, 0, 128); margin-bottom: 2rem;">Nombre: <span style="color: #010101; font-size: 16px;">${props.name}</span></p>
