@@ -8,8 +8,6 @@ interface ISendEmail {
 }
 
 async function sendEmail(props: ISendEmail) {
-  console.log(props);
-
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
