@@ -10,6 +10,7 @@ import Button from "@atoms/Button/Button.astro";
   ) as HTMLButtonElement;
   button.addEventListener("click", () => {
     // formValidation();
+    // e.preventDefault();
     alert("hola");
   });
 </script>
@@ -40,5 +41,5 @@ import Button from "@atoms/Button/Button.astro";
     <span class="error__msg" id="messageError"></span>
   </div>
   <div class="loader"></div>
-  <Button content="Send" id="button-send-email-form" />
+  <Button content="Send" type="button" id="button-send-email-form" />
 </form>
