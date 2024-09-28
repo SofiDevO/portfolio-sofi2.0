@@ -1,5 +1,3 @@
-import { EMAIL, EMAIL_HOST, EMAIL_PASS, EMAIL_PORT } from "astro:env/server";
-
 import nodemailer from "nodemailer";
 
 interface ISendEmail {
@@ -11,18 +9,16 @@ interface ISendEmail {
 
 async function sendEmail(props: ISendEmail) {
   let transporter = nodemailer.createTransport({
-    host: EMAIL_HOST,
-    port: EMAIL_PORT,
-    secure: true,
+    service: "gmail",
     auth: {
-      user: EMAIL,
-      pass: EMAIL_PASS,
+      user: import.meta.env.EMAIL,
+      pass: import.meta.env.EMAIL_PASS,
     },
   });
 
   let message = {
     from: process.env.EMAIL,
-    to: EMAIL,
+    to: import.meta.env.EMAIL,
     subject: props.subject,
     html: `
       <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
@@ -37,7 +33,7 @@ async function sendEmail(props: ISendEmail) {
         </main>
       </section>
     `,
-  }
+  };
 
   let info = await transporter.sendMail(message);
   return info;

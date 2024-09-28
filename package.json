@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-sofi2.0",
+  "name": "portfolio-sofi-2.0",
   "version": "1.0.0",
-  "description": "Nueva version del poratfolio",
+  "description": "Nueva version del portafolio",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev --port 4322",
@@ -13,22 +13,22 @@
   "author": "SofiDev",
   "license": "ISC",
   "dependencies": {
-    "@astrojs/node": "^8.3.4",
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/vercel": "^7.8.1",
-    "@emotion/styled": "^11.13.0",
-    "@fontsource-variable/fira-code": "^5.0.18",
-    "@fontsource-variable/montserrat": "^5.0.19",
-    "@fontsource/questrial": "^5.0.13",
-    "@mui/material": "^5.16.7",
-    "astro": "^4.15.2",
-    "dotenv": "^16.4.5",
-    "nodemailer": "^6.9.15",
-    "react-github-calendar": "^4.2.2",
-    "react-toastify": "^10.0.5",
-    "sass": "^1.77.8"
+    "@astrojs/node": "8.3.4",
+    "@astrojs/react": "3.6.2",
+    "@astrojs/vercel": "7.8.1",
+    "@emotion/styled": "11.13.0",
+    "@fontsource-variable/fira-code": "5.0.18",
+    "@fontsource-variable/montserrat": "5.0.19",
+    "@fontsource/questrial": "5.0.13",
+    "@mui/material": "5.16.7",
+    "astro": "4.15.2",
+    "dotenv": "16.4.5",
+    "nodemailer": "6.9.15",
+    "react-github-calendar": "4.2.2",
+    "react-toastify": "10.0.5",
+    "sass": "1.77.8"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4"
+    "@types/node": "22.5.4"
   }
 }
