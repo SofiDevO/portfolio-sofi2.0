@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, g as renderSlot, b as createAstro, e as addAttribute, a as renderComponent } from '../chunks/astro/server_CJ5Zltcn.mjs';
 import 'kleur/colors';
-import { a as $$SocialIcons, g as getData, $ as $$Layout } from '../chunks/Layout_DiItI1sq.mjs';
 import 'clsx';
 /* empty css                                 */
+import { a as $$SocialIcons, g as getData, $ as $$Layout } from '../chunks/Layout_DiItI1sq.mjs';
 import { jsx } from 'react/jsx-runtime';
 import { u as userData } from '../chunks/userData_CoxU_2iY.mjs';
 import { s as skillsIconsMapped } from '../chunks/portfolioData_MkJEwqW_.mjs';
