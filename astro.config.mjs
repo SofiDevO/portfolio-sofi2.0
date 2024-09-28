@@ -10,10 +10,9 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://itssofi.dev/",
   integrations: [react()],
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  output: "server",
+  adapter: vercel(),
+
   experimental: {
     env: {
       schema: {
