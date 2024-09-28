@@ -1,0 +1,10 @@
+aliceblue
+astrojs
+fira
+fontsource
+montserrat
+questrial
+sofi
+Sofi
+toastify
+weigth

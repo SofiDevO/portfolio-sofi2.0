@@ -9,23 +9,16 @@ interface Props {
   image?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const {
-  title,
-  description,
-  image = "img/icons/sofi-icon.webp",
-} = Astro.props;
+const { title, description, image = "img/icons/sofi-icon.webp" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" href="/img/icons/sofi-icon.webp"/>
+<link rel="icon" type="image/png" href="/img/icons/sofi-icon.webp" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -47,7 +40,6 @@ const {
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- css librerias/ cdn -->
-
 
 <!-- Iconify CDN -->
 <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"

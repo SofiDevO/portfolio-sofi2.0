@@ -4,15 +4,22 @@ import Button from "@atoms/Button/Button.astro";
 ---
 
 <script>
-  import { formValidation } from "@controllers/formValidation.controller";
-  formValidation();
+  import { formValidation } from "./ValidationForm";
+
+  const button = document.querySelector(
+    "#button-send-email-form"
+  ) as HTMLButtonElement;
+
+  button.addEventListener("click", () => {
+    formValidation();
+  });
 </script>
 
 <Subtitle content="Get in touch with Me " />
 <form class="contact" method="POST" novalidate>
   <div class="form__group form__group-name">
     <label for="name">Your Name: * </label>
-    <input  type="text" id="name" name="name" required />
+    <input type="text" id="name" name="name" required />
     <span class="error__msg" id="nameError"></span>
   </div>
   <div class="form__container">
@@ -34,6 +41,5 @@ import Button from "@atoms/Button/Button.astro";
     <span class="error__msg" id="messageError"></span>
   </div>
   <div class="loader"></div>
-  <Button type="submit" value="Send" content="Send" />
-
+  <Button content="Send" type="button" id="button-send-email-form" />
 </form>
