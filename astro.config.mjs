@@ -9,8 +9,4 @@ export default defineConfig({
   integrations: [react()],
   output: "server",
   adapter: vercelServerless(),
-  i18n: {
-    defaultLocale: "en",
-    locales: ["es", "en"],
-  },
 });
