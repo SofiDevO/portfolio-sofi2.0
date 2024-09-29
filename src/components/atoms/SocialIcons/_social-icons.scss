@@ -57,6 +57,12 @@
   display: block;
 }
 
+
+@include respond-to("medium"){
+  .social__link{
+    animation: none;
+  }
+}
 .dark {
   .social__link {
     filter: drop-shadow(0 0 12px aqua);
