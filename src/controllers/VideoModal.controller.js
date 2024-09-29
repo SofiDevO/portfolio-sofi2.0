@@ -6,16 +6,15 @@ const videoThumbnail = document.querySelector(".youtubeThumbnail");
 const stopVideo = document.querySelector("iframe");
 const channelId = "UC36_js-krsAHAEAWpEDhHtw"; // Youtube Channel ID
 
-const initializeModal = (iframe, videoData) => {
-  const videoNumber = iframe.getAttribute("vnum");
-  const video = videoData[videoNumber];
-  const videoId = video.link.split("v=")[1];
+const initializeModal = (iframe) => {
+  const videoLink = iframe.getAttribute("data-link");
+  const thumbnail = iframe.getAttribute("data-thumbnail");
+  const videoId = videoLink.split("v=")[1];
   const embeddUrl = `https://youtube.com/embed/${videoId}?controls=1&autoplay=1`;
 
-  iframe.setAttribute("src", embeddUrl);
-  videoThumbnail.style.backgroundImage = video.thumbnail === ""
+  videoThumbnail.style.backgroundImage = thumbnail === ""
     ? `url('/img/portadaLIVE.png')`
-    : `url(${video.thumbnail})`;
+    : `url(${thumbnail})`;
 
   btnOpenModal.addEventListener("click", () => {
     const dialog = document.querySelector("dialog");
@@ -31,12 +30,7 @@ const initializeModal = (iframe, videoData) => {
 };
 
 export const loadVideo = async (iframe) => {
-  try {
-    const videoData = await fetchYouTubeVideos(channelId);
-    initializeModal(iframe, videoData);
-  } catch (error) {
-    console.error("Error loading video:", error);
-  }
+    initializeModal(iframe);
 };
 
 // Initialize video modal for all iframes with class "latestVideoEmbed"

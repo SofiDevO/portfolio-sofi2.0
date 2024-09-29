@@ -1,17 +1,12 @@
 ---
-
+import { fetchYouTubeVideos } from '@src/services/youtubeLatestVid';
+const channelId = "UC36_js-krsAHAEAWpEDhHtw"; 
+const videoData = await fetchYouTubeVideos(channelId);
+const { thumbnail, link } = videoData[0];
 ---
 
 <script>
-  import {loadVideo} from "@controllers/VideoModal.controller";
-
-
-
-
-
-
-
-
+  import {loadVideo} from "@controllers/VideoModal.controller"; 
 </script>
 
 <dialog class="youtube__modal__box">
@@ -25,7 +20,8 @@
     <iframe
       id="ytchannel"
       class="latestVideoEmbed"
-      vnum="0"
+      data-link={link}
+      data-thumbnail={thumbnail}
       width="100%"
       height="100%"
       frameborder="0"
