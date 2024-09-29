@@ -12,8 +12,6 @@ const initializeModal = (iframe) => {
   const videoId = videoLink.split("v=")[1];
   const embeddUrl = `https://youtube.com/embed/${videoId}?controls=1&autoplay=1`;
 
-  console.log(videoThumbnail);
-  iframe.setAttribute("src", embeddUrl);
   videoThumbnail.style.backgroundImage = thumbnail === ""
     ? `url('/img/portadaLIVE.png')`
     : `url(${thumbnail})`;
