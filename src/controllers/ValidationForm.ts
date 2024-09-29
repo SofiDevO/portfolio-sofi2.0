@@ -56,15 +56,15 @@ export const formValidation = () => {
     let errorMessage;
 
     let synonyms = {
-      name: "nombre",
-      email: "correo electronico",
-      subject: "asunto",
-      message: "mensaje",
+      name: "name",
+      email: "email",
+      subject: "subject",
+      message: "message",
     };
 
     let errorMsg = {
-      emptyField: (e) => `Por favor, introduzca su ${synonyms[e]}`,
-      invalidField: (e) => `Por favor, introduzca un ${synonyms[e]} válido.`,
+      emptyField: (e) => `Please enter a ${synonyms[e]}`,
+      invalidField: (e) => `Please enter a valid ${synonyms[e]} format`,
     };
 
     if (fieldValue === "") {
