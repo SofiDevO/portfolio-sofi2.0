@@ -1,0 +1,7 @@
+# ingora el formateo de archivos de scrips
+*.ts
+*.tsx
+*.js
+
+# ignora el formateo de stylos
+*.scss
