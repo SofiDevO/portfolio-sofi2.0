@@ -1,6 +1,6 @@
 - name: Get global node ID
   id: get-repo-id
-  uses: nvdaes/get-repository-id@v1
+  uses: SofiDevO/get-repository-id@v1
   with:
     repository: owner/repo
 
