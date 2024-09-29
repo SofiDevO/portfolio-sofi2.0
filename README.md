@@ -4,7 +4,7 @@
 
 # Project: Portfolio Sofi 2.0
 
-> [!WARNING]
+>[!CAUTION]
 > Always **GIT PULL** before making changes, as updates and PRs are frequently submitted.
 
 This project is a new version of the personal portfolio, designed and developed by **SofiDev**. The goal of this version is to offer an updated portfolio using modern technologies and a modular structure.
@@ -68,8 +68,8 @@ npm install
 ---
 
 ### Usage
-
-To start developing the project, use the following command to run the development server:
+>[!TIP]
+>To start developing the project, use the following command to run the development server:
 
 ```bash
 npm run dev
@@ -80,8 +80,8 @@ This command will start the server at `http://localhost:4322`.
 ---
 
 ## Contribution Rules
-
-If you want to contribute to this project, please follow these rules:
+>[!CAUTION]
+>If you want to contribute to this project, please follow these rules:
 
 1. **Fork or Clone**: Fork or clone the repository to start.
 2. **Create a Specific Branch**: Use a descriptive branch name that clearly identifies the change you are making.

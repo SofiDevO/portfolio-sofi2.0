@@ -1,6 +1,6 @@
 # Proyecto: Portfolio Sofi 2.0
 
-> [!WARNING]
+> [!CAUTION]
 > Siempre haz **GIT PULL** antes de comenzar a hacer cambios, ya que se suben cambios y PR de manera constante.
 
 Este proyecto es una nueva versión del portafolio personal, diseñado y desarrollado por **SofiDev**. El objetivo de esta versión es ofrecer un portafolio actualizado utilizando tecnologías modernas y una estructura modular.
@@ -76,8 +76,8 @@ Este comando iniciará el servidor en `http://localhost:4322`.
 ---
 
 ## Reglas para Contribuir
-
-Si deseas colaborar en este proyecto, por favor sigue estas reglas:
+>[!CAUTION]
+>Si deseas colaborar en este proyecto, por favor sigue estas reglas:
 
 1. **Fork o Clonar**: Realiza un fork o clona el repositorio para comenzar.
 2. **Crea una Rama Exclusiva**: Usa un nombre descriptivo para la rama que identifique claramente el cambio que vas a realizar.
