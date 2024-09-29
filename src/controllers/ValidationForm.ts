@@ -51,47 +51,41 @@ export const formValidation = () => {
     const inputElement = form.querySelector(`#${field}`) as HTMLInputElement;
     const fieldValue = inputElement.value.trim();
     const errorElement = document.getElementById(`${field}Error`);
-    let errorMsg = "";
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     inputElement.classList.remove("input-success");
+    let errorMessage;
 
-    switch (field) {
-      case "name":
-        if (fieldValue === "") {
-          errorMsg = "Por favor, introduzca su nombre.";
-        } else {
-          inputElement.classList.add("input-success");
-        }
-        break;
-      case "email":
-        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-        if (fieldValue === "") {
-          errorMsg = "Por favor, introduzca su correo electrónico.";
-        } else if (!emailPattern.test(fieldValue)) {
-          errorMsg = "Por favor, introduzca un correo electrónico válido.";
-        } else {
-          inputElement.classList.add("input-success");
-        }
-        break;
-      case "subject":
-        if (fieldValue === "") {
-          errorMsg = "Por favor ingrese un asunto.";
-        } else {
-          inputElement.classList.add("input-success");
-        }
-        break;
-      case "message":
-        if (fieldValue === "") {
-          errorMsg = "Por favor ingresa un mensaje.";
-        } else {
-          inputElement.classList.add("input-success");
-        }
-        break;
+    let synonyms = {
+      name: "nombre",
+      email: "correo electronico",
+      subject: "asunto",
+      message: "mensaje"
     }
-    inputElement.classList.remove("input-success");
 
-    errorElement.textContent = errorMsg;
-    inputElement.classList.toggle("input-error", !!errorMsg);
-    return !errorMsg; // Return true if there is no error
+    let errorMsg ={
+      emptyField: (e) => `Por favor, introduzca su ${synonyms[e]}`,
+      invalidField: (e) => `Por favor, introduzca un ${synonyms[e]} válido.`,
+    };
+
+
+    if (fieldValue === "") {
+      errorMessage = errorMsg.emptyField(field);
+      errorElement.textContent = errorMessage;
+      inputElement.classList.toggle("input-error", !!errorMessage);
+      return false;
+    }
+
+    if(field === "email" && !emailPattern.test(fieldValue)) {
+      errorMessage = errorMsg.invalidField(field);
+      errorElement.textContent = errorMessage;
+      inputElement.classList.toggle("input-error", !!errorMessage);
+      return false;
+    }
+
+    inputElement.classList.remove("input-error");
+    errorElement.textContent = "";
+    inputElement.classList.add("input-success");
+    return true; // Return true if there is no error
   }
 
   // Validate all fields on submit
