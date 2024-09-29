@@ -3,9 +3,9 @@ import ToastNotification from "@src/controllers/toastAlerts.controller";
 const loader = document.querySelector(".loader");
 
 // Mensajes
-let ms200 = "The message was sent successfully 🚀"; // Success message
-let ms300 = "Does not meet the required format 🤔"; // Warning message
-let ms400 = "You must complete all fields 🙄"; // Error message
+let ms200 = "The message was sent successfully"; // Success message
+let ms300 = "Does not meet the required format"; // Warning message
+let ms400 = "You must complete all fields"; // Error message
 
 export const formValidation = () => {
   const form = document.querySelector("form") as HTMLFormElement;
@@ -57,7 +57,7 @@ export const formValidation = () => {
     switch (field) {
       case "name":
         if (fieldValue === "") {
-          errorMsg = "Por favor, introduzca su nombre.";
+          errorMsg = "Please enter your name.";
         } else {
           inputElement.classList.add("input-success");
         }
@@ -65,23 +65,23 @@ export const formValidation = () => {
       case "email":
         const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
         if (fieldValue === "") {
-          errorMsg = "Por favor, introduzca su correo electrónico.";
+          errorMsg = "Please enter your email.";
         } else if (!emailPattern.test(fieldValue)) {
-          errorMsg = "Por favor, introduzca un correo electrónico válido.";
+          errorMsg = "Please enter a valid email.";
         } else {
           inputElement.classList.add("input-success");
         }
         break;
       case "subject":
         if (fieldValue === "") {
-          errorMsg = "Por favor ingrese un asunto.";
+          errorMsg = "Please enter a subject.";
         } else {
           inputElement.classList.add("input-success");
         }
         break;
       case "message":
         if (fieldValue === "") {
-          errorMsg = "Por favor ingresa un mensaje.";
+          errorMsg = "Please enter a message.";
         } else {
           inputElement.classList.add("input-success");
         }
