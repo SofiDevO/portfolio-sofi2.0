@@ -1,0 +1,60 @@
+---
+import LayoutNoHeader from "../layouts/LayoutNoHeader.astro";
+import Title from "@components/atoms/Title/Title.jsx";
+import Button from "@components/atoms/Button/Button.astro";
+---
+
+<script>
+ document.getElementById('backButton').addEventListener('click', function() {
+    window.history.back();
+  });
+  </script>
+
+<LayoutNoHeader>
+
+  <section class="error">
+  <div class="error__container">
+
+    <Title titleDesc="404 NOT FOUND" clase="" />
+    <p class="error__message ">La pagina a la que tratas de acceder no existe</p>
+    <p class="error__message">Esta página está en construcción. Por favor, vuelve más tarde</p>
+    <img src="/img/sofi-laptop.gif" alt="logo" />
+    <Button content="Volver" id="backButton"/>
+  </div>
+  </section>
+</LayoutNoHeader>
+
+<style lang="scss">
+  .error {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    background: url("/img/Waneella.gif");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    padding: 0 1rem;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      backdrop-filter: blur(14px);
+      padding: 1rem 2rem;
+      border-radius: 13px;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0 0 0 1px rgba(102, 255, 252, 0.341);
+    }
+  }
+
+  .error__message {
+    font-size: 1.8rem;
+    color: aqua
+  }
+
+  .error > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+</style>

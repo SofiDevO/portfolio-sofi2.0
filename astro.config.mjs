@@ -6,6 +6,7 @@ import vercelServerless from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://itssofi.dev",
   integrations: [react()],
   output: "server",
   adapter: vercelServerless(),

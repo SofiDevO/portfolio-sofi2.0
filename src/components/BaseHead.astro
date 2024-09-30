@@ -2,14 +2,26 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../sass/main.scss";
-
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 interface Props {
-  title: string;
-  description: string;
+  mainTitle?: string;
+  title?: string;
+  description?: string;
   image?: string;
 }
 
-const { title, description, image = "img/icons/sofi-icon.webp" } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {
+  mainTitle= SITE_TITLE,
+  title = "Home",
+  description = SITE_DESCRIPTION,
+  image = "img/icons/sofi-icon.webp",
+} = Astro.props;
+
+
+
+
 ---
 
 <!-- Global Metadata -->
@@ -17,8 +29,9 @@ const { title, description, image = "img/icons/sofi-icon.webp" } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/img/icons/sofi-icon.webp" />
 <meta name="generator" content={Astro.generator} />
-
+<title>{mainTitle} | {title}</title>
 <!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

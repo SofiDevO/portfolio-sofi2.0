@@ -1,14 +1,16 @@
 ---
+// Importaciones necesarias
 import { menuData } from "@data/menuData";
 import Logo from "@atoms/Logo/Logo.astro";
 import HamburgerButton from "@atoms/hamburgerBtn/HamburgerBtn.astro";
 import SocialIcons from "@atoms/SocialIcons/SocialIcons.astro";
 import LanguageFlag from "@src/components/atoms/LanguageFlag/LanguageFlag.astro";
+
 const pagePathname = Astro.url.pathname;
+const { blog } = Astro.props;
 ---
 
 <script>
-
   import "@src/controllers/hamburger.controller.js";
 </script>
 
@@ -17,22 +19,22 @@ const pagePathname = Astro.url.pathname;
     <Logo />
     <nav class="header__menu">
       <ul class="header__list">
-        { pagePathname !== "/"
-       &&
-       <li class="header__item">
-        <a class="header__link" href="/">Home</a>
-        </li>
-        }
-        {
-          menuData.map((data) => (
-            <li class="header__item">
-              <a class="header__link" href={data.enlace}>
-                {data.texto}
-              </a>
-            </li>
-          ))
-        }
-
+        {pagePathname !== "/" && (
+          <li class="header__item">
+            <a class="header__link" href="/">Home</a>
+          </li>
+        )}
+        {menuData.map((data) => (
+          <li class="header__item" >
+            <a
+              class="header__link"
+              href={data.enlace}
+              target={data.enlace.includes("blog") ? "_blank" : "_self"}
+            >
+              {data.texto}
+            </a>
+          </li>
+        ))}
         <div class="header__icons">
           <SocialIcons />
         </div>
