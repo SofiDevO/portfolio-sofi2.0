@@ -1,0 +1,50 @@
+---
+---
+
+
+<div class="to__top ">
+    <iconify-icon icon="codicon:triangle-up" width="30" height="30" style="color: #63f6f4e9"></iconify-icon>
+</div>
+
+<script is:inline>
+  const cajaToTop = document.querySelector(".to__top");
+
+  cajaToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 1400) {
+      cajaToTop.classList.add("show");
+    } else {
+      cajaToTop.classList.remove("show");
+    }
+  });
+</script>
+
+<style>
+  /* Estilos para cuando el botón está activo */
+  .to__top.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    margin-right: 3.8rem;
+    top: 75%;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #20006a;
+    z-index: 999;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+  }
+
+  /* Estilos para cuando el botón no está activo */
+  .to__top {
+    display: none;
+    opacity: 0;
+  }
+</style>

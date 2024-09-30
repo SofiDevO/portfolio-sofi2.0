@@ -4,5 +4,5 @@ export const menuData = [
     { enlace: "#skills", texto: "Skills" },
     { enlace: "#portfolio", texto: "Portfolio" },
     { enlace: "#social", texto: "Social" },
-    { enlace: "#blog", texto: "Blog" },
+    { enlace: "https://blog.itssofi.dev/", texto: "Blog" },
   ];

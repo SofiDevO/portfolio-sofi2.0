@@ -55,6 +55,7 @@ export const formValidation = () => {
     inputElement.classList.remove("input-success");
     let errorMessage;
 
+
     let synonyms = {
       name: "name",
       email: "email",
@@ -75,6 +76,7 @@ export const formValidation = () => {
     }
 
     if (field === "email" && !emailPattern.test(fieldValue)) {
+
       errorMessage = errorMsg.invalidField(field);
       errorElement.textContent = errorMessage;
       inputElement.classList.toggle("input-error", !!errorMessage);
