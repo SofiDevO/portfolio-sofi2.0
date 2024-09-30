@@ -3,9 +3,9 @@ import ToastNotification from "@src/controllers/toastAlerts.controller";
 const loader = document.querySelector(".loader");
 
 // Mensajes
-let ms200 = "The message was sent successfully 🚀"; // Success message
-let ms300 = "Does not meet the required format 🤔"; // Warning message
-let ms400 = "You must complete all fields 🙄"; // Error message
+let ms200 = "The message was sent successfully"; // Success message
+let ms300 = "Does not meet the required format"; // Warning message
+let ms400 = "You must complete all fields"; // Error message
 
 export const formValidation = () => {
   const form = document.querySelector("form") as HTMLFormElement;
@@ -55,18 +55,18 @@ export const formValidation = () => {
     inputElement.classList.remove("input-success");
     let errorMessage;
 
-    let synonyms = {
-      name: "nombre",
-      email: "correo electronico",
-      subject: "asunto",
-      message: "mensaje"
-    }
 
-    let errorMsg ={
-      emptyField: (e) => `Por favor, introduzca su ${synonyms[e]}`,
-      invalidField: (e) => `Por favor, introduzca un ${synonyms[e]} válido.`,
+    let synonyms = {
+      name: "name",
+      email: "email",
+      subject: "subject",
+      message: "message",
     };
 
+    let errorMsg = {
+      emptyField: (e) => `Please enter a ${synonyms[e]}`,
+      invalidField: (e) => `Please enter a valid ${synonyms[e]} format`,
+    };
 
     if (fieldValue === "") {
       errorMessage = errorMsg.emptyField(field);
@@ -75,7 +75,8 @@ export const formValidation = () => {
       return false;
     }
 
-    if(field === "email" && !emailPattern.test(fieldValue)) {
+    if (field === "email" && !emailPattern.test(fieldValue)) {
+
       errorMessage = errorMsg.invalidField(field);
       errorElement.textContent = errorMessage;
       inputElement.classList.toggle("input-error", !!errorMessage);
