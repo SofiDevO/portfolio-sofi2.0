@@ -1,40 +1,31 @@
-import { fetchYouTubeVideos } from '@src/services/youtubeLatestVid';
-
 const btnOpenModal = document.querySelector(".youtube__button");
 const closeModalBtn = document.querySelector(".modal__close__button");
 const videoThumbnail = document.querySelector(".youtubeThumbnail");
-const stopVideo = document.querySelector("iframe");
-const channelId = "UC36_js-krsAHAEAWpEDhHtw"; // Youtube Channel ID
+const iframe = document.querySelector(".latestVideoEmbed");
 
 const initializeModal = (iframe) => {
-  const videoLink = iframe.getAttribute("data-link");
-  const thumbnail = iframe.getAttribute("data-thumbnail");
-  const videoId = videoLink.split("v=")[1];
-  const embeddUrl = `https://youtube.com/embed/${videoId}?controls=1&autoplay=1`;
+  // muestra el puro link del poster que esta dentro del video
+  const poster = iframe.style.backgroundImage.slice(5, -2);
 
-  videoThumbnail.style.backgroundImage = thumbnail === ""
-    ? `url('/img/portadaLIVE.png')`
-    : `url(${thumbnail})`;
+  // inserta el link dentro del apartado si existe el poster dentro del componente <Youtube/>
+  // que esta dentro de YotubeModal.astro
+  poster ? videoThumbnail.style.backgroundImage = `url(${poster})` : "url('/img/portadaLIVE.png')";
+
+  const dialog = document.querySelector(".youtube__modal__box");
 
   btnOpenModal.addEventListener("click", () => {
-    const dialog = document.querySelector("dialog");
-    dialog.showModal();
-    iframe.setAttribute("src", embeddUrl); // Autoplay video
+    dialog.style.display = "flex";
   });
 
   closeModalBtn.addEventListener("click", () => {
-    const dialog = document.querySelector("dialog");
-    dialog.close();
-    stopVideo.setAttribute("src", ""); // Stop video
+    dialog.style.display = "none";  
+    const Video = document.querySelector(".latestVideoEmbed iframe");
+    // pause el video si se esta reproduciendo después de cerrar la modal
+    Video.src = Video.src.split("?")[0];
   });
 };
 
-export const loadVideo = async (iframe) => {
-    initializeModal(iframe);
+export const loadVideo = () => {
+  iframe ? initializeModal(iframe) : null
 };
 
-// Initialize video modal for all iframes with class "latestVideoEmbed"
-const iframes = document.getElementsByClassName("latestVideoEmbed");
-if (iframes.length > 0) {
-  loadVideo(iframes[0]);
-}
