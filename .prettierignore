@@ -2,6 +2,3 @@
 *.ts
 *.tsx
 *.js
-
-# ignora el formateo de stylos
-*.scss

@@ -41,15 +41,15 @@
     }
   }
 }
-.social__link-1{
+.social__link-1 {
   -webkit-animation: bounce-in-bottom 1.2s 1.9s both;
   animation: bounce-in-bottom 1.5s 1.9s both;
 }
-.social__link-2{
+.social__link-2 {
   -webkit-animation: bounce-in-bottom 1.2s 1.9s both;
   animation: bounce-in-bottom 1.5s 2s both;
 }
-.social__link-3{
+.social__link-3 {
   -webkit-animation: bounce-in-bottom 1.2s 1.9s both;
   animation: bounce-in-bottom 1.5s 2.1s both;
 }
@@ -57,9 +57,8 @@
   display: block;
 }
 
-
-@include respond-to("medium"){
-  .social__link{
+@include respond-to("medium") {
+  .social__link {
     animation: none;
   }
 }
