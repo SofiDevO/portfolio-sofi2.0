@@ -1,0 +1,115 @@
+.post-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &__image-container {
+    position: relative;
+    max-height: 18rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &:hover &__image {
+    transform: scale(1.1);
+  }
+
+  &__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover &__image-overlay {
+    opacity: 1;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__author-image {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: translateY(-3rem);
+    transition: transform 0.3s ease-in-out;
+  }
+  &:hover &__author-image {
+    transform: translateY(0);
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__author-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: v.$secundaryColor;
+  }
+
+  &__date {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: v.$ufo-green;
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    @include text-gradient("ligth");
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease-in-out;
+    text-wrap: wrap;
+  }
+
+  &__excerpt p {
+    font-size: 1.4rem;
+    color: v.$secundaryColor;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__read-more {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: v.$ufo-green;
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__read-more-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__read-more:hover &__read-more-icon {
+    transform: translateX(1rem);
+  }
+}

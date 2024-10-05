@@ -16,13 +16,18 @@
     margin-top: 2rem;
     max-width: 1200px;
     background: black;
-    background:rgba(0, 0, 0, 0.613);
+    background: rgba(0, 0, 0, 0.613);
     border-radius: 16px;
     padding: 1rem 2rem;
   }
 
   &__list > *:not(a) {
     margin-right: 1.5rem;
+    .header__link {
+      display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
     @include respond-to("medium") {
       margin-bottom: 2rem;
       .header__link {
@@ -35,15 +40,14 @@
     .header__list {
       display: flex;
       align-items: center;
-      .header__icons{
+      .header__icons {
         display: none;
-        @include respond-to("medium"){
+        @include respond-to("medium") {
           display: block;
         }
       }
     }
-}
-
+  }
 
   .header__link {
     font-weight: bold;
@@ -108,7 +112,6 @@
       }
     }
   }
-
 
   .header__menu.is-active {
     transform: translateX(0%);

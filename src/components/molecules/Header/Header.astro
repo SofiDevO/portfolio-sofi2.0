@@ -32,6 +32,7 @@ const { blog } = Astro.props;
               target={data.enlace.includes("blog") ? "_blank" : "_self"}
             >
               {data.texto}
+              {data.enlace.includes("blog") && <iconify-icon icon="iconamoon:link-external" width="19" height="19"  style="color: #00c8f0"></iconify-icon>}
             </a>
           </li>
         ))}

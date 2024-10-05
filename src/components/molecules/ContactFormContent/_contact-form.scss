@@ -10,10 +10,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  color: white;
+  color: v.$secundaryColor;
   input {
-    padding: 0.6rem;
+    padding: 0.9rem;
+    font-size: 1.5rem;
   }
   label {
     font-size: 1.3rem;

@@ -4,10 +4,23 @@
   display: grid;
   place-content: center;
   overflow-x: hidden;
+  background-color: v.$cetacean-purple;
+  background: linear-gradient(
+    180deg,
+    rgb(20, 0, 48) 6%,
+    rgba(34, 2, 80, 0.103) 10%
+  ),
+  url("/img/cuadriculaDifuminada.png");
+  background-size: cover;
+  @media screen and (max-width: 980px) {
+    min-height: 200%;
+    overflow: hidden;
+    height: auto;
+  }
 }
 .social__grid {
       padding: 0 1rem;
-      max-width: 1300px;
+      max-width: 1140px;
       display: grid;
       align-content: center;
       grid-template-columns: repeat(8, minmax(100px, 1fr));
@@ -54,24 +67,4 @@
 }
 .social__title {
   margin-bottom: 2rem;
-}
-
-.social__background {
-  background: linear-gradient(
-      180deg,
-      rgb(20, 0, 48) 6%,
-      rgba(34, 2, 80, 0.103) 10%
-    ),
-    url("/img/cuadriculaDifuminada.png");
-  background-size: cover;
-  width: 100%;
-  min-height: 100dvh;
-  position: absolute;
-
-  z-index: -1;
-  @media screen and (max-width: 980px) {
-    min-height: 200%;
-    overflow: hidden;
-    height: auto;
-  }
 }
