@@ -2,22 +2,22 @@ import nodemailer from "nodemailer";
 import * as EmailValidator from "email-validator";
 
 interface ISendEmail {
-  email: string;  // Email del remitente
-  html: string;   // Contenido del mensaje
-  subject: string; // Asunto del mensaje
-  name: string; // Nombre del remitente
+  email: string;
+  html: string;
+  subject: string;
+  name: string;
 }
 
 async function sendEmail(props: ISendEmail) {
   const data = {
-    email: import.meta.env.EMAIL, // Tu email autorizado
+    email: import.meta.env.EMAIL,
     host: import.meta.env.EMAIL_HOST,
     port: import.meta.env.EMAIL_PORT,
     user: import.meta.env.EMAIL,
     pass: import.meta.env.EMAIL_PASS,
   };
 
-  // Verificación del formato del email
+  // Verificación del formato del email con email-validator
   if (!EmailValidator.validate(props.email)) {
     throw new Error("El correo electrónico no tiene un formato válido.");
   }
@@ -32,11 +32,9 @@ async function sendEmail(props: ISendEmail) {
     },
   });
 
-  // Mensaje a enviar
-  let messageToYou = {
-    from: data.email, // Tu email (donde recibirás el mensaje)
-    replyTo: props.email, // El correo de la persona que te contacta
-    to: data.email, // Tu email (donde recibirás el mensaje)
+  let message = {
+    from: data.email,
+    to: data.email,
     subject: props.subject,
     html: `
       <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
@@ -53,14 +51,8 @@ async function sendEmail(props: ISendEmail) {
     `,
   };
 
-  try {
-    let info = await transporter.sendMail(messageToYou);
-    return info;
-
-  } catch (error) {
-    console.error("Error al enviar el correo:", error.message);
-    throw new Error("No se pudo enviar el correo electrónico.");
-  }
+  let info = await transporter.sendMail(message);
+  return info;
 }
 
 export { sendEmail };

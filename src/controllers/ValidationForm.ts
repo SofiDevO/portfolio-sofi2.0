@@ -71,8 +71,8 @@ export const formValidation = () => {
       if (response.ok) {
         clearErrors();
         form.reset();
-        // Guardar email en cookie por 30 días
-        setCookie("usedEmail", email, 30);
+        // Guardar email en cookie por 2 días
+        setCookie("usedEmail", email, 2);
         ToastNotification(ms200, "success");
       } else {
         ToastNotification(ms300, "error");
