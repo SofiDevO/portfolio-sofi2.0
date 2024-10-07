@@ -1,12 +1,14 @@
 ---
 import { getData } from "@src/services/data"
 const {socialIcons } = await getData()
+const {isAnimated=true} = Astro.props;
 ---
 
 <div class="social__container">
   {
     socialIcons.map((data, index) => (
-      <a href={data.link} class={`social__link social__link-${index+1}`} target="_blank">
+      isAnimated ?
+      (<a href={data.link} class={`social__link social__link-${index+1}`} target="_blank">
         <iconify-icon
           class={`social__icon `}
           icon={data.icon}
@@ -14,7 +16,17 @@ const {socialIcons } = await getData()
           height="25"
         />
         <span class="social__tooltip">{data.name}</span>
-      </a>
+      </a>)
+      :
+      (<a href={data.link} class="social__link" target="_blank">
+        <iconify-icon
+          class={`social__icon `}
+          icon={data.icon}
+          width="25"
+          height="25"
+        />
+        <span class="social__tooltip">{data.name}</span>
+      </a>)
     ))
   }
 </div>

@@ -8,6 +8,7 @@ import DividerTop from "@src/components/atoms/DividerTop/DividerTop.astro";
 import Skills from "@src/components/organisms/Skills/Skills.astro";
 import Portfolio from "@src/components/organisms/Portfolio/Portfolio.astro";
 import Social from "@src/components/organisms/Social/Social.astro";
+import Footer from "@molecules/Footer/Footer.astro";
 import { getData } from "@src/services/data";
 import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
 const { user, skills, tools, socialIcons } = await getData();
@@ -30,4 +31,5 @@ const { user, skills, tools, socialIcons } = await getData();
   <Portfolio />
   <DividerBottom fill="shape-fill-3" />
   <Social />
+  <Footer/>
 </Layout>
