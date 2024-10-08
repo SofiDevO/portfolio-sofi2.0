@@ -1,4 +1,5 @@
 import { getData } from "@src/services/data"
+export const prerender = true;
 
 const skillsData = await getData( "skills",  true);
 
