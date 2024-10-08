@@ -143,7 +143,7 @@ export const formValidation = () => {
     }
 
     // Validar longitud máxima para el campo de email
-    if (field === "email" && fieldValue.length > 15) {
+    if (field === "email" && fieldValue.length > 30) {
       errorMessage = errorMsg.emailMaxLength(field);
       errorElement.textContent = errorMessage;
       inputElement.classList.toggle("input-error", !!errorMessage);
