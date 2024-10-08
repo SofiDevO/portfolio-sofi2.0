@@ -56,6 +56,9 @@
     font-size: 4rem;
   }
 }
+.skill{
+  animation-play-state: paused;
+}
 
 .skill-0 {
   top: -13%;
@@ -65,7 +68,7 @@
   transform: translateX(-1600px) scale(6.2);
 
   @include respond-to("medium") {
-    top: -6%;
+    top: -5%;
     right: 38%;
   }
 }
@@ -76,7 +79,7 @@
     floating 5s ease-in-out 1.5s infinite;
   transform: translateX(-1600px) scale(6.2);
   @include respond-to("medium") {
-    top: 13%;
+    top: 10%;
     left: 74%;
   }
 }

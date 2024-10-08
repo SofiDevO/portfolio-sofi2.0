@@ -1,5 +1,6 @@
 ---
-const { data } = Astro.props
+const { data } = Astro.props;
+export const prerender = true;
 ---
 
 <script  >
@@ -17,7 +18,7 @@ const { data } = Astro.props
                 alt="Profile Picture"
                 />
   </button>
-  <div class="hero__skills">
+  <div class="hero__skills ">
       <!-- Iconos rendered by a template string -->
     </div>
 </div>

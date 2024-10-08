@@ -17,7 +17,7 @@ const inicialSkills = shuffle(skillsData).slice(0, 7);
 skillIcons.innerHTML = inicialSkills
   .map(
     (skill, index) => `
-        <div class="icon__container skill-${index}" >
+        <div class="icon__container skill skill-${index}" >
       <iconify-icon
         class="skills__icons "
         icon="${skill.icon}"
@@ -32,7 +32,7 @@ buttonShuffle.addEventListener("click", () => {
     .map(
       (skill, index) => `
 
-        <div class="icon__container skill-${index}">
+        <div class="icon__container skill skill-${index}">
       <iconify-icon
         class="skills__icons "
         icon="${skill.icon}"
