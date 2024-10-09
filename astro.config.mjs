@@ -8,6 +8,6 @@ import vercelServerless from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://itssofi.dev",
   integrations: [react()],
-  output: "server",
+  output: "hybrid",
   adapter: vercelServerless(),
 });
