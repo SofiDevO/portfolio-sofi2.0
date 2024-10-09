@@ -9,6 +9,8 @@ import { socialIconsData } from "@src/data/socialIconsData";
 import { userData } from "@src/data/userData";
 import { toolsData } from "@src/data/ToolsData";
 
+export const prerender = false;
+
 // Creamos un objeto 'dataTypes' que mapea los nombres de los tipos de datos a sus respectivos valores.
 // Este objeto permite acceder rápidamente a los datos según el tipo solicitado.
 const dataTypes = {
