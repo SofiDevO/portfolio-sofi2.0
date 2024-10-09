@@ -2,6 +2,7 @@
 // También importamos la función 'sendEmail', que se encargará de enviar el correo electrónico.
 import type { APIRoute } from "astro";
 import { sendEmail } from "@src/services/mailer";
+export const prerender = false;
 
 // Definimos un objeto 'ERROR' que contiene mensajes de error comunes.
 // Esto nos permite reutilizar mensajes de error en todo el código para una mejor organización.
