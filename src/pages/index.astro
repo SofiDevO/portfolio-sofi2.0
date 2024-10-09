@@ -11,7 +11,6 @@ import Social from "@src/components/organisms/Social/Social.astro";
 import Footer from "@molecules/Footer/Footer.astro";
 import { getData } from "@src/services/data";
 import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
-export const prerender = true;
 const { user, skills, tools, socialIcons } = await getData();
 ---
 
