@@ -1,79 +1,80 @@
 ---
-import { fetchYouTubeVideos } from "@src/services/youtubeLatestVid";
-import { YouTube } from "astro-embed";
-
+import { fetchYouTubeVideos } from '@src/services/youtubeLatestVid';
 const channelId = "UC36_js-krsAHAEAWpEDhHtw";
 const videoData = await fetchYouTubeVideos(channelId);
-const { thumbnail, guid } = videoData[0];
-const videoId = guid.replace("yt:video:", "");
+const { thumbnail, link } = videoData[0];
 ---
 
 <script>
-  import { loadVideo } from "@controllers/VideoModal.controller";
-  loadVideo();
+  import {loadVideo} from "@controllers/VideoModal.controller";
 </script>
 
-<section class="youtube__modal__box">
-  <div class="modal__close__button"></div>
+<dialog class="youtube__modal__box">
+  <iconify-icon
+    class="modal__close__button"
+    icon="ant-design:close-circle-twotone"
+    width="50"
+    height="50"
+    style="color: #00c8f0"></iconify-icon>
   <div class="modal__container">
-    <YouTube
-      id={videoId}
+    <iframe
+      id="ytchannel"
       class="latestVideoEmbed"
-      poster={thumbnail}
-      title="My Latest Youtube video"
-    />
+      data-link={link}
+      data-thumbnail={thumbnail}
+      width="100%"
+      height="100%"
+      frameborder="0"
+      allowfullscreen
+      id="ytchannel"
+    >
+    </iframe>
   </div>
-</section>
-
-<style is:global>
-  lite-youtube {
-    min-width: 100%;
-    height: 100%;
-  }
-</style>
+</dialog>
 
 <style lang="scss">
   .youtube__modal__box {
     position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1200;
+    max-width: 1200px;
+    max-height: 780px;
+    background-color: #000000df;
+    z-index: 1000;
+    backdrop-filter: blur(21px);
+    @media screen and (max-width: 768px) {
+      width: 100vw;
+      height: 100dvh;
+    }
   }
-
+  .latestVideoEmbed {
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: 768px) {
+      height: 25%;
+    }
+  }
   .modal__close__button {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.699);
-  }
-
-  .modal__container {
     position: absolute;
-    width: 95%;
-    max-width: 900px;
-    height: 550px;
-    overflow: hidden;
-    border-radius: 12px;
-    border: solid 2px #1d536e;
-  }
-
-  @media (max-width: 900px) {
-    .modal__container {
-      height: 500px;
+    top: -1px;
+    right: 50%;
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    color: #00bbf5;
+    &:hover {
+      color: #ff0000;
+      transform: scale(.95);
     }
   }
-  @media (max-width: 600px) {
-    .modal__container {
-      height: 400px;
-    }
-  }
-  @media (max-width: 400px) {
-    .modal__container {
-      height: 350px;
-    }
+  .modal__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
   }
 </style>
