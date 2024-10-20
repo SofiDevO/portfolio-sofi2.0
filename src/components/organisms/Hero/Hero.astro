@@ -9,7 +9,7 @@ const { data } = Astro.props
 
 
 <section class="hero">
-  <BackgroundIconsFloat/>
+  <BackgroundIconsFloat />
   <div class="hero__container">
     <div class="hero__content">
       <h1 class="hero__title">Hi! I'm {data.name}<span class="span__blink">{data.lastName}</span></h1>
@@ -17,9 +17,9 @@ const { data } = Astro.props
         <p class="hero__slogan">≥{data.sloganHero1}</p>
       </div>
       <div class="container__icons">
-        <SocialIcons/>
+        <SocialIcons />
       </div>
     </div>
-    <ProfilePicture data={data.profilePicture}/>
+    <ProfilePicture data={data.profilePicture} />
   </div>
 </section>
