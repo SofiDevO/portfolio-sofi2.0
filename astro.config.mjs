@@ -10,4 +10,7 @@ export default defineConfig({
   integrations: [react()],
   output: "server",
   adapter: vercelServerless(),
+  experimental: {
+    serverIslands: true,
+  },
 });
