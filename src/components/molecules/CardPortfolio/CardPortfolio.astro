@@ -1,12 +1,12 @@
 ---
-const { titulo, imgSrc, demoURL, repoURL, descripcion, skills } = Astro.props;
+const { title, imgSrc, demoURL, repoURL, description, skills } = Astro.props;
 ---
 
 <article class="card">
   <div class="card__cara--A">
     <img
       class="card__img"
-      alt={`Imagen de portada de ${titulo}`}
+      alt={`Imagen de portada de ${title}`}
       src={imgSrc}
     />
     <div class="card__cara--B">
@@ -17,8 +17,8 @@ const { titulo, imgSrc, demoURL, repoURL, descripcion, skills } = Astro.props;
           ))
         }
       </div>
-      <h3 class="card__title">{titulo}</h3>
-      <p class="card__description" >{descripcion}</p>
+      <h3 class="card__title">{title}</h3>
+      <p class="card__description" >{description}</p>
       <div class="card__links">
         <a href={demoURL}>ver Demo <iconify-icon icon="quill:link-out" width="15" height="15"  style="color: aqua"></iconify-icon></a>
         <a href={repoURL}>ver Repo <iconify-icon icon="quill:link-out" width="15" height="15"  style="color: aqua"></iconify-icon></a>

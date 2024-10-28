@@ -10,11 +10,11 @@ export const prerender = true;
     {skillsIconsMapped.slice(0,6).map((data) =>(
 
     <CardPortfolio
-    titulo={data.titulo}
+    title={data.title}
+    description={data.description}
     imgSrc={data.imgSrc}
     demoURL={data.demoURL}
     repoURL={data.repoURL}
-    descripcion={data.descripcion}
     skills={data.skills}
     />
     ))
