@@ -14,9 +14,11 @@ import ToastNotification from "@src/components/atoms/ToastNotification/ToastNoti
 const { user, skills, tools, socialIcons } = await getData();
 ---
 
-<script>
+<script >
   import ToastNotification from "@src/controllers/toastAlerts.controller";
-  ToastNotification("This site is under construction 🚧🏗️", "info");
+  setTimeout(() => {
+    ToastNotification("This site is under construction 🚧🏗️", "info");
+  }, 4000);
 </script>
 <Layout>
   <ToastNotification />
