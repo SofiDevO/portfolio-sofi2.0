@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/blog",
+        "destination": "/404",
+        "statusCode": 404
+      }
+    ]
+  }
+  
