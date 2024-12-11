@@ -1,23 +1,48 @@
 ---
+import Title from "@src/components/atoms/Title/Title";
 import CardPortfolio from "../../molecules/CardPortfolio/CardPortfolio.astro";
-import { skillsIconsMapped} from "@src/data/portfolioData";
-export const prerender = true;
+
+import { portfolioCardsData } from "@src/services/getPortfolioCards";
+const data = await portfolioCardsData();
+
+const mainData = data.proyectosPortafolio.edges.map((item) => {
+  //Separar Iconos de su valor para obtener atributo icon de iconify
+  const skillicons = item.node.proyectoPortafolio.skillicons.map((icon) => {
+    const parts = icon.split(":");
+    return parts.length > 1 ? parts.slice(1).join(":").trim() : icon.trim();
+  });
+
+  return {
+    title: item.node.title,
+    description: item.node.proyectoPortafolio.description,
+    imgSrc: item.node.proyectoPortafolio.imgsrc_url.node.link,
+    demoURL: item.node.proyectoPortafolio.demourl,
+    repoURL: item.node.proyectoPortafolio.repoUrl,
+    skills: item.node.proyectoPortafolio.skills,
+    skillicons,
+  };
+});
+
+const { cardsLength = 6 } = Astro.props;
 ---
 
 <section class="portfolio" id="portfolio">
-  <h2></h2>
+  <Title titleDesc="Portfolio" clase="title-dark" />
   <div class="card__section">
-    {skillsIconsMapped.slice(0,6).map((data) =>(
-
-    <CardPortfolio
-    title={data.title}
-    description={data.description}
-    imgSrc={data.imgSrc}
-    demoURL={data.demoURL}
-    repoURL={data.repoURL}
-    skills={data.skills}
-    />
-    ))
-}
+    {
+      mainData
+        .slice(0, cardsLength)
+        .map((data) => (
+          <CardPortfolio
+            title={data.title}
+            description={data.description}
+            imgSrc={data.imgSrc}
+            demoURL={data.demoURL}
+            repoURL={data.repoURL}
+            skills={data.skills}
+            skillIcon={data.skillicons}
+          />
+        ))
+    }
   </div>
 </section>
