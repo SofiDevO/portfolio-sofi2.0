@@ -1,7 +1,7 @@
 import { wpquery } from "@src/services/wordpress";
-export const portfolioCardsData =
-     await wpquery({
-      query: `
+
+export const portfolioCardsData = await wpquery({
+  query: `
       query gePortfolioCards {
         proyectosPortafolio {
           edges {
@@ -22,6 +22,5 @@ export const portfolioCardsData =
           }
         }
       }
-    `,
-    });
-
+  `,
+});

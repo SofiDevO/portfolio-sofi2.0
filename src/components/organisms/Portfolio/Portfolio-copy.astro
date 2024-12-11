@@ -1,33 +1,30 @@
 ---
 import Title from "@src/components/atoms/Title/Title";
 import CardPortfolio from "../../molecules/CardPortfolio/CardPortfolio.astro";
-import { skillsIconsMapped } from "@src/data/portfolioData";
+
 
 import { portfolioCardsData as data } from "@src/services/getPortfolioCards";
 
 const mainData = data.proyectosPortafolio.edges.map((item) => {
-  // Procesar skills
-  const skills = item.node.proyectoPortafolio.skills.map((skill) => {
-    return skill.split(': ')[1].replace(/"/g, ''); // Extrae solo el valor después de ": " y remueve comillas
-  });
-
-  // Procesar skillicons
+  //Separar Iconos de su valor para obtener atributo icon de iconify
   const skillicons = item.node.proyectoPortafolio.skillicons.map((icon) => {
-    return icon.split(': ')[1].replace(/"/g, '');
+    const parts = icon.split(':');
+    return parts.length > 1 ? parts.slice(1).join(':').trim() : icon.trim();
   });
 
   return {
     title: item.node.title,
     description: item.node.proyectoPortafolio.description,
     imgSrc: item.node.proyectoPortafolio.imgsrc_url.node.link,
-    demoURL: item.node.uri,
-    repoURL: item.node.uri,
-    skills,
-    skillicons,
+    demoURL: item.node.proyectoPortafolio.demourl,
+    repoURL: item.node.proyectoPortafolio.repoUrl,
+    skills: item.node.proyectoPortafolio.skills,
+    skillicons
   };
 });
 
 console.log("🦝", mainData);
+
 ---
 <section class="portfolio" id="portfolio">
   <Title titleDesc="Portfolio" clase="title-dark" />
@@ -40,7 +37,7 @@ console.log("🦝", mainData);
         demoURL={data.demoURL}
         repoURL={data.repoURL}
         skills={data.skills}
-        skillIcon={data.skillicons} // Asegúrate de que `CardPortfolio` maneje un array de iconos si es necesario
+        skillIcon={data.skillicons} 
       />
     ))}
   </div>
