@@ -1,4 +1,7 @@
+
 import ToastNotification from "@src/controllers/toastAlerts.controller";
+import { words } from "@src/data/words";
+
 
 const loader = document.querySelector(".loader");
 
@@ -8,7 +11,7 @@ let ms300 = "Does not meet the required format 🤡";
 let ms400 = "You must complete all fields 🙄";
 let ms500 = "You already used this email 😹🫵🏻";
 let ms600 = "This email contains forbidden words";
-let ms700 = "The message contains forbidden words";
+let ms700 = "No te quieras hacer el Piola 😎";
 let ms900 = "The name cannot contain numbers, signs, or hyphens";
 
 
@@ -36,7 +39,7 @@ export const formValidation = () => {
   }
 
   // Palabras prohibidas
-  const forbiddenWords = ["test", "falso", "prueba", "correo"];
+  const forbiddenWords = words;
 
   // Validar si el texto contiene palabras prohibidas
   function containsForbiddenWords(text) {

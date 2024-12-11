@@ -1,5 +1,5 @@
 ---
-const { title, imgSrc, demoURL, repoURL, description, skills } = Astro.props;
+const { title, imgSrc, demoURL, repoURL, description, skills,skillIcon } = Astro.props;
 ---
 
 <article class="card">
@@ -12,8 +12,8 @@ const { title, imgSrc, demoURL, repoURL, description, skills } = Astro.props;
     <div class="card__cara--B">
       <div class="thecnology">
         {
-          skills.map((skill) => (
-            <iconify-icon icon={skill} width="20" height="20" />
+          skillIcon.map((skill) => (
+            <iconify-icon icon={skill} width="20" heigIcont="20" />
           ))
         }
       </div>

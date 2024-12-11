@@ -1,7 +1,6 @@
 #portfolio {
   display: grid;
   place-items: center;
-
   width: 100%;
 }
 
@@ -10,7 +9,7 @@
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   overflow-x: hidden;
   gap: 3rem;
-  padding-block: 20rem;
+  padding-block: 10rem;
   writing-mode: horizontal-tb;
   place-content: center;
   align-content: center;

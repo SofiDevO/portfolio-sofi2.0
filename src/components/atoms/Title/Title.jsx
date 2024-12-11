@@ -1,6 +1,3 @@
-
-
-
 const Title = ({titleDesc, clase}) => {
   return (
         <h2 className={`title ${clase}`}>{titleDesc}</h2>

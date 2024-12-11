@@ -11,7 +11,8 @@ import Social from "@src/components/organisms/Social/Social.astro";
 import Footer from "@molecules/Footer/Footer.astro";
 import { getData } from "@src/services/data";
 import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
-const { user, skills, tools, socialIcons } = await getData();
+import PortfolioCopy from "@src/components/organisms/Portfolio/Portfolio-copy.astro";
+const { user, skills, tools } = await getData();
 ---
 
 <script >
@@ -23,14 +24,15 @@ const { user, skills, tools, socialIcons } = await getData();
 <Layout>
   <ToastNotification />
   <BackgroundGradient>
-    <Hero data={user} socialIcons={socialIcons} />
+    <Hero data={user} />
   </BackgroundGradient>
   <DividerTop />
   <About data={user} />
   <DividerBottom fill="shape-fill-3" />
   <Skills data={user} , skills={skills} tools={tools} />
   <DividerTop fill="shape-fill-purple " />
-  <Portfolio />
+  <!-- <Portfolio /> -->
+  <PortfolioCopy />
   <DividerBottom fill="shape-fill-3" />
   <Social />
   <Footer/>
