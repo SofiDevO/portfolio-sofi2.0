@@ -1,1 +1,1 @@
-export const words = ["test", "falso", "prueba", "correo", "nick"];
+export const words = ["test", "falso", "prueba", "correo", "nick", "puta","dayanita"];
