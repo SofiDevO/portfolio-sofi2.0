@@ -83,7 +83,7 @@
   display: flex;
   justify-content: flex-end;
   padding: 0.6rem 2rem;
-  transform: translate(20px, -33px);
+  transform: translate(20px, -37px);
   background: #1400302b;
   width: fit-content;
   align-self: self-end;
@@ -95,6 +95,25 @@
 }
 .card:hover .thecnology {
   transform: translate(20px, 0px);
+}
+.skill-item{
+  position: relative;
+  .skill__tooltip{
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: -200%;
+    background: #1c004d;
+    color: v.$ufo-green;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    z-index: 100;
+    font-size: 1.5rem;
+    z-index: 400;
+  }
+  &:hover .skill__tooltip{
+    display: block;
+  }
 }
 .card__links {
   @include centerFlex(space-between);

@@ -1,12 +1,22 @@
 .footer{
     @include centerFlex(space-between);
-    padding: 2rem ;
+    padding: 3rem ;
     background: v.$mainColor;
     min-height: 15dvh;
     &__list{
         display: flex;
         flex-direction: column;
         gap:1rem;
+    }
+    &__link{
+        color: v.$ufo-green;
+        &:hover{
+            color: v.$secundaryColor;
+        }
+    }
 
+    @media screen and (max-width: 728px) {
+        flex-direction: column;
+        gap: 2rem;
     }
 }

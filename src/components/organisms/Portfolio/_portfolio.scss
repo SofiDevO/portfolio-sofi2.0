@@ -2,6 +2,13 @@
   display: grid;
   place-items: center;
   width: 100%;
+  padding-block: 15rem;
+  writing-mode: horizontal-tb;
+  max-width: 1200px;
+  margin: 0 auto;;
+}
+.portfolio__title{
+  margin-bottom:5rem ;
 }
 
 .card__section {
@@ -9,13 +16,9 @@
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   overflow-x: hidden;
   gap: 3rem;
-  padding-block: 10rem;
-  writing-mode: horizontal-tb;
   place-content: center;
   align-content: center;
-  max-width: 1140px;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem;
   width: 100%;
   @include respond-to("small") {
     grid-template-columns: 1fr;

@@ -1,28 +1,30 @@
 ---
-const { title, imgSrc, demoURL, repoURL, description, skills,skillIcon } = Astro.props;
+const { title, imgSrc, demoURL, repoURL, description, skills, skillIcon } = Astro.props;
 ---
-
 <article class="card">
   <div class="card__cara--A">
-    <img
-      class="card__img"
-      alt={`Imagen de portada de ${title}`}
-      src={imgSrc}
-    />
-    <div class="card__cara--B">
-      <div class="thecnology">
-        {
-          skillIcon.map((skill) => (
-            <iconify-icon icon={skill} width="20" heigIcont="20" />
-          ))
-        }
-      </div>
-      <h3 class="card__title">{title}</h3>
-      <p class="card__description" >{description}</p>
-      <div class="card__links">
-        <a href={demoURL} target="_blank" rel="noopener noreferrer nofollow ">ver Demo <iconify-icon icon="quill:link-out" width="15" height="15"  style="color: aqua"></iconify-icon></a>
-        <a href={repoURL} target="_blank" rel="noopener noreferrer nofollow ">ver Repo <iconify-icon icon="quill:link-out" width="15" height="15"  style="color: aqua"></iconify-icon></a>
-      </div>
+    <img class="card__img" alt={`Imagen de portada de ${title}`} src={imgSrc} />
+  </div>
+  <div class="card__cara--B">
+    <div class="thecnology">
+      {skillIcon.map((icon, index) => (
+        <div class="skill-item">
+          <iconify-icon icon={icon} width="20" height="20"></iconify-icon>
+          <span class="skill__tooltip">{skills[index]}</span>
+        </div>
+      ))}
+    </div>
+    <h3 class="card__title">{title}</h3>
+    <p class="card__description">{description}</p>
+    <div class="card__links">
+      <a href={demoURL} target="_blank" rel="noopener noreferrer nofollow">
+        Ver Demo 
+        <iconify-icon icon="quill:link-out" width="15" height="15" style="color: aqua"></iconify-icon>
+      </a>
+      <a href={repoURL} target="_blank" rel="noopener noreferrer nofollow">
+        Ver Repo 
+        <iconify-icon icon="quill:link-out" width="15" height="15" style="color: aqua"></iconify-icon>
+      </a>
     </div>
   </div>
 </article>

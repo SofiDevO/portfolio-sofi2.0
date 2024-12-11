@@ -10,8 +10,8 @@ let ms200 = "The message was sent successfully 🚀";
 let ms300 = "Does not meet the required format 🤡";
 let ms400 = "You must complete all fields 🙄";
 let ms500 = "You already used this email 😹🫵🏻";
-let ms600 = "This email contains forbidden words";
-let ms700 = "No te quieras hacer el Piola 😎";
+let ms600 = "No te quieras hacer el Piola 😎";
+let ms700 = "Messasage cannot be sent ";
 let ms900 = "The name cannot contain numbers, signs, or hyphens";
 
 

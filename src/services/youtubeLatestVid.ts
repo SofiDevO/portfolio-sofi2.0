@@ -1,7 +1,7 @@
 export const fetchYouTubeVideos = async (channelId) => {
   const API_key = `${import.meta.env.YT_API}`;
   
-console.log(API_key)  
+
 
   const channelURL = encodeURIComponent(
     `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
