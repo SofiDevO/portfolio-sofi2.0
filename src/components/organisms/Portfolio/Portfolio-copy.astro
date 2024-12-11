@@ -22,14 +22,13 @@ const mainData = data.proyectosPortafolio.edges.map((item) => {
     skillicons
   };
 });
-
-console.log("🦝", mainData);
+const {cardsLength=6} = Astro.props; 
 
 ---
 <section class="portfolio" id="portfolio">
   <Title titleDesc="Portfolio" clase="title-dark" />
   <div class="card__section">
-    {mainData.slice(0, 6).map((data) => (
+    {mainData.slice(0,cardsLength).map((data) => (
       <CardPortfolio
         title={data.title}
         description={data.description}

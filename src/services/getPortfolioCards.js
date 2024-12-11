@@ -17,6 +17,8 @@ export const portfolioCardsData = await wpquery({
                   }
                 }
                 description
+                demourl
+                repoUrl
               }
             }
           }
