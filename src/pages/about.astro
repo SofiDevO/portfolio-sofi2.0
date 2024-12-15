@@ -1,7 +1,28 @@
 ---
 import Layout from "@src/layouts/Layout.astro";
+import { Content as Documentation } from "../../README.md";
 ---
 
 <Layout>
-  <h1>about</h1>
+  <main>
+    <Documentation />
+  </main>
 </Layout>
+
+<style lang="scss" is:global>
+  main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    padding-top:7rem ;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  hr{
+    border: none;
+  }
+  h1{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+</style>
