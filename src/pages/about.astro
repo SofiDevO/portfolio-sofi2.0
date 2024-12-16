@@ -1,15 +1,29 @@
 ---
+import BaseHead from "@components/BaseHead.astro";
 import Layout from "@src/layouts/Layout.astro";
-import { Content as Documentation } from "../../README.md";
+import { Content as Documentation } from "@data/documentation.md";
+import Title from "@atoms/Title/Title";
+import {contributorsCardsData} from '@services/getContributorsCards';
+import CardContributor from "@src/components/atoms/CardContributor/CardContributor.astro";
 ---
 
 <Layout>
   <main>
-    <Documentation />
+    <!-- <Documentation /> -->
+
+     <section class="contributtors">
+       <Title titleDesc="Our Top Contributtors" clase="title-dark about__title" />
+      <div class="contributtors__container">
+        <CardContributor/>
+      </div>
+     </section>
   </main>
 </Layout>
 
 <style lang="scss" is:global>
+  .about__title{
+    text-align: center;
+  }
   main {
     width: 100%;
     max-width: 1200px;
