@@ -42,7 +42,7 @@ export const contributorsCardsData = async () => {
     return data; 
   } catch (e) {
     console.error("Error fetching portfolio data:", e);
-    return { proyectosPortafolio: { edges: [] } };
+    return { contributorsCardsData: { edges: [] } };
   }
 };
 

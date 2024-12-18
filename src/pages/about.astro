@@ -3,8 +3,22 @@ import BaseHead from "@components/BaseHead.astro";
 import Layout from "@src/layouts/Layout.astro";
 import { Content as Documentation } from "@data/documentation.md";
 import Title from "@atoms/Title/Title";
-import {contributorsCardsData} from '@services/getContributorsCards';
+import {contributorsCardsData as data} from '@services/getContributorsCards';
 import CardContributor from "@src/components/atoms/CardContributor/CardContributor.astro";
+
+const {contributors} = await data();
+const labels = contributors.edges.map((item) => ({
+  uri: item.node.uri,
+  dataContributors: item.node.contribuidores
+}));
+
+
+console.log ("labels 😎", labels[2]);
+console.log ("cv 🧬", labels[2].dataContributors.cv.node.link);
+console.log ("profilepic 🦝", labels[2].dataContributors.profilepic.node.link);
+console.log ("banner 💖", labels[2].dataContributors.banner.node.link);
+console.log("URI 😛",labels[2].uri);
+
 ---
 
 <Layout>
@@ -14,7 +28,7 @@ import CardContributor from "@src/components/atoms/CardContributor/CardContribut
      <section class="contributtors">
        <Title titleDesc="Our Top Contributtors" clase="title-dark about__title" />
       <div class="contributtors__container">
-        <CardContributor/>
+        <CardContributor />
       </div>
      </section>
   </main>
