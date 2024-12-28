@@ -1,6 +1,4 @@
-const baseURL = import.meta.env.WPGRAPHQL_URL;
-// const baseURL ="https://blog-sofi.api-wordpress.tech/graphql";
-
+   const baseURL = import.meta.env.WPGRAPHQL_URL;
 
 interface WPGraphQLParams {
   query: string;

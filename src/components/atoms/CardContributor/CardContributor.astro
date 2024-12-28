@@ -1,5 +1,4 @@
 ---
-
 const {
   name = "SofiDev",
   rol = "Frontend Developer,UX/UI,Backend Developer",
@@ -8,17 +7,25 @@ const {
   gitHub = "https://github.com/SofiDevO",
   linkedin = "https://www.linkedin.com/in/sofidev/",
   youTube = "https://www.youtube.com/@SofiDev",
+  contributorDetail
 } = Astro.props;
 ---
 
 <article class="card__contributor">
   <div
     class="card__contributor__banner"
-    style={`background-image: url(${banner})`}
+    style={`background-image:url(${banner})`}
   >
   </div>
-  <img class="card__contributor__profile__pic" src={profilepic} alt={name} width="200" />
-  <h2 class="card__contributor__name">{name}</h2>
+  <img
+    class="card__contributor__profile__pic"
+    src={profilepic}
+    alt={name}
+    width="200"
+  />
+  <a href={contributorDetail}>
+    <h2 class="card__contributor__name">{name}</h2>
+  </a>
   <div class="card__contributor__container">
     <p class="card__contributor__rol">{rol}</p>
     <div class="social__container">
@@ -45,7 +52,8 @@ const {
           class="social__icon"
           icon="entypo-social:youtube-with-circle"
           width="25"
-          height="25">
+          height="25"
+        >
         </iconify-icon>
       </a>
     </div>

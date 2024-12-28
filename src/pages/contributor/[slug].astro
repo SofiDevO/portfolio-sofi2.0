@@ -1,0 +1,37 @@
+---
+import Layout from "@src/layouts/Layout.astro";
+const { slug } = Astro.params;
+import { contributorsCardsData } from "@services/getContributorsCards";
+
+// Obtiene los datos de los contribuidores
+const { contributors } = await contributorsCardsData();
+
+// Busca el contribuidor por URI
+const contributor = contributors.find((contributor) => contributor.uri.includes(slug));
+
+const contributorData = contributor
+  ? {
+      name: contributor.name || "Nombre no disponible",
+      email: contributor.email || "Correo no disponible",
+      github: contributor.github || "GitHub no disponible",
+      linkedin: contributor.linkedin || "LinkedIn no disponible",
+      rol: contributor.rol?.join(", ") || "Rol no disponible",
+      youtube: contributor.youtube || "YouTube no disponible",
+      profilepic: contributor.profilepic || "/default-profile-pic.png",
+      description: contributor.description || "Descripción no disponible",
+      banner: contributor.banner || "/default-banner.png",
+    }
+  : null;
+---
+
+<Layout>
+  {contributorData ? (
+    <>
+      <h1>{contributorData.name}</h1>
+      <img src={contributorData.profilepic} alt={`Foto de perfil de ${contributorData.name}`} />
+      <Fragment set:html={contributorData.description || ""}/>
+    </>
+  ) : (
+    <h2>Contribuidor no encontrado 🦝</h2>
+  )}
+</Layout>

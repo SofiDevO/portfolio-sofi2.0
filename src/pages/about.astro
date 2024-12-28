@@ -1,55 +1,52 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
 import Layout from "@src/layouts/Layout.astro";
-import { Content as Documentation } from "@data/documentation.md";
 import Title from "@atoms/Title/Title";
-import {contributorsCardsData as data} from '@services/getContributorsCards';
 import CardContributor from "@src/components/atoms/CardContributor/CardContributor.astro";
+import { contributorsCardsData } from "@services/getContributorsCards";
 
-const {contributors} = await data();
-const labels = contributors.edges.map((item) => ({
-  uri: item.node.uri,
-  dataContributors: item.node.contribuidores
-}));
-
-
-console.log ("labels 😎", labels[2]);
-console.log ("cv 🧬", labels[2].dataContributors.cv.node.link);
-console.log ("profilepic 🦝", labels[2].dataContributors.profilepic.node.link);
-console.log ("banner 💖", labels[2].dataContributors.banner.node.link);
-console.log("URI 😛",labels[2].uri);
+const { contributors } = await contributorsCardsData();
 
 ---
 
 <Layout>
   <main>
-    <!-- <Documentation /> -->
-
-     <section class="contributtors">
-       <Title titleDesc="Our Top Contributtors" clase="title-dark about__title" />
-      <div class="contributtors__container">
-        <CardContributor />
+    <section class="contributors">
+      <Title titleDesc="Our Top Contributors" clase="title-dark about__title" />
+      <div class="contributors__container">
+        {contributors.map((contributor) => (
+          <CardContributor
+            name={contributor.name}
+            rol={contributor.rol}
+            profilepic={contributor.profilepic}
+            banner={contributor.banner}
+            gitHub={contributor.github}
+            linkedin={contributor.linkedin}
+            youTube={contributor.youtube}
+            contributorDetail={contributor.uri}
+          />
+        ))}
       </div>
-     </section>
+    </section>
   </main>
 </Layout>
 
 <style lang="scss" is:global>
-  .about__title{
+  .about__title {
     text-align: center;
   }
   main {
     width: 100%;
     max-width: 1200px;
     display: flex;
-    padding-top:7rem ;
+    padding-top: 7rem;
     flex-direction: column;
     margin: 0 auto;
   }
-  hr{
+  hr {
     border: none;
   }
-  h1{
+  h1 {
     font-size: 4rem;
     margin-bottom: 2rem;
   }
