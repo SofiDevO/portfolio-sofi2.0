@@ -2,10 +2,11 @@
 import BaseHead from "@components/BaseHead.astro";
 import Layout from "@src/layouts/Layout.astro";
 import Title from "@atoms/Title/Title";
-import CardContributor from "@src/components/atoms/CardContributor/CardContributor.astro";
+import CardContributor from "@molecules/CardContributor/CardContributor.astro";
 import { contributorsCardsData } from "@services/getContributorsCards";
 
 const { contributors } = await contributorsCardsData();
+console.log(contributors);
 
 ---
 
@@ -34,6 +35,7 @@ const { contributors } = await contributorsCardsData();
 <style lang="scss" is:global>
   .about__title {
     text-align: center;
+    margin-bottom: 4rem;
   }
   main {
     width: 100%;

@@ -27,7 +27,7 @@
 @import "@layouts/BackgroundGradient/background-gradient";
 @import "@molecules/SocialCard/social-card";
 @import "@organisms/Social/social";
-@import "@atoms/CardContributor/card-contributtor"; 
+@import "@molecules/CardContributor/card-contributtor"; 
 
 * {
    box-sizing: border-box;
@@ -60,8 +60,10 @@ html {
    text-decoration: none;
    font-size: 1.6rem;
    color: v.$secundaryColor;
- }
-p{
+  }
+  
+  p{
+  
   font-size: 1.6rem;
 }
  li {

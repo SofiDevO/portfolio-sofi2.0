@@ -1,7 +1,8 @@
-import { getData } from "@src/services/data"
+// import { getData } from "@src/services/data"
+// const skillsData = await getData( "skills",  true);
 export const prerender = true;
+import { skillsData } from "@src/data/skillsData";
 
-const skillsData = await getData( "skills",  true);
 
 /* Shuffle initial function */
 export const shuffle = (array) => {
@@ -22,7 +23,8 @@ skillIcons.innerHTML = inicialSkills
       <iconify-icon
         class="skills__icons "
         icon="${skill.icon}"
-      ></iconify-icon>
+      >
+      </iconify-icon>
       </div>
     `
   )

@@ -1,0 +1,82 @@
+.contributors__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 253px);
+  gap: 4.2rem;
+  place-content: center;
+  align-content: center;
+  padding: 0 1rem;
+  width: 100%;
+  justify-items: center;
+  @include respond-to("small") {
+    grid-template-columns: 1fr;
+    width: unset;
+  }
+}
+.card__contributor {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  border-radius: 12px;
+  min-height: 331px;
+  overflow: hidden;
+  background: rgba(44, 3, 92, 0.88);
+  box-shadow: 5px 4px 6.2px 1px rgba(185, 185, 185, 0.25) inset;
+  gap: 4rem;
+}
+.social__container--contributor {
+  margin-top: 0;
+}
+.card__contributor__container {
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.card__contributor__banner {
+  background-image: url(https://blog-sofi.api-wordpress.tech/contributor/rickytodev/photo-by-jplenio/);
+  background-size: cover;
+  width: 100%;
+  height: 101px;
+  background-position: center;
+  position: relative;
+}
+.card__contributor__profile__pic {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card__contributor__name {
+  text-align: center;
+  color: white;
+}
+
+.card__contributor__rol {
+  color: rgb(238, 238, 238);
+  text-wrap: balance;
+  line-height: 1.6;
+  text-align: center;
+  min-height: 5rem;
+  text-overflow: ellipsis;
+}
+
+.card__contributor__details{
+  background: black;
+  padding: .6rem 1rem;
+  border-radius: 9px;
+  color: v.$ufo-green;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  max-width: 8em;
+}
