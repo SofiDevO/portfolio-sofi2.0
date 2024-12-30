@@ -27,6 +27,7 @@
 @import "@layouts/BackgroundGradient/background-gradient";
 @import "@molecules/SocialCard/social-card";
 @import "@organisms/Social/social";
+@import "@molecules/CardContributor/card-contributtor"; 
 
 * {
    box-sizing: border-box;
@@ -59,13 +60,26 @@ html {
    text-decoration: none;
    font-size: 1.6rem;
    color: v.$secundaryColor;
- }
-p{
+  }
+  
+  p{
+  
   font-size: 1.6rem;
 }
  li {
    list-style: none;
  }
+ h2{
+  font-size: 3rem ;
+ }
+ h3{
+   font-size: 2rem;
+ }
+
+ h4, h5, h6{
+   font-size: 1.6rem;
+ }  
+
 
 
 .MuiTooltip-tooltip {

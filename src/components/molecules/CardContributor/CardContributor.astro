@@ -1,0 +1,68 @@
+---
+const {
+  name,
+  rol,
+  profilepic = "https://blog-sofi.api-wordpress.tech/contributor/sofidev/shophi/",
+  banner = "https://blog-sofi.api-wordpress.tech/contributor/sofidev/andrew-goudreau-squirtle4",
+  gitHub = "https://github.com/SofiDevO",
+  linkedin = "https://www.linkedin.com/in/sofidev/",
+  youTube = "https://www.youtube.com/@SofiDev",
+  contributorDetail,
+} = Astro.props;
+
+console.log(rol)
+const roles = rol.join(', ');
+//  const roles = rol.toLocaleString('es', ",  ");
+console.log(roles);
+
+---
+
+<article class="card__contributor">
+  <div
+    class="card__contributor__banner"
+    style={`background-image:url(${banner})`}
+  >
+    <img
+      class="card__contributor__profile__pic"
+      src={profilepic}
+      alt={name}
+      width="200"
+    />
+  </div>
+  <div class="card__contributor__container social__container--contributor">
+    <h2 class="card__contributor__name">{name}</h2>
+
+    <p class="card__contributor__rol">{roles}</p>
+
+    <div class="social__container">
+      <a href={gitHub} target="_blank" rel="noopener noreferrer">
+        <iconify-icon
+          class="social__icon"
+          icon="fa:github-alt"
+          width="25"
+          height="25"
+        >
+        </iconify-icon>
+      </a>
+      <a href={youTube} target="_blank" rel="noopener noreferrer">
+        <iconify-icon
+          class="social__icon"
+          icon="simple-icons:linkedin"
+          width="25"
+          height="25"
+        >
+        </iconify-icon>
+      </a>
+      <a href={youTube} target="_blank" rel="noopener noreferrer">
+        <iconify-icon
+          class="social__icon"
+          icon="entypo-social:youtube-with-circle"
+          width="25"
+          height="25"
+        >
+        </iconify-icon>
+      </a>
+    </div>
+    <a class="card__contributor__details" href={contributorDetail}> Know More </a>
+  </div>
+</article>

@@ -14,6 +14,7 @@
 		"@pages/*": ["src/pages/*"],
 		"@controllers/*": ["src/controllers/*"],
 		"@data/*": ["src/data/*"],
+		"@services/*": ["src/services/*"],
 		"@sass/*": ["src/sass/*"],
 		"@img/*": ["public/img/*"]
 	  },
