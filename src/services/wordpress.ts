@@ -1,15 +1,19 @@
-const baseURL = import.meta.env.WPGRAPHQL_URL;
+const baseURL = `${import.meta.env.WPGRAPHQL_URL}`;
+console.log(baseURL)
 
 interface WPGraphQLParams {
-  query: string;
+  query?: string;
   variables?: object;
+  headers?: object;
 }
 
-export async function wpquery({ query, variables = {} }: WPGraphQLParams) {
+export async function wpquery({ query, variables = {}, headers = {} }: WPGraphQLParams) {
+  
   const res = await fetch(baseURL, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
+      ...headers,
     },
     body: JSON.stringify({
       query,
@@ -17,7 +21,6 @@ export async function wpquery({ query, variables = {} }: WPGraphQLParams) {
     }),
   });
   if (!res.ok) {
-    console.log(res);
     return {};
   }
   const { data } = await res.json();

@@ -3,16 +3,16 @@ import BackgroundIconsFloat from "@src/components/atoms/BackgroundIconsFloat/Bac
 import ProfilePicture from "@src/components/atoms/ProfilePicture/ProfilePicture.astro";
 import SocialIcons from "@src/components/atoms/SocialIcons/SocialIcons.astro";
 export const prerender = true;
-const { data } = Astro.props;
-
+const { data } = Astro.props
 ---
 
+
+
 <section class="hero">
+  <BackgroundIconsFloat />
   <div class="hero__container">
     <div class="hero__content">
-      <h1 class="hero__title">
-        Hi! I'm {data.name}<span class="span__blink">{data.lastName}</span>
-      </h1>
+      <h1 class="hero__title">Hi! I'm {data.name}<span class="span__blink">{data.lastName}</span></h1>
       <div class="text__container">
         <p class="hero__slogan">≥{data.sloganHero1}</p>
       </div>
@@ -22,5 +22,4 @@ const { data } = Astro.props;
     </div>
     <ProfilePicture data={data.profilePicture} />
   </div>
-  <BackgroundIconsFloat />
 </section>
