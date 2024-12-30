@@ -21,7 +21,6 @@ const { user, skills, tools } = await getData();
   }, 4000);
 </script>
 <Layout>
-  <ToastNotification />
   <BackgroundGradient>
     <Hero data={user} />
   </BackgroundGradient>
@@ -35,4 +34,5 @@ const { user, skills, tools } = await getData();
   <DividerBottom fill="shape-fill-3" />
   <Social />
   <Footer />
+  <ToastNotification />
 </Layout>
