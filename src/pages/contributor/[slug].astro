@@ -1,7 +1,7 @@
 ---
-import Layout from "@src/layouts/Layout.astro";
 const { slug } = Astro.params;
-import { contributorsCardsData } from "@services/getContributorsCards";
+import Layout from "@layouts/Layout.astro";
+import { contributorsCardsData } from "@services/getContributorsCards" ;
 
 // Obtiene los datos de los contribuidores
 const { contributors } = await contributorsCardsData();
@@ -19,16 +19,22 @@ const contributorData = contributor
       youtube: contributor.youtube || "YouTube no disponible",
       profilepic: contributor.profilepic || "/default-profile-pic.png",
       description: contributor.description || "Descripción no disponible",
-      banner: contributor.banner || "/default-banner.png",
+      banner: contributor.banner || " Banner no disponible",
+      cv: contributor.cv || "CV no disponible",
     }
   : null;
+  console.log(contributorData?.cv)
 ---
 
 <Layout>
   {contributorData ? (
     <>
+      <section style={`background-image:url(${contributorData.banner})`}>
       <h1>{contributorData.name}</h1>
+
       <img src={contributorData.profilepic} alt={`Foto de perfil de ${contributorData.name}`} />
+      </section>
+
       <Fragment set:html={contributorData.description || ""}/>
     </>
   ) : (
