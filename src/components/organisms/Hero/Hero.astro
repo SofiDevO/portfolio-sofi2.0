@@ -9,6 +9,7 @@ const { data } = Astro.props
 
 
 <section class="hero">
+  <BackgroundIconsFloat />
   <div class="hero__container">
     <div class="hero__content">
       <h1 class="hero__title">Hi! I'm {data.name}<span class="span__blink">{data.lastName}</span></h1>
@@ -21,5 +22,4 @@ const { data } = Astro.props
     </div>
     <ProfilePicture data={data.profilePicture} />
   </div>
-  <BackgroundIconsFloat />
 </section>
