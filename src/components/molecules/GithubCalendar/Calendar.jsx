@@ -9,7 +9,8 @@ import YearButton from "@atoms/YearButton/YearButton";
 function Calendar() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [activeButton, setActiveButton] = useState(new Date().getFullYear());
-
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  console.log(currentYear);
   const handleYearButtonClick = (year) => {
     setSelectedYear(year);
     setActiveButton(year);
@@ -41,7 +42,7 @@ function Calendar() {
           />
         </div>
         <div className="year__buttons">
-          {[2024, 2023, 2022].map((year) => (
+          {[currentYear , currentYear -1, currentYear -2].map((year) => (
             <YearButton
               key={year}
               year={year}
