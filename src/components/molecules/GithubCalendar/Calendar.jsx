@@ -10,7 +10,7 @@ function Calendar() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [activeButton, setActiveButton] = useState(new Date().getFullYear());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  console.log(currentYear);
+  
   const handleYearButtonClick = (year) => {
     setSelectedYear(year);
     setActiveButton(year);

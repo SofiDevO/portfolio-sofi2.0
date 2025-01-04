@@ -1,17 +1,18 @@
-<div class="bg-icons" id="bg-icons">
-    <!-- Dynamically generated span elements will be added here -->
-</div>
-
 <script>
-    // Select the container where spans will be appended
-    const backgroundContainer = document.getElementById('bg-icons');
+  // Select the container where spans will be appended
+  const backgroundContainer = document.getElementById("bg-icons");
 
-    // Number of spans to be generated
-    const numSpans = 20;
+  // Number of spans to be generated
+  const numSpans = 20;
 
-    // Dynamically generate spans and append them to the container
-    for (let i = 0; i < numSpans; i++) {
-        const span = document.createElement('span');
-        backgroundContainer.appendChild(span);
-    }
+  // Dynamically generate spans and append them to the container
+  for (let i = 0; i < numSpans; i++) {
+    const span = document.createElement("span");
+    backgroundContainer.appendChild(span);
+  }
 </script>
+
+
+<div class="container__icons">
+  <div class="bg-icons" id="bg-icons"></div>
+</div>
