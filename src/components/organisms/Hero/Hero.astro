@@ -16,9 +16,7 @@ const { data } = Astro.props
       <div class="text__container">
         <p class="hero__slogan">≥{data.sloganHero1}</p>
       </div>
-      <div class="container__icons">
-        <SocialIcons />
-      </div>
+      <SocialIcons />
     </div>
     <ProfilePicture data={data.profilePicture} />
   </div>
