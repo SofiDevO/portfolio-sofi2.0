@@ -78,7 +78,7 @@ const skillIcons = {
   JavaScript: "skill-icons:javascript",
   React: "skill-icons:react-dark",
   Astro: "skill-icons:astro",
-  CSS: "skill-icons:css",
+  CSS: "vscode-icons:file-type-css",
   Sass: "skill-icons:sass",
   StyledComponents: "skill-icons:styledcomponents",
   Bootstrap: "devicon:bootstrap",
