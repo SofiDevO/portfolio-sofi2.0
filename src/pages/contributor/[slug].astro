@@ -1,13 +1,15 @@
 ---
 const { slug } = Astro.params;
 import Layout from "@layouts/Layout.astro";
-import { contributorsCardsData } from "@services/getContributorsCards" ;
-
+import { contributorsCardsData } from "@services/getContributorsCards";
+import Footer from "@molecules/Footer/Footer.astro";
 // Obtiene los datos de los contribuidores
 const { contributors } = await contributorsCardsData();
 
 // Busca el contribuidor por URI
-const contributor = contributors.find((contributor) => contributor.uri.includes(slug));
+const contributor = contributors.find((contributor) =>
+  contributor.uri.includes(slug)
+);
 
 const contributorData = contributor
   ? {
@@ -23,21 +25,76 @@ const contributorData = contributor
       cv: contributor.cv || "CV no disponible",
     }
   : null;
-  console.log(contributorData?.cv)
+console.log(contributorData?.github);
 ---
 
 <Layout>
-  {contributorData ? (
-    <>
-      <section style={`background-image:url(${contributorData.banner})`}>
-      <h1>{contributorData.name}</h1>
-
-      <img src={contributorData.profilepic} alt={`Foto de perfil de ${contributorData.name}`} />
+  {
+    contributorData ? (
+      <section
+        class="contributor"
+        style={` background-image:linear-gradient(rgb(0 0 0 / 85%), rgb(0 0 0 / 63%)), url(${contributorData.banner})`}
+      >
+      <div class="contributor__bg__blur">
+          <img
+            class="contributor__image"
+            src={contributorData.profilepic}
+            alt={`Foto de perfil de ${contributorData.name}`}
+          />
+          <article class="contributor__info">
+            <h1 class="contributor__name">{contributorData.name}</h1>
+            <h2 class="contributor__rol">{contributorData.rol}</h2>
+            <Fragment
+              class="contributor__description"
+              set:html={contributorData.description || ""}
+            />
+            <div class="social__container social__container--contributor">
+              <a
+                href={contributorData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <iconify-icon
+                  class="social__icon"
+                  icon="fa:github-alt"
+                  width="25"
+                  height="25"
+                />
+              </a>
+              <a
+                href={contributorData.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <iconify-icon
+                  class="social__icon"
+                  icon="simple-icons:linkedin"
+                  width="25"
+                  height="25"
+                />
+              </a>
+              <a
+                href={contributorData.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <iconify-icon
+                  class="social__icon"
+                  icon="entypo-social:youtube-with-circle"
+                  width="25"
+                  height="25"
+                />
+              </a>
+            </div>
+          </article>
+        </div>
       </section>
+    ) : (
+      <section class="contributor">
+        <h2>Contribuidor no encontrado 🦝</h2>
+      </section>
+    )
+  }
 
-      <Fragment set:html={contributorData.description || ""}/>
-    </>
-  ) : (
-    <h2>Contribuidor no encontrado 🦝</h2>
-  )}
+  <Footer />
 </Layout>

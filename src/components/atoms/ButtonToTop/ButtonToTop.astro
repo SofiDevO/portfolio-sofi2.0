@@ -9,12 +9,12 @@
 <script is:inline>
   const cajaToTop = document.querySelector(".to__top");
 
-  cajaToTop.addEventListener("click", () => {
+  cajaToTop.addEventListener("click", () => { 
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 1400) {
+    if (window.scrollY  > 1400) {
       cajaToTop.classList.add("show");
     } else {
       cajaToTop.classList.remove("show");
