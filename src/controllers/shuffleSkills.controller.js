@@ -1,8 +1,7 @@
 // import { getData } from "@src/services/data"
 // const skillsData = await getData( "skills",  true);
 // export const prerender = true;
- import { skillsData } from "@src/data/skillsData";
-
+import { skillsData } from "@src/data/skillsData";
 
 /* Shuffle initial function */
 export const shuffle = (array) => {
@@ -19,12 +18,9 @@ const inicialSkills = shuffle(skillsData).slice(0, 7);
 skillIcons.innerHTML = inicialSkills
   .map(
     (skill, index) => `
-        <div class="icon__container skill skill-${index}" >
+      <div class="icon__container skill skill-${index}" >
       <iconify-icon
-        class="skills__icons "
-        icon="${skill.icon}"
-      >
-      </iconify-icon>
+        class="skills__icons " icon="${skill.icon}" > </iconify-icon>
       </div>
     `
   )
@@ -36,10 +32,7 @@ buttonShuffle.addEventListener("click", () => {
       (skill, index) => `
 
         <div class="icon__container skill skill-${index}">
-      <iconify-icon
-        class="skills__icons "
-        icon="${skill.icon}"
-      ></iconify-icon>
+      <iconify-icon class="skills__icons " icon="${skill.icon}" ></iconify-icon>
       </div>
     `
     )
