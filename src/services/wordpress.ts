@@ -1,5 +1,4 @@
 const baseURL = import.meta.env.WPGRAPHQL_URL;
- /* const baseURL = "https://sofidev.top/patata"; */
 console.log(baseURL);
 interface WPGraphQLParams {
   query: string;
