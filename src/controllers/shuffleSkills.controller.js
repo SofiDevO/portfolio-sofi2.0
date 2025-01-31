@@ -1,7 +1,7 @@
 import { getData } from "@src/services/data";
 
 const skillsData = await getData("skills", true);
-export const prerender = false;
+/* export const prerender = false; */
 /* import { skillsData } from "@src/data/skillsData"; */
 
 /* Shuffle initial function */
