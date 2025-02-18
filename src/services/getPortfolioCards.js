@@ -4,7 +4,7 @@ export const portfolioCardsData = async () => {
   try {
     const data = await wpquery({
       query: `
-        query getPortfolioCards {
+        query gePortfolioCards {
           proyectosPortafolio {
             edges {
               node {
@@ -28,7 +28,7 @@ export const portfolioCardsData = async () => {
         }
       `,
     });
-    return data; 
+    return data;
   } catch (e) {
     console.error("Error fetching portfolio data:", e);
     return { proyectosPortafolio: { edges: [] } };

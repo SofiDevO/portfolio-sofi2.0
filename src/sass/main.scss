@@ -28,6 +28,7 @@
 @import "@molecules/SocialCard/social-card";
 @import "@organisms/Social/social";
 @import "@molecules/CardContributor/card-contributtor"; 
+@import "@pages/contributor/contributor";
 
 * {
    box-sizing: border-box;
@@ -69,17 +70,6 @@ html {
  li {
    list-style: none;
  }
- h2{
-  font-size: 3rem ;
- }
- h3{
-   font-size: 2rem;
- }
-
- h4, h5, h6{
-   font-size: 1.6rem;
- }  
-
 
 
 .MuiTooltip-tooltip {

@@ -12,5 +12,5 @@ export default defineConfig({
   adapter: vercelServerless(),
   experimental: {
     serverIslands: true,
-  }
+  },
 });

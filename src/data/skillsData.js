@@ -5,7 +5,7 @@ export const skillsData = [
   { name: "Next.js", icon: "logos:nextjs-icon" },
   { name: "Astro", icon: "skill-icons:astro" },
   { name: "Vue.js", icon: "skill-icons:vuejs-dark" },
-  { name: "CSS", icon: "skill-icons:css" },
+  { name: "CSS", icon: "vscode-icons:file-type-css" },
   { name: "Sass", icon: "skill-icons:sass" },
   { name: "Styled Components", icon: "skill-icons:styledcomponents" },
   { name: "Tailwind", icon: "skill-icons:tailwindcss-dark" },

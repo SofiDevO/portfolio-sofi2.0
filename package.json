@@ -26,7 +26,6 @@
     "dotenv": "16.4.5",
     "email-validator": "^2.0.4",
     "email-verifier": "^0.0.1",
-    "gitmoji-cli": "^9.5.0",
     "install": "^0.13.0",
     "nodemailer": "6.9.15",
     "npm": "^10.9.0",

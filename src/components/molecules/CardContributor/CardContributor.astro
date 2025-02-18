@@ -12,8 +12,7 @@ const {
 
 console.log(rol)
 const roles = rol.join(', ');
-//  const roles = rol.toLocaleString('es', ",  ");
-console.log(roles);
+
 
 ---
 
@@ -29,12 +28,12 @@ console.log(roles);
       width="200"
     />
   </div>
-  <div class="card__contributor__container social__container--contributor">
+  <div class="card__contributor__container ">
     <h2 class="card__contributor__name">{name}</h2>
 
     <p class="card__contributor__rol">{roles}</p>
 
-    <div class="social__container">
+    <div class="social__container social__container--contributor">
       <a href={gitHub} target="_blank" rel="noopener noreferrer">
         <iconify-icon
           class="social__icon"
@@ -44,7 +43,7 @@ console.log(roles);
         >
         </iconify-icon>
       </a>
-      <a href={youTube} target="_blank" rel="noopener noreferrer">
+      <a href={linkedin} target="_blank" rel="noopener noreferrer">
         <iconify-icon
           class="social__icon"
           icon="simple-icons:linkedin"
