@@ -27,9 +27,19 @@
 @import "@layouts/BackgroundGradient/background-gradient";
 @import "@molecules/SocialCard/social-card";
 @import "@organisms/Social/social";
-@import "@molecules/CardContributor/card-contributtor"; 
+@import "@molecules/CardContributor/card-contributtor";
 @import "@pages/contributor/contributor";
+:root {
+  --text-color:  rgb(12 12 12)
+  --secundary-color: #F1F1F1;
+  --black:rgb(12 12 12);
+  --white: #F1F1F1;
+}
 
+.dark{
+  --text-color: #F1F1F1;
+  --secundary-color: rgb(10, 10, 10);
+}
 * {
    box-sizing: border-box;
    margin: 0;
@@ -50,28 +60,24 @@ html {
    color: v.$mainColor;
    background: v.$secundaryColor;
   }
-
-  .dark body{
-    color: v.$secundaryColor;
-    background: v.$mainColor;
-
- }
-
  a {
    text-decoration: none;
    font-size: 1.6rem;
-   color: v.$secundaryColor;
+   color: var(--white) ;
   }
-  
+
   p{
-  
+
   font-size: 1.6rem;
 }
  li {
    list-style: none;
  }
 
-
+h2 {
+  font-size: 2rem;
+  color : v.$french-violet;
+}
 .MuiTooltip-tooltip {
   font-size: 1.2rem!important;
 }

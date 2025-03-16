@@ -1,5 +1,7 @@
-$mainColor: rgb(12 12 12);
-$secundaryColor: #F1F1F1;
+
+
+$mainColor: var(--text-color);
+$secundaryColor: var(--secundary-color);
 $french-violet: #6600CC;
 $cetacean-purple:#140030;
 $ufo-green: #33FF76;
@@ -28,7 +30,7 @@ $color-background-after-ligth: #18131c;
 
 /*Gradiente dark mode   */
 $color-background-body: #06080c;
-$color-background-before: #090c12;
+$color-background-before: #090f12;
 $color-gradient1-start: rgba(17, 3, 40, 0.3);
 $color-gradient1-end: rgba(8, 4, 16, 0);
 $color-gradient2-start: rgba(131, 66, 244, 0.632);

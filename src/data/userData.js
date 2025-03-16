@@ -7,11 +7,6 @@ export const userData = {
     profilePicture: "/img/sofi-pic-1.webp",
     profilePicture2: "/img/sofi-pic-2.webp",
     aboutPicture: "/img/sofi-selfie.webp",
-    about: {
-        intro: "Javascript Fan 😍. Always looking for new skills to learn. \n",
-        highlighted: "What sets me apart?",
-        continuation: "I genuinely love what I do! 💙 I thrive on transforming  ideas into unique digital solutions. 💡 \n\n  My focus goes beyond coding—it's about creating experiences that captivate and solve real-world problems in innovative ways. 🚀"
-    },
     aboutSkills: {
         intro: "Skilled in modern web technologies, I create dynamic and user-centric digital solutions. \n\nMy expertise in both front-end and back-end development allows for the seamless integration of design and functionality, ensuring impactful and engaging applications.\n",
         highlighted: "Tools",

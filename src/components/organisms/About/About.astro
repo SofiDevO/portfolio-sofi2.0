@@ -2,9 +2,9 @@
 import Title from "@atoms/Title/Title";
 import ButtonAbout from "@atoms/ButtonAbout/ButtonAbout.astro";
 import Calendar from "@src/components/molecules/GithubCalendar/Calendar";
-import { only } from "node:test";
-
+export const prerender = true;
 const { data } = Astro.props
+import AboutData from "@data/about.mdx";
 ---
 
 <section class="about" id="about">
@@ -24,13 +24,14 @@ const { data } = Astro.props
     </div>
     <div class="about__content">
       <Title titleDesc="About Me" clase="title-dark" />
-      <p class="about__description">
+      <!-- <p class="about__description">
           {data.about.intro}
-        </p>
-        <h5 class="about__highlighted">{data.about.highlighted}</h5>
-        <p class="about__description">
+        </p> -->
+        <!-- <h5 class="about__highlighted">{data.about.highlighted}</h5> -->
+        <!-- <p class="about__description">
           {data.about.continuation}
-        </p>
+        </p> -->
+        <AboutData />
     </div>
   </article>
   <Calendar client:only="react" />

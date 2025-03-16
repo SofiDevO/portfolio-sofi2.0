@@ -66,7 +66,7 @@
   &__author-name {
     font-size: 1.4rem;
     font-weight: 600;
-    color: v.$secundaryColor;
+    color: var(--white);
   }
 
   &__date {
@@ -85,7 +85,7 @@
 
   &__excerpt p {
     font-size: 1.4rem;
-    color: v.$secundaryColor;
+    color: var(--white);
     margin-bottom: 0.8rem;
     line-height: 1.5;
     display: -webkit-box;

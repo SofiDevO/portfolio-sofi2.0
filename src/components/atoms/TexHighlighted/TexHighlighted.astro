@@ -1,0 +1,28 @@
+---
+const { glow, text, glowSecondary } = Astro.props;
+---
+
+<p class="about__highlighted">
+  {glow && <span class="about__highlighted--glow">{glow}</span>}
+  {text}
+  {
+    glowSecondary && (
+      <span class="about__highlighted--glow">{glowSecondary}</span>
+    )
+  }
+</p>
+
+<style lang="scss">
+  @use "@sass/variables" as v;
+  @use "@sass/mixins" as mixins;
+
+  .about__highlighted {
+    color: v.$mainColor;
+    margin: 0.5rem 0;
+    @include mixins.typography("1.2rem", "normal", "400");
+    &--glow{
+      @include mixins.typography("1.2rem", "1.5", "bold");
+      @include mixins.text-gradient("dark");
+    }
+  }
+</style>
