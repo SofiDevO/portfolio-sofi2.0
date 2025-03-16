@@ -1,6 +1,10 @@
 ---
 const { data } = Astro.props;
-export const prerender = false;
+export const prerender = true;
+
+
+import { skillsData } from "@src/data/skillsData";
+
 ---
 
 <script  >
@@ -20,5 +24,6 @@ export const prerender = false;
   </button>
   <div class="hero__skills ">
       <!-- Iconos rendered by a template string -->
+
     </div>
 </div>

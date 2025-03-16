@@ -53,7 +53,7 @@ const BlogPost = () => {
             {/* Descripción */}
             <div
               className="post-card__excerpt"
-              dangerouslySetInnerHTML={{ __html: firstPost.excerpt }}
+              dangerouslySetInnerHTML={{ __html: firstPost.excerpt.replace(/\[.*?\]/g, "...")}}
             ></div>
 
             {/* Leer más link */}

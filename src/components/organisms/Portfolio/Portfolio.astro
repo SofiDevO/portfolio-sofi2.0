@@ -1,27 +1,16 @@
 ---
-import {portfolioCardsData} from "@services/getPortfolioCards";
+import { portfolioCardsData } from "@services/getPortfolioCards";
 import Title from "@src/components/atoms/Title/Title";
-import CardPortfolio from "../../molecules/CardPortfolio/CardPortfolio.astro";
-
-
-import defaultImage from "../../../../public/img/metaBanner.webp";
-
-// Función para obtener los datos de la API de respaldo
-async function fetchBackupData() {
-  try {
-    const response = await fetch("https://itssofi.dev/api/portafolio");
-    const data = await response.json();
-    return data.portafolio;
-  } catch (error) {
-    console.error("Error fetching backup data:", error);
-    return [];
-  }
-}
+import CardPortfolio from "@molecules/CardPortfolio/CardPortfolio.astro";
+import defaultImage from "@img/metaBanner.webp";
+import LoaderTerminal from "@src/components/atoms/Loader/LoaderTerminal.astro";
 
 // Intentar obtener los datos principales
 let mainData = [];
+
 try {
   const data = await portfolioCardsData();
+
   mainData = data.proyectosPortafolio.edges.map((item) => {
     const skillicons = item.node.proyectoPortafolio.skillicons.map((icon) => {
       const parts = icon.split(":");
@@ -31,7 +20,8 @@ try {
     return {
       title: item.node.title,
       description: item.node.proyectoPortafolio.description,
-      imgSrc: item.node.proyectoPortafolio.imgsrc_url?.node?.link || defaultImage,
+      imgSrc:
+        item.node.proyectoPortafolio.imgsrc_url?.node?.link || defaultImage,
       demoURL: item.node.proyectoPortafolio.demourl,
       repoURL: item.node.proyectoPortafolio.repoUrl,
       skills: item.node.proyectoPortafolio.skills,
@@ -40,8 +30,6 @@ try {
   });
 } catch (error) {
   console.error("Error fetching main data:", error);
-  // Si falla, obtener los datos de respaldo
-  mainData = await fetchBackupData();
 }
 
 const { cardsLength = 6 } = Astro.props;
@@ -50,6 +38,7 @@ const { cardsLength = 6 } = Astro.props;
 <section class="portfolio" id="portfolio">
   <Title titleDesc="Portfolio" clase="title-dark portfolio__title" />
   <div class="card__section">
+
     {
       mainData
         .slice(0, cardsLength)

@@ -50,19 +50,6 @@
         margin-bottom: 1rem;
         white-space: pre-line;
       }
-      .about__highlighted{
-        font-size: 1.8rem;
-        @include text-gradient("dark");
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
     }
-  }
-}
-
-.dark {
-  .about {
-    background: v.$mainColor;
-    color: v.$secundaryColor;
   }
 }
