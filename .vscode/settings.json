@@ -4,7 +4,9 @@
       "name": "custom-dictionary-workspace",
       "path": "${workspaceFolder:portfolio-sofi2.0}/.cspell/custom-dictionary-workspace.txt",
       "addWords": true,
-      "scope": "workspace"
+      "scope": "workspace",
+      "better-comments.multilineComments": true,
+      "better-comments.inlineComments": true
     }
   }
 }

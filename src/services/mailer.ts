@@ -25,7 +25,7 @@ async function sendEmail(props: ISendEmail) {
   let transporter = nodemailer.createTransport({
     host: data.host,
     port: data.port,
-    secure: false,
+    secure: true,
     auth: {
       user: data.email,
       pass: data.pass,

@@ -12,6 +12,8 @@ import Footer from "@molecules/Footer/Footer.astro";
 import { getData } from "@src/services/data";
 import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
 const { user, skills, tools } = await getData();
+
+export const prerender = true
 ---
 
 <script  >
