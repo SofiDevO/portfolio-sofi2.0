@@ -10,8 +10,7 @@
 
 const localUrl = import.meta.env.LOCAL_URL;
 const url = import.meta.env.SITE_URL
-/*   ? import.meta.env.SITE_URL
-  : "https://itssofi.dev/"; */
+
 
 // Create an async function that takes an optional 'dataType' argument.
 // By default, 'dataType' is "data" if no other value is provided.
