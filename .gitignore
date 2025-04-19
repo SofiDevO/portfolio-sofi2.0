@@ -8,11 +8,13 @@ lerna-debug.log*
 .pnpm-debug.log*
 .vercel
 ### VisualStudioCode ###
-#.vscode/*      # Maybe .vscode/**/* instead - see comments
-#!.vscode/settings.json
-#!.vscode/tasks.json
-#!.vscode/launch.json
-#!.vscode/extensions.json
+.vscode/*      # Maybe .vscode/**/* instead - see comments
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
