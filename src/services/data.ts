@@ -10,8 +10,7 @@
 
 const localUrl = import.meta.env.LOCAL_URL;
 const url = import.meta.env.SITE_URL
-  ? import.meta.env.SITE_URL
-  : "https://itssofi.dev/";
+
 
 // Create an async function that takes an optional 'dataType' argument.
 // By default, 'dataType' is "data" if no other value is provided.
@@ -22,7 +21,7 @@ export async function getData(
   dataType: string = "data",
   local: boolean = false
 ) {
-  const siteUrl = local ? localUrl : url;
+  const siteUrl = !local ? url : localUrl;
   // If the value of 'dataType' is not "data", use it as the endpoint; otherwise, the endpoint will be "all".
   // This decides which part of the API to call.
   const endpoint = dataType !== "data" ? dataType : "all";
