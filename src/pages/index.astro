@@ -13,17 +13,10 @@ import { getData } from "@src/services/data";
 import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
 const { user, skills, tools } = await getData();
 
-export const prerender = true
+export const prerender = true;
 ---
 
-<script  >
-  import ToastNotification from "@src/controllers/toastAlerts.controller";
-  document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    ToastNotification("This site is under construction 🚧🏗️", "info");
-  }, 4000);
-});
-</script>
+
 <Layout>
   <BackgroundGradient>
     <Hero data={user} />
@@ -38,5 +31,13 @@ export const prerender = true
   <DividerBottom fill="shape-fill-3" />
   <Social />
   <Footer />
-  <ToastNotification />
 </Layout>
+<ToastNotification />
+<script  >
+  import ToastNotification from "@src/controllers/toastAlerts.controller";
+  document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    ToastNotification("This site is under construction 🚧🏗️", "info");
+  }, 4000);
+});
+</script>

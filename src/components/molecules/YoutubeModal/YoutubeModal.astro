@@ -7,7 +7,7 @@ const { thumbnail, guid } = videoData[0];
 const videoId = guid.replace("yt:video:", "");
 ---
 
-<script>
+<script >
   import { loadVideo } from "@controllers/VideoModal.controller";
   loadVideo();
 </script>
@@ -16,7 +16,6 @@ const videoId = guid.replace("yt:video:", "");
   <div class="modal__close__button"></div>
   <div class="modal__container">
     <YouTube
-      
       id={videoId}
       class="latestVideoEmbed"
       poster={thumbnail}
