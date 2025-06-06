@@ -7,8 +7,6 @@ import YoutubeModal from "@molecules/YoutubeModal/YoutubeModal.astro";
 import ContactFormMain from "@molecules/ContactFormContent/ContactFormMain.astro";
 import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
 import BlogPost from "@src/components/molecules/BlogPost/BlogPost";
-
-
 ---
 
 <section id="social" class="social">
@@ -25,7 +23,7 @@ import BlogPost from "@src/components/molecules/BlogPost/BlogPost";
     </div>
     <div class="social__item social__item-2">
       <SocialCard extrClass="youtube__card">
-        <YoutubeCardContent />
+        <YoutubeCardContent server:defer />
       </SocialCard>
     </div>
     <div class="social__item social__item-3">
@@ -35,7 +33,8 @@ import BlogPost from "@src/components/molecules/BlogPost/BlogPost";
     </div>
     <div class="social__item social__item-4">
       <SocialCard >
-        <BlogPost server:defer
+        <BlogPost
+          server:defer
         />
       </SocialCard>
     </div>
