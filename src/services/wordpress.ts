@@ -1,5 +1,4 @@
 const baseURL = import.meta.env.WPGRAPHQL_URL;
-console.log(baseURL);
 interface WPGraphQLParams {
   query: string;
   variables?: object;

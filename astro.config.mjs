@@ -12,7 +12,4 @@ export default defineConfig({
   integrations: [react(), mdx()],
   output: "server",
   adapter: vercelServerless(),
-
-    serverIslands: true,
-
 });

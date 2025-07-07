@@ -15,7 +15,7 @@ export const portfolioCardsData = async () => {
                   skillicons
                   imgsrc_url {
                     node {
-                      link
+                      link:mediaItemUrl
                     }
                   }
                   description
