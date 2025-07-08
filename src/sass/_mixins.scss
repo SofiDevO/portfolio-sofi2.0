@@ -1,5 +1,5 @@
 
-@use "@sass/variables" as v;
+@use "@sass/variables" as *;
 
 @mixin reset-pm {
 	padding: 0;
@@ -56,34 +56,34 @@
 	@if $mode == "dark" {
 		content: "";
 		position: absolute;
-		background-color: v.$color-background-before;
+		background-color: $color-background-before;
 		background-image: radial-gradient(
 				37.88% 68.62% at 50% 0,
-				v.$color-gradient1-start 0%,
-				v.$color-gradient1-end 80%
+				$color-gradient1-start 0%,
+				$color-gradient1-end 80%
 			),
 			radial-gradient(
 				10% 10% at 50% 10%,
-				v.$color-gradient2-start 0%,
-				v.$color-gradient2-middle 90%,
-				v.$color-gradient2-end 100%
+				$color-gradient2-start 0%,
+				$color-gradient2-middle 90%,
+				$color-gradient2-end 100%
 			),
 			radial-gradient(
 				100% 28.09% at 100% 10%,
-				v.$color-gradient3-start 0%,
-				v.$color-gradient3-middle 80%,
-				v.$color-gradient3-end 100%
+				$color-gradient3-start 0%,
+				$color-gradient3-middle 80%,
+				$color-gradient3-end 100%
 			),
 			linear-gradient(
 				180deg,
-				v.$color-gradient4-start 35.79%,
-				v.$color-gradient4-end 80%,
-				v.$color-background-gradient5 80%
+				$color-gradient4-start 35.79%,
+				$color-gradient4-end 80%,
+				$color-background-gradient5 80%
 			),
 			radial-gradient(
 				74.84% 135.56% at 100% 10%,
-				v.$color-gradient6-start 0%,
-				v.$color-background-gradient6 80%
+				$color-gradient6-start 0%,
+				$color-background-gradient6 80%
 			);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -97,34 +97,34 @@
 	} @else if $mode == "ligth" {
 		content: "";
 		position: absolute;
-		background-color: v.$color-background-before-ligth;
+		background-color: $color-background-before-ligth;
 		background-image: radial-gradient(
 				37.88% 68.62% at 50% 0,
-				v.$color-gradient1-start-ligth 0%,
-				v.$color-gradient1-end-ligth 80%
+				$color-gradient1-start-ligth 0%,
+				$color-gradient1-end-ligth 80%
 			),
 			radial-gradient(
 				10% 10% at 50% 10%,
-				v.$color-gradient2-start-ligth 0%,
-				v.$color-gradient2-middle-ligth 90%,
-				v.$color-gradient2-end-ligth 100%
+				$color-gradient2-start-ligth 0%,
+				$color-gradient2-middle-ligth 90%,
+				$color-gradient2-end-ligth 100%
 			),
 			radial-gradient(
 				100% 28.09% at 100% 10%,
-				v.$color-gradient3-start-ligth 0%,
-				v.$color-gradient3-middle-ligth 80%,
-				v.$color-gradient3-end-ligth 100%
+				$color-gradient3-start-ligth 0%,
+				$color-gradient3-middle-ligth 80%,
+				$color-gradient3-end-ligth 100%
 			),
 			linear-gradient(
 				180deg,
-				v.$color-gradient4-start-ligth 35.79%,
-				v.$color-gradient4-end-ligth 80%,
-				v.$color-background-gradient5-ligth 80%
+				$color-gradient4-start-ligth 35.79%,
+				$color-gradient4-end-ligth 80%,
+				$color-background-gradient5-ligth 80%
 			),
 			radial-gradient(
 				74.84% 135.56% at 100% 10%,
-				v.$color-gradient6-start-ligth 0%,
-				v.$color-background-gradient6-ligth 80%
+				$color-gradient6-start-ligth 0%,
+				$color-background-gradient6-ligth 80%
 			);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -140,12 +140,12 @@
 
 @mixin text-gradient($mode){
 	@if  $mode == "ligth"{
-		background: v.$text-over-light;
+		background: $text-over-light;
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 }@else if $mode  == "dark"{
-	background: v.$text-over-dark;
+	background: $text-over-dark;
 	  background-clip: text;
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
