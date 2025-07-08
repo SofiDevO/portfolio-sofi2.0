@@ -71,6 +71,12 @@
   position: absolute;
   opacity: 0;
   transition: opacity 0.4s ease;
+  @include respond-to("medium") {
+    bottom: 95%;
+    left: 50%;
+    max-width: none;
+    width: 100%;
+  }
 
   .skills__terminal__content {
     padding: .4rem;
