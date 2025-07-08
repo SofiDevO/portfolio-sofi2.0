@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .calendar {
   @include centerFlex();
   gap: 1rem;

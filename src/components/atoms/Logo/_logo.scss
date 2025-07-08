@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .logo{
     @include centerFlex(space-between);
     gap:1rem;

@@ -1,3 +1,7 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
+
 #portfolio {
   display: grid;
   place-items: center;

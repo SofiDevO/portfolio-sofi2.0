@@ -1,3 +1,4 @@
+@use "@sass/variables" as *;
 button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -6,7 +7,7 @@ button {
     font-weight: 600;
     font-family: inherit;
     background-color: #1c0161;
-    color: v.$ufo-green;
+    color: $ufo-green;
     cursor: pointer;
     transition: border-color 0.25s;
   }

@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .image__container {
   position: relative;
   @include centerFlex();

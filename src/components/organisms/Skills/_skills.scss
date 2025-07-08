@@ -1,5 +1,9 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
+
 .skills {
-  background: v.$cetacean-purple;
+  background: $cetacean-purple;
   width: 100%;
   display: flex;
   justify-content: center;

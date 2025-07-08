@@ -1,3 +1,4 @@
+@use "@sass/mixins" as *;
 .card-social__title {
     @include text-gradient("ligth");
     font-size: 2.76rem;

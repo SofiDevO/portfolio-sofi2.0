@@ -1,4 +1,7 @@
-@import "@atoms/SocialCardImage/social-card-image";
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
+@use "@atoms/SocialCardImage/social-card-image";
 
 .card-social {
   display: flex;

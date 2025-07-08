@@ -1,83 +1,32 @@
-@use "./variables" as v;
-@import "./mixins";
-@import "@sass/functions";
-@import "@sass/animations";
-@import "@atoms/Title/title";
-@import "@atoms/Subtitle/subtitle";
-@import "@atoms/SocialIcons/social-icons";
-@import "@atoms/DividerBottom/divider-bottom";
-@import "@atoms/DividerTop/divider-top";
-@import "@atoms/YearButton/year-button";
-@import "@atoms/BackgroundIconsFloat/bg-icons";
-@import "@atoms/ButtonAbout/button-about";
-@import "@atoms/BarraTerminal/barra-terminal";
-@import '@atoms/ToastNotification/toast-notification';
-@import "@molecules/BlogPost/post-card";
-@import "@molecules/Header/header";
-@import "@molecules/Footer/footer";
-@import "@molecules/Carousel/carousel";
-@import "@molecules/GithubCalendar/github-calendar";
-@import "@molecules/CardTerminal/card-terminal";
-@import "@molecules/CardPortfolio/card-portfolio";
-@import "@molecules/ContactFormContent/contact-form";
-@import "@organisms/Hero/hero";
-@import "@organisms/Skills/skills";
-@import "@organisms/About/about";
-@import "@organisms/Portfolio/portfolio";
-@import "@layouts/BackgroundGradient/background-gradient";
-@import "@molecules/SocialCard/social-card";
-@import "@organisms/Social/social";
-@import "@molecules/CardContributor/card-contributtor";
-@import "@pages/contributor/contributor";
-:root {
-  --text-color:  rgb(12 12 12)
-  --secundary-color: #F1F1F1;
-  --black:rgb(12 12 12);
-  --white: #F1F1F1;
-}
+@use "base/reset";
 
-.dark{
-  --text-color: #F1F1F1;
-  --secundary-color: rgb(10, 10, 10);
-}
-* {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   scroll-behavior: smooth;
- }
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./functions" as *;
+@use "./animations" as *;
 
-html {
-   margin: 0;
-   font-size: 62.5%;
-   font-optical-sizing: auto;
-
- }
-
- body {
-   overflow-x: hidden;
-   @include font-family("montserrat");
-   color: v.$mainColor;
-   background: v.$secundaryColor;
-  }
- a {
-   text-decoration: none;
-   font-size: 1.6rem;
-   color: var(--white) ;
-  }
-
-  p{
-
-  font-size: 1.6rem;
-}
- li {
-   list-style: none;
- }
-
-h2 {
-  font-size: 2rem;
-  color : v.$french-violet;
-}
-.MuiTooltip-tooltip {
-  font-size: 1.2rem!important;
-}
+@use "@atoms/Title/title";
+@use "@atoms/Subtitle/subtitle";
+@use "@atoms/SocialIcons/social-icons";
+@use "@atoms/DividerBottom/divider-bottom";
+@use "@atoms/DividerTop/divider-top";
+@use "@atoms/YearButton/year-button";
+@use "@atoms/BackgroundIconsFloat/bg-icons";
+@use "@atoms/ButtonAbout/button-about";
+@use "@atoms/BarraTerminal/barra-terminal";
+@use "@atoms/ToastNotification/toast-notification";
+@use "@molecules/BlogPost/post-card";
+@use "@molecules/Header/header";
+@use "@molecules/Footer/footer";
+@use "@molecules/Carousel/carousel";
+@use "@molecules/GithubCalendar/github-calendar";
+@use "@molecules/CardTerminal/card-terminal";
+@use "@molecules/CardPortfolio/card-portfolio";
+@use "@molecules/ContactFormContent/contact-form";
+@use "@organisms/Hero/hero";
+@use "@organisms/Skills/skills";
+@use "@organisms/About/about";
+@use "@organisms/Portfolio/portfolio";
+@use "@layouts/BackgroundGradient/background-gradient";
+@use "@molecules/SocialCard/social-card";
+@use "@organisms/Social/social";

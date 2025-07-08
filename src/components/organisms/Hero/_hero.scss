@@ -1,4 +1,8 @@
-@import "@atoms/ProfilePicture/profile-picture";
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
+@use "@atoms/ProfilePicture/profile-picture";
+
 .hero {
   width: 100%;
   min-height: 100dvh;
@@ -47,7 +51,7 @@
   }
   .hero__slogan {
     @include text-gradient("ligth");
-    color: v.$ufo-green;
+    color: $ufo-green;
     font-size: 2rem;
     letter-spacing:10px;
     border-right: 5px solid;

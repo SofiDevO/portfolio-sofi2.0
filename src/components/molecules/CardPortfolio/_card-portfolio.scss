@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .card {
   height: 246px;
   border-radius: 15px;
@@ -104,7 +107,7 @@
     top: 120%;
     left: -200%;
     background: #1c004d;
-    color: v.$ufo-green;
+    color: $ufo-green;
     padding: 0.4rem 0.5rem;
     border-radius: 5px;
     z-index: 100;

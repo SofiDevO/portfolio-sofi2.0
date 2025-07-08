@@ -5,23 +5,26 @@ export const portfolioCardsData = async () => {
     const data = await wpquery({
       query: `
         query gePortfolioCards {
-          proyectosPortafolio {
+          proyectosPortafolio(where: {orderby: {field: MODIFIED, order: DESC}}) {
             edges {
               node {
                 title(format: RENDERED)
-                uri
                 proyectoPortafolio {
                   skills
                   skillicons
                   imgsrc_url {
                     node {
-                      link:mediaItemUrl
+                      link: mediaItemUrl
+                      srcSet(size: ALX_MEDIUM)
+                      sizes(size: ALX_MEDIUM)
                     }
                   }
                   description
                   demourl
                   repoUrl
+                  detalle
                 }
+                slug
               }
             }
           }

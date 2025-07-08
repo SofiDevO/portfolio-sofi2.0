@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .social {
   padding-block: 10rem;
   width: 100%;
@@ -5,7 +8,7 @@
   display: grid;
   place-content: center;
   overflow-x: hidden;
-  background-color: v.$cetacean-purple;
+  background-color: $cetacean-purple;
   background: linear-gradient(
     180deg,
     rgb(20, 0, 48) 6%,

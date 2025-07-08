@@ -1,5 +1,5 @@
-
-
+@use "@sass/variables" as *;
+@use "@sass/mixins" as *;
 
 
 .wrapper{
@@ -29,16 +29,16 @@
 }
 
 .custom-shape-divider-bottom-1723178641 .shape-fill {
-    fill: v.$secundaryColor;
+    fill: $secundaryColor;
 }
 .custom-shape-divider-bottom-1723178641 .shape-fill-2 {
     fill: #0E0E0E;
 }
 .custom-shape-divider-bottom-1723178641 .shape-fill-3 {
-    fill: v.$cetacean-purple;
+    fill: $cetacean-purple;
 }
 
 
 .dark .custom-shape-divider-bottom-1723178641 .shape-fill {
-    fill: v.$mainColor;
+    fill: $mainColor;
 }

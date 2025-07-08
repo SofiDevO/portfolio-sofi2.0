@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .footer{
     @include centerFlex(space-between);
     padding: 3rem ;
@@ -9,7 +12,7 @@
         gap:1rem;
     }
     &__link{
-        color: v.$ufo-green;
+        color: $ufo-green;
         &:hover{
             color: white;
         }

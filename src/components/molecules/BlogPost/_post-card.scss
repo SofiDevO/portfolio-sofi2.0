@@ -1,3 +1,5 @@
+@use "@sass/variables" as *;
+@use "@sass/mixins" as *;
 .post-card {
   width: 100%;
   height: 100%;
@@ -72,7 +74,7 @@
   &__date {
     font-size: 1.4rem;
     font-weight: 500;
-    color: v.$ufo-green;
+    color: $ufo-green;
   }
   &__title {
     font-size: 1.8rem;
@@ -98,7 +100,7 @@
   &__read-more {
     font-size: 1.6rem;
     font-weight: 600;
-    color: v.$ufo-green;
+    color: $ufo-green;
     display: inline-flex;
     flex: 1;
     align-items: center;

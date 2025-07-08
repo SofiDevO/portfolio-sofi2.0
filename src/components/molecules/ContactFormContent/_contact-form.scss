@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .contact {
   display: flex;
   justify-content: center;
@@ -56,8 +59,8 @@
   padding: 1rem;
   width: 100%;
   font-size: 1.4rem;
-  background: v.$text-over-dark;
+  background: $text-over-dark;
   &:hover {
-    background: v.$french-violet;
+    background: $french-violet;
   }
 }

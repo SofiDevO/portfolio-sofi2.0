@@ -1,10 +1,13 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .about {
   width: 100%;
   padding-block: 10rem;
   writing-mode: horizontal-tb;
   @include centerFlex();
   flex-direction: column;
-  color: v.$mainColor;
+  color: $mainColor;
   &__container {
     max-width: 1300px;
     width: 100%;
@@ -28,7 +31,7 @@
         width: 34rem;
         height: 34rem;
         border-radius: 50%;
-        border: 2px solid v.$ufo-green;
+        border: 2px solid $ufo-green;
         overflow: hidden;
         @include respond-to("medium") {
           width: 100%;

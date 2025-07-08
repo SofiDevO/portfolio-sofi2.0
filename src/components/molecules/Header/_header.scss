@@ -1,9 +1,12 @@
-@import "@atoms/Logo/logo";
-@import "@atoms/hamburgerBtn/hamburger";
-@import "@atoms/LanguageFlag/language-flag";
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
+@use "@atoms/Logo/logo";
+@use "@atoms/hamburgerBtn/hamburger";
+
 
 .header {
-  @include centerFlex(center);
+  @include centerFlex();
   width: 100%;
   position: fixed;
   padding: 0 2rem;
@@ -69,7 +72,7 @@
     transform-origin: 1;
     height: 2px;
     transition: 0.35s transform;
-    background: v.$ufo-green;
+    background: $ufo-green;
   }
 
   .header__link:hover::after {

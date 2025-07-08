@@ -1,3 +1,6 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
 .hamburger {
   display: none;
 }
@@ -37,7 +40,7 @@
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
-    background-color: v.$ufo-green;
+    background-color: $ufo-green;
   }
   .hamburger-inner:before {
     top: -10px;

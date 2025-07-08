@@ -1,0 +1,57 @@
+@use "@sass/mixins" as *;
+@use "@sass/variables" as *;
+
+
+:root {
+  --text-color:  rgb(12 12 12)
+  --secundary-color: #F1F1F1;
+  --black:rgb(12 12 12);
+  --white: #F1F1F1;
+}
+
+.dark{
+  --text-color: #F1F1F1;
+  --secundary-color: rgb(10, 10, 10);
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   scroll-behavior: smooth;
+ }
+
+html {
+   margin: 0;
+   font-size: 62.5%;
+   font-optical-sizing: auto;
+
+ }
+
+ body {
+   overflow-x: hidden;
+   @include font-family("montserrat");
+   color: $mainColor;
+   background: $secundaryColor;
+  }
+ a {
+   text-decoration: none;
+   font-size: 1.6rem;
+   color: var(--white) ;
+  }
+
+  p{
+
+  font-size: 1.6rem;
+}
+ li {
+   list-style: none;
+ }
+
+h2 {
+  font-size: 2rem;
+  color : $french-violet;
+}
+.MuiTooltip-tooltip {
+  font-size: 1.2rem!important;
+}
