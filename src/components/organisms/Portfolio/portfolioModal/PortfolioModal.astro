@@ -1,0 +1,70 @@
+---
+const {
+  title,
+  imgSrc,
+  demoURL,
+  repoURL,
+  description,
+  skills,
+  skillIcon,
+  detalles,
+  slug,
+
+
+} = Astro.props;
+
+---
+
+<dialog class="modal" data-slug={slug}>
+  <article class="modal__container">
+    <iconify-icon
+      class="close-btn"
+      icon="icon-park-twotone:close-one"
+      width="48"
+      height="48"
+      style="color: #2dcece"></iconify-icon>
+    {
+      (
+        <div class="modal__content">
+          <div class="modal__banner">
+            <img
+              class="modal__image"
+              alt={`Imagen de portada de ${title}`}
+              src={imgSrc}
+            />
+          </div>
+          <div class="thecnology">
+            {skillIcon.map((icon, index) => (
+              <div class="skill-item">
+                <iconify-icon icon={icon} width="40" height="40" />
+                <span class="skill__tooltip">{skills[index]}</span>
+              </div>
+            ))}
+          </div>
+          <div class="modal__desc">
+            <h1 class="modal__title">{title}</h1>
+            <div class="modal__fragment" set:html={detalles} />
+          </div>
+          <a href={demoURL} target="_blank" rel="noopener noreferrer nofollow">
+            Ver Demo
+            <iconify-icon
+              icon="quill:link-out"
+              width="15"
+              height="15"
+              style="color: aqua"
+            />
+          </a>
+          <a href={repoURL} target="_blank" rel="noopener noreferrer nofollow">
+            Ver Repo
+            <iconify-icon
+              icon="quill:link-out"
+              width="15"
+              height="15"
+              style="color: aqua"
+            />
+          </a>
+        </div>
+      )
+    }
+  </article>
+</dialog>

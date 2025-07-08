@@ -4,6 +4,7 @@ import Title from "@src/components/atoms/Title/Title";
 import CardPortfolio from "@molecules/CardPortfolio/CardPortfolio.astro";
 import defaultImage from "@img/metaBanner.webp";
 import LoaderTerminal from "@src/components/atoms/Loader/LoaderTerminal.astro";
+import PortfolioModal from "./portfolioModal/PortfolioModal.astro";
 
 // Intentar obtener los datos principales
 let mainData = [];
@@ -17,6 +18,7 @@ try {
       return parts.length > 1 ? parts.slice(1).join(":").trim() : icon.trim();
     });
 
+
     return {
       title: item.node.title,
       description: item.node.proyectoPortafolio.description,
@@ -26,33 +28,70 @@ try {
       repoURL: item.node.proyectoPortafolio.repoUrl,
       skills: item.node.proyectoPortafolio.skills,
       skillicons,
+      detalles: item.node.proyectoPortafolio.detalle,
+      slug: item.node.slug,
     };
   });
 } catch (error) {
   console.error("Error fetching main data:", error);
 }
-
 const { cardsLength = 6 } = Astro.props;
+
+
+
+
 ---
 
 <section class="portfolio" id="portfolio">
+
   <Title titleDesc="Portfolio" clase="title-dark portfolio__title" />
   <div class="card__section">
-
     {
       mainData
         .slice(0, cardsLength)
-        .map((data) => (
-          <CardPortfolio
-            title={data.title}
-            description={data.description}
-            imgSrc={data.imgSrc}
-            demoURL={data.demoURL}
-            repoURL={data.repoURL}
-            skills={data.skills}
-            skillIcon={data.skillicons}
-          />
-        ))
+        .map((data) =>
+        <CardPortfolio {...data} skillIcon={data.skillicons} />
+        <PortfolioModal {...data} skillIcon={data.skillicons} />
+      )
+
     }
   </div>
+
 </section>
+
+<script>
+  const buttons = document.querySelectorAll(".card__btn");
+  const modals = document.querySelectorAll(".modal");
+
+  buttons.forEach((btn) => {
+    const slug = btn.getAttribute("data-slug");
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Busca el modal que corresponde a este slug
+      const modal = Array.from(modals).find(
+        (m) => m.getAttribute("data-slug") === slug
+      );
+      if (modal) {
+        modal.setAttribute("open", "open");
+        modal.classList.add("open");
+
+        // Cerrar modal al hacer click en el fondo o en el botón de cerrar
+        const closeBtn = modal.querySelector(".close-btn");
+        const closeModal = (event) => {
+          if (
+            event.target === modal ||
+            event.target === closeBtn
+          ) {
+            modal.removeAttribute("open");
+            modal.classList.remove("open");
+            document.removeEventListener("click", closeModal);
+          }
+        };
+        // Espera un tick para evitar cerrar inmediatamente
+        setTimeout(() => {
+          document.addEventListener("click", closeModal);
+        }, 0);
+      }
+    });
+  });
+</script>

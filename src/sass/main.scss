@@ -30,3 +30,16 @@
 @use "@layouts/BackgroundGradient/background-gradient";
 @use "@molecules/SocialCard/social-card";
 @use "@organisms/Social/social";
+
+
+:root {
+  --text-color:  rgb(12 12 12);
+  --secundary-color: #F1F1F1;
+  --black:rgb(12 12 12);
+  --white: #F1F1F1;
+}
+
+.dark {
+  --text-color: #F1F1F1;
+  --secundary-color: rgb(10, 10, 10);
+}

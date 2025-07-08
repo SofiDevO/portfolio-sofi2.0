@@ -1,6 +1,6 @@
 @use "@sass/mixins" as *;
 @use "@sass/variables" as *;
-
+@use "./portfolioModal/portfolio-modal";
 
 #portfolio {
   display: grid;

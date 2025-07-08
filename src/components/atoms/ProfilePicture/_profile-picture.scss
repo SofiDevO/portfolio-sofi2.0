@@ -18,9 +18,14 @@
   border: none;
   overflow: hidden;
   cursor: pointer;
+  background:black;
+}
+ .dark .image__button {
+  background: aqua;
 }
 
 .image__button:hover .hero__img {
+
   transform: scale(0.95);
 }
 .image__button:active .hero__img {

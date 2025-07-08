@@ -20,7 +20,7 @@ console.log(localUrl, url)
  */
 export async function getData(
   dataType: string = "data",
-  local: boolean = false
+  local: boolean = true
 ) {
   const siteUrl = !local ? url : localUrl;
 

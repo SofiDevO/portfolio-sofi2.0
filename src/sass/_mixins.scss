@@ -11,11 +11,14 @@
 	align-items: $align;
 	justify-content: $justify;
 }
-@mixin typography($font-size, $line-height, $font-weight: normal) {
+@mixin typography($font-size, $line-height, $font-weight) {
 	font-size: $font-size;
 	line-height: $line-height;
 	font-weight: $font-weight;
 }
+
+
+
 @mixin font-family($type) {
 	@if $type == "montserrat" {
 		font-family: "Montserrat Variable", sans-serif;

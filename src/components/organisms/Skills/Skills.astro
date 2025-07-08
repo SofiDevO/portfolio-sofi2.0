@@ -3,11 +3,11 @@ import Title from "@src/components/atoms/Title/Title";
 import CarrouselSkills from "@src/components/molecules/CarouselSkills/CarrouselSkills.astro";
 import CarouselTools from "@src/components/molecules/CarouselTools/CarouselTools.astro";
 import CardTerminal from "@molecules/CardTerminal/cardTerminal.astro";
-const { data, skills, tools } = Astro.props
+const { data, skills, tools } = Astro.props;
 ---
 
 <script>
-  import {d} from "@src/controllers/TerminalSkills.controller";
+  import { d } from "@src/controllers/TerminalSkills.controller";
 </script>
 
 <section class="skills" id="skills">
@@ -27,15 +27,18 @@ const { data, skills, tools } = Astro.props
       </div>
       <div class="skills__avatar__container">
         <img
-        id="skills__avatar"
+          id="skills__avatar"
           class="skills__avatar"
-          src="../img/funkoSofi.png"
+          src="/img/sofi-love.png"
           alt={`avatar funko of ${data.userName}`}
+          width="300"
+          height="300"
         />
 
         <CardTerminal clase="skills__terminal skills__popup">
           <p class="skills__terminal__content">
             {data.terminalInfo}
+            <span class="cursor"></span>
           </p>
         </CardTerminal>
       </div>
@@ -43,7 +46,7 @@ const { data, skills, tools } = Astro.props
     <CarrouselSkills skillsData={skills} />
     <div class="skills__carousel--tools">
       <Title titleDesc="Tools" clase="title-dark" />
-      <CarouselTools toolsData={tools}/>
+      <CarouselTools toolsData={tools} />
     </div>
   </div>
 </section>

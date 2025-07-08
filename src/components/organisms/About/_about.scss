@@ -52,6 +52,11 @@
     }
     .about__content {
       max-width: 532px;
+      h3{
+        margin: 1rem 0;
+        @include typography(2.4rem, normal, 700);
+        @include text-gradient("dark");
+      }
       .about__description {
         font-size: 1.6rem;
         margin-bottom: 1rem;

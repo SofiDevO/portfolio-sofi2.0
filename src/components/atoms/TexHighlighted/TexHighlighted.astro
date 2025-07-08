@@ -13,16 +13,17 @@ const { glow, text, glowSecondary } = Astro.props;
 </p>
 
 <style lang="scss">
-  @use "@sass/variables" as v;
-  @use "@sass/mixins" as mixins;
+  @use "@sass/variables" as *;
+  @use "@sass/mixins" as *;
 
   .about__highlighted {
-    color: v.$mainColor;
-    margin: 0.5rem 0;
-    @include mixins.typography("1.2rem", "normal", "400");
+
+    color: $mainColor;
+    margin: 0.8rem 0;
+    @include typography(1.6rem, normal, 400);
     &--glow{
-      @include mixins.typography("1.2rem", "1.5", "bold");
-      @include mixins.text-gradient("dark");
+      @include typography(1.6rem, 1.5, 700);
+      @include text-gradient("dark");
     }
   }
 </style>

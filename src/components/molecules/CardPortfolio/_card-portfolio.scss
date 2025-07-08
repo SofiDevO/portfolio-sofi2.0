@@ -118,10 +118,15 @@
     display: block;
   }
 }
+.card__btn {
+  font-size: 1.6rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid $ufo-green;
+}
 .card__links {
   @include centerFlex(space-between);
   width: 100%;
-  max-width: 20rem;
   gap: 1rem;
   align-self: center;
   a{
