@@ -3,7 +3,7 @@ export const userData = {
   name: "Sofi",
   lastName: "Dev",
   userName: "SofiDev",
-  sloganHero1: "Frontend Developer in Mexico",
+  sloganHero1: "Javascript Developer in Mexico",
   profilePicture: "/img/raw.png",
   profilePicture2: "/img/raw.png",
   aboutPicture:
@@ -17,6 +17,6 @@ export const userData = {
   },
   terminalInfo:
     "ls skills\n Javascript, React, Astro, NextJs Node.js, Express, Sass, Tailwind, Scss, Bootstrap, MySQL, Wordpress, CSS, Vue.js, Svelte\n\nls tools\n- figma, vs code, vercel\nbash, github, git, photoshop\n illustrator, ",
-  cv: "/docs/Angela_Sofia_Osorio_CV2024_updated.pdf",
+  cv: "/docs/CV_AngelaSofía_Osorio_2025.pdf",
   email: "contact@sofidev.top",
 };

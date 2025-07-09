@@ -1,15 +1,63 @@
 ---
 import Logo from "@src/components/atoms/Logo/Logo.astro";
 import SocialIcons from "@src/components/atoms/SocialIcons/SocialIcons.astro";
+import { isExternal } from "util/types";
 
-
+const footerLinks = [
+  {
+    name: "Repository",
+    link: "https://github.com/SofiDevO/portfolio-sofi2.0",
+    target: "_blank",
+    rel: "noopener noreferrer nofollow",
+  },
+  {
+    name: "Visit my Blog",
+    link: "https://sofidev.blog",
+    target: "_blank",
+    rel: "noopener noreferrer nofollow",
+  },
+  {
+    name: "Download my cv",
+    link: "/docs/CV_AngelaSofía_Osorio_2025.pdf",
+    target: "_blank",
+    rel: "noopener noreferrer nofollow",
+  },
+];
+const getYear = () => new Date().getFullYear();
 ---
 
 <footer class="footer">
+  <section class="footer__container">
     <Logo />
-    <ul class="footer__list">
-        <li class="footer__item"><a href="/about" class="footer__link">About This Portfolio</a></li>
-        <li class="footer__item"><a href="https://blog.itssofi.dev/" class="footer__link" target="_blank" rel="noopener noreferrer nofollow">Visit my Blog</a></li>
-    </ul>
-    <SocialIcons isAnimated={false}/>
+    <div class="footer__links">
+      <h2 class="footer__links__title">Fast links</h2>
+      <ul class="footer__list">
+        {
+          footerLinks.map((data) => (
+            <li class="footer__item">
+              <a
+                class="footer__link"
+                href={data.link}
+                target={data.target}
+                rel={data.rel}
+              >
+                {data.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="footer__links">
+      <h2 class="footer__links__title">Social Links</h2>
+
+      <SocialIcons isAnimated={false} />
+    </div>
+  </section>
+  <section class="footer__credits">
+    <span class="footer__copy">
+      Made with ❤️ under the MIT license | {getYear()}
+      {isExternal(footerLinks[0].link) ? "Angela Sofía Osorio" : "SofiDev"}
+    </span>
+  </section>
 </footer>
