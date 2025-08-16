@@ -3,11 +3,11 @@ const {
   title,
   imgSrc,
   demoURL,
+  excerpt,
   repoURL,
   description,
   skills,
-  skillIcon,
-  detalles,
+  skillIcons,
   slug
 } = Astro.props;
 ---
@@ -19,7 +19,7 @@ const {
   <div class="card__cara--B">
     <div class="thecnology">
       {
-        skillIcon.map((icon, index) => (
+        skillIcons.map((icon, index) => (
           <div class="skill-item">
             <iconify-icon icon={icon} width="20" height="20" />
             <span class="skill__tooltip">{skills[index]}</span>
@@ -28,7 +28,7 @@ const {
       }
     </div>
     <h3 class="card__title">{title}</h3>
-    <p class="card__description">{description}</p>
+    <p class="card__description">{excerpt}</p>
     <div class="card__links">
       <button data-slug={slug} class="card__btn" >Details</button>
     </div>
