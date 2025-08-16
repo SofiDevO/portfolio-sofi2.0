@@ -31,7 +31,7 @@ export const portfolioCardsData = async () => {
       `,
     });
     const projects = data?.proyects?.nodes || [];
-    if (!projects.length) return [];
+    if (!projects.length) throw new Error("No projects found");
 
     return projects.map(item => {
       return {
