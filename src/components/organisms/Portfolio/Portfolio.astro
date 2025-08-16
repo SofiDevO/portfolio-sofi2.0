@@ -3,38 +3,10 @@ import { portfolioCardsData } from "@services/getPortfolioCards";
 import Title from "@src/components/atoms/Title/Title";
 import CardPortfolio from "@molecules/CardPortfolio/CardPortfolio.astro";
 import defaultImage from "@img/metaBanner.webp";
-import LoaderTerminal from "@src/components/atoms/Loader/LoaderTerminal.astro";
 import PortfolioModal from "./portfolioModal/PortfolioModal.astro";
 
-// Intentar obtener los datos principales
-let mainData = [];
+const mainData = await portfolioCardsData();
 
-try {
-  const data = await portfolioCardsData();
-
-  mainData = data.proyectosPortafolio.edges.map((item) => {
-    const skillicons = item.node.proyectoPortafolio.skillicons.map((icon) => {
-      const parts = icon.split(":");
-      return parts.length > 1 ? parts.slice(1).join(":").trim() : icon.trim();
-    });
-
-
-    return {
-      title: item.node.title,
-      description: item.node.proyectoPortafolio.description,
-      imgSrc:
-        item.node.proyectoPortafolio.imgsrc_url?.node?.link || defaultImage,
-      demoURL: item.node.proyectoPortafolio.demourl,
-      repoURL: item.node.proyectoPortafolio.repoUrl,
-      skills: item.node.proyectoPortafolio.skills,
-      skillicons,
-      detalles: item.node.proyectoPortafolio.detalle,
-      slug: item.node.slug,
-    };
-  });
-} catch (error) {
-  console.error("Error fetching main data:", error);
-}
 const { cardsLength = 6 } = Astro.props;
 
 
@@ -50,8 +22,8 @@ const { cardsLength = 6 } = Astro.props;
       mainData
         .slice(0, cardsLength)
         .map((data) =>
-        <CardPortfolio {...data} skillIcon={data.skillicons} />
-        <PortfolioModal {...data} skillIcon={data.skillicons} />
+        <CardPortfolio {...data} />
+        <PortfolioModal {...data} />
       )
 
     }

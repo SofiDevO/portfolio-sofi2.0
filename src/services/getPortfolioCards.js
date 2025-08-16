@@ -1,39 +1,57 @@
 import { wpquery } from "@src/services/wordpress";
+import { skillIcons, portafolioData } from "@data/portfolioData";
 
 export const portfolioCardsData = async () => {
   try {
     const data = await wpquery({
       query: `
-        query gePortfolioCards {
-          proyectosPortafolio(where: {orderby: {field: MODIFIED, order: DESC}}) {
-            edges {
-              node {
-                title(format: RENDERED)
-                proyectoPortafolio {
-                  skills
-                  skillicons
-                  imgsrc_url {
-                    node {
-                      link: mediaItemUrl
-                      srcSet(size: ALX_MEDIUM)
-                      sizes(size: ALX_MEDIUM)
-                    }
+        query proyects {
+          proyects {
+            nodes {
+              proyectInfo {
+                banner {
+                  node {
+                    altText
+                    mediaItemUrl
+                    sizes(size: MEDIUM)
+                    srcSet(size: MEDIUM)
                   }
-                  description
-                  demourl
-                  repoUrl
-                  detalle
                 }
-                slug
+                excerpt
+                description
+                demourl
+                skillicon
+                repourl
               }
+              slug
+              title
             }
           }
         }
       `,
     });
-    return data;
+    const projects = data?.proyects?.nodes || [];
+    if (!projects.length) return [];
+
+    return projects.map(item => {
+      return {
+        title: item.title,
+        description: item.proyectInfo.description,
+        excerpt: item.proyectInfo.excerpt,
+        imgSrc: item.proyectInfo.banner?.node?.mediaItemUrl || '',
+        demoURL: item.proyectInfo.demourl,
+        repoURL: item.proyectInfo.repourl,
+        skills: item.proyectInfo.skillicon,
+        slug: item.slug,
+        skillIcons: item.proyectInfo.skillicon.map(skill => skillIcons[skill] ?? "" )
+      }
+    })
   } catch (e) {
-    console.error("Error fetching portfolio data:", e);
-    return { proyectosPortafolio: { edges: [] } };
+    return portafolioData.map(item => {
+      return {
+        ...item,
+        skillIcons: item.skills.map(skill => skillIcons[skill] ?? "")
+      }
+    });
   }
 };

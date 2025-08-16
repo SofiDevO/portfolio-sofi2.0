@@ -5,9 +5,9 @@ const {
   demoURL,
   repoURL,
   description,
+  excerpt,
   skills,
-  skillIcon,
-  detalles,
+  skillIcons,
   slug,
 
 
@@ -34,7 +34,7 @@ const {
             />
           </div>
           <div class="thecnology">
-            {skillIcon.map((icon, index) => (
+            {skillIcons.map((icon, index) => (
               <div class="skill-item">
                 <iconify-icon icon={icon} width="40" height="40" />
                 <span class="skill__tooltip">{skills[index]}</span>
@@ -43,7 +43,7 @@ const {
           </div>
           <div class="modal__desc">
             <h1 class="modal__title">{title}</h1>
-            <div class="modal__fragment" set:html={detalles} />
+            <div class="modal__fragment" set:html={description} />
           </div>
           <a href={demoURL} target="_blank" rel="noopener noreferrer nofollow">
             Ver Demo
