@@ -23,7 +23,7 @@ import BlogPost from "@src/components/molecules/BlogPost/BlogPost";
     </div>
     <div class="social__item social__item-2">
       <SocialCard extrClass="youtube__card">
-        <YoutubeCardContent />
+        <YoutubeCardContent server:defer/>
       </SocialCard>
     </div>
     <div class="social__item social__item-3">
@@ -33,12 +33,10 @@ import BlogPost from "@src/components/molecules/BlogPost/BlogPost";
     </div>
     <div class="social__item social__item-4">
       <SocialCard >
-        <BlogPost
-          server:defer
-        />
+        <BlogPost />
       </SocialCard>
     </div>
   </div>
-  <YoutubeModal />
+  <YoutubeModal server:defer/>
 </section>
 <ToastNotification />
