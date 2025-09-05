@@ -24,6 +24,12 @@ export async function getData(
 ) {
   const siteUrl = !local ? url : localUrl;
 
+  // Check if siteUrl is defined before making the request
+  if (!siteUrl) {
+    console.warn(`${!local ? 'SITE_URL' : 'LOCAL_URL'} environment variable is not defined`);
+    return null;
+  }
+
   // If the value of 'dataType' is not "data", use it as the endpoint; otherwise, the endpoint will be "all".
   // This decides which part of the API to call.
   const endpoint = dataType !== "data" ? dataType : "all";

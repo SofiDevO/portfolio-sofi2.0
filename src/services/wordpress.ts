@@ -5,6 +5,12 @@ interface WPGraphQLParams {
 }
 
 export async function wpquery({ query, variables = {} }: WPGraphQLParams) {
+  // Check if baseURL is defined before making the request
+  if (!baseURL) {
+    console.warn('WPGRAPHQL_URL environment variable is not defined');
+    return {};
+  }
+  
   const res = await fetch(baseURL, {
     method: "post",
     headers: {
