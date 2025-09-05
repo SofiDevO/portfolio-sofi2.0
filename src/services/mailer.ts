@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import * as EmailValidator from "email-validator";
 
 interface ISendEmail {
   email: string;
@@ -17,10 +16,7 @@ async function sendEmail(props: ISendEmail) {
     pass: import.meta.env.EMAIL_PASS,
   };
 
-  // Verificación del formato del email con email-validator
-  if (!EmailValidator.validate(props.email)) {
-    throw new Error("El correo electrónico no tiene un formato válido.");
-  }
+
 
   let transporter = nodemailer.createTransport({
     host: data.host,
@@ -32,22 +28,55 @@ async function sendEmail(props: ISendEmail) {
     },
   });
 
+
   let message = {
     from: data.email,
     to: data.email,
     subject: props.subject,
     html: `
-      <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
-        <header style="background-color: aliceblue; padding: 1rem; margin-bottom: 1rem;">
-            <h1 style="text-align: center; font-size: 3rem; font-weight: 700; color: rgb(51, 0, 128);">Portfolio</h1>
-        </header>
-        <main>
-            <p style="font-size: 18px; font-weight: bold; color: rgb(51, 0, 128); margin-bottom: 2rem;">Nombre: <span style="color: #010101; font-size: 16px;">${props.name}</span></p>
-            <p style="font-size: 18px; font-weight: bold; color: rgb(51, 0, 128); margin-bottom: 2rem;">Email: <span style="color: #010101; font-size: 16px;">${props.email}</span></p>
-            <p style="font-size: 18px; font-weight: bold; color: rgb(51, 0, 128); margin-bottom: 2rem;">Asunto: <span style="color: #010101; font-size: 16px;">${props.subject}</span></p>
-            <p style="font-size: 18px; font-weight: bold; color: rgb(51, 0, 128);">Mensaje: <span style="color: #010101; font-size: 16px;">${props.html}</span></p>
-        </main>
-      </section>
+      <div style="background-color: #1a133b; padding: 28px 16px; font-family: Arial, sans-serif; width: 100%; -webkit-text-size-adjust: 100%;">
+        <center>
+          <table width="600" style="max-width:600px; width:100%; border-collapse:collapse;">
+            <tr>
+              <td style="padding: 0 0 18px 0; text-align: center;">
+                <div style="background: linear-gradient(90deg, rgba(120,84,255,0.12), rgba(80,44,200,0.08)); padding: 18px; border-radius: 10px; display: inline-block;">
+                  <h1 style="margin:0; font-size:28px; color:#ffffff; font-weight:700; letter-spacing:0.2px;">Portfolio</h1>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="background-color: #241a3f; border-radius: 8px; padding: 18px; color: #e9e7ee;">
+                <p style="margin:0 0 12px; font-size:16px;">
+                  <strong style="color:#bdb6ff; display:inline-block; min-width:88px;">Nombre:</strong>
+                  <span style="color:#ffffff; font-size:15px;">${props.name}</span>
+                </p>
+
+                <p style="margin:0 0 12px; font-size:16px;">
+                  <strong style="color:#bdb6ff; display:inline-block; min-width:88px;">Email:</strong>
+                  <span style="color:#ffffff; font-size:15px;">${props.email}</span>
+                </p>
+
+                <p style="margin:0 0 12px; font-size:16px;">
+                  <strong style="color:#bdb6ff; display:inline-block; min-width:88px;">Asunto:</strong>
+                  <span style="color:#ffffff; font-size:15px;">${props.subject}</span>
+                </p>
+
+                <p style="margin:0; font-size:16px; line-height:1.4;">
+                  <strong style="color:#bdb6ff; display:block; margin-bottom:6px;">Mensaje:</strong>
+                  <span style="color:#e6e4ef; font-size:15px;">${props.html}</span>
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:16px; text-align:center; color:#9b94b8; font-size:12px;">
+                Enviado desde el formulario de contacto
+              </td>
+            </tr>
+          </table>
+        </center>
+      </div>
     `,
   };
 
