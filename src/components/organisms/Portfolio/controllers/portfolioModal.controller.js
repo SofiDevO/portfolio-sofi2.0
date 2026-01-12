@@ -3,7 +3,7 @@ const cardSection = document.querySelector(".card__section");
   const modalImg = document.querySelector(".modal__image")
   const modalTitle = document.querySelector(".modal__title")
   const modalDescription = document.querySelector(".modal__fragment")
-  const modalTecnology = document.querySelector(".modal-thecnology")
+  const modalTechnology = document.querySelector(".modal__technology")
   const modalDemo = document.querySelector(".modal__demo")
   const modalRepo = document.querySelector(".modal__repo")
   const closeBtn = document.querySelector(".close-btn")
@@ -31,13 +31,12 @@ const cardSection = document.querySelector(".card__section");
     modalDemo.href = data.demoURL;
     modalRepo.href = data.repoURL;
 
-    modalTecnology.innerHTML = "";
-    const cardTecnology = card.querySelector(".thecnology") ;
-    if (cardTecnology) {
-      const skillsData = JSON.parse(cardTecnology.dataset.skills || '[]');
-      const iconsData = JSON.parse(cardTecnology.dataset.icons || '[]');
-
-      modalTecnology.innerHTML = iconsData
+    modalTechnology.innerHTML = "";
+    const cardTechnology = card.querySelector(".technology") ;
+    if (cardTechnology) {
+      const skillsData = JSON.parse(cardTechnology.dataset.skills || '[]');
+      const iconsData = JSON.parse(cardTechnology.dataset.icons || '[]');
+      modalTechnology.innerHTML = iconsData
         .map((icon, index) => `
           <div class="skill-item">
             <iconify-icon icon="${icon}" width="40" height="40"></iconify-icon>
