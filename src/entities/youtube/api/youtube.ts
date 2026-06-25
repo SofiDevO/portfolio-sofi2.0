@@ -104,7 +104,7 @@ export const fetchLatestYouTubeVideo = async (): Promise<YouTubeVideo | null> =>
       if (!duration || parseDuration(duration) < 60) continue;
 
       return {
-        id: videoId
+        id: videoId,
         title: item.snippet.title,
         description: item.snippet.description,
         thumbnail: item.snippet.thumbnails?.high?.url || item.snippet.thumbnails?.medium?.url || item.snippet.thumbnails?.default?.url,
