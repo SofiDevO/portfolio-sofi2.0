@@ -33,15 +33,14 @@
 @use "@widgets/about/ui/_about";
 @use "@widgets/portfolio/ui/_portfolio";
 @use "@widgets/social/ui/_social";
-
 // App layouts
 @use "@app/layouts/BackgroundGradient/background-gradient";
 
 
 :root {
-  --text-color:  rgb(12 12 12);
+  --text-color: rgb(12 12 12);
   --secundary-color: #F1F1F1;
-  --black:rgb(12 12 12);
+  --black: rgb(12 12 12);
   --white: #F1F1F1;
   --french-violet: 102, 0, 204;
 }
