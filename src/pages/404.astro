@@ -1,26 +1,24 @@
 ---
-import LayoutNoHeader from "../layouts/LayoutNoHeader.astro";
-import Title from "@components/atoms/Title/Title.jsx";
-import Button from "@components/atoms/Button/Button.astro";
+import LayoutNoHeader from "@app/layouts/LayoutNoHeader.astro";
+import Title from "@shared/ui/Title/Title";
+import Button from "@shared/ui/Button/Button.astro";
 ---
 
 <script>
- document.getElementById('backButton').addEventListener('click', function() {
+  document.getElementById("backButton")?.addEventListener("click", () => {
     window.history.back();
   });
-  </script>
+</script>
 
 <LayoutNoHeader>
-
   <section class="error">
-  <div class="error__container">
-
-    <Title titleDesc="404 NOT FOUND" clase="" />
-    <p class="error__message ">La pagina a la que tratas de acceder no existe</p>
-    <p class="error__message">Esta página está en construcción. Por favor, vuelve más tarde</p>
-    <img src="/img/sofi-laptop.gif" alt="logo" />
-    <Button content="Volver" id="backButton"/>
-  </div>
+    <div class="error__container">
+      <Title titleDesc="404 NOT FOUND" clase="" />
+      <p class="error__message">La pagina a la que tratas de acceder no existe</p>
+      <p class="error__message">Esta página está en construcción. Por favor, vuelve más tarde</p>
+      <img src="/img/sofi-laptop.gif" alt="logo" />
+      <Button content="Volver" id="backButton" />
+    </div>
   </section>
 </LayoutNoHeader>
 
@@ -51,7 +49,7 @@ import Button from "@components/atoms/Button/Button.astro";
 
   .error__message {
     font-size: 1.8rem;
-    color: aqua
+    color: aqua;
   }
 
   .error > *:not(:last-child) {

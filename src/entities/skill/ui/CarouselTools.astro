@@ -1,0 +1,13 @@
+---
+import Carousel from "@shared/ui/Carousel/Carousel.astro";
+const { toolsData } = Astro.props;
+---
+
+<Carousel clase="slide__track--tools">
+  {[...toolsData, ...toolsData].map((data) => (
+    <div class="slide">
+      <div class="tag">{data.name}</div>
+      <iconify-icon icon={data.icon} width="60" height="60" />
+    </div>
+  ))}
+</Carousel>

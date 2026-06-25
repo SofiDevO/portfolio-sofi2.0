@@ -6,18 +6,13 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@atoms/*": ["src/components/atoms/*"],
-      "@molecules/*": ["src/components/molecules/*"],
-      "@organisms/*": ["src/components/organisms/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@controllers/*": ["src/controllers/*"],
-      "@data/*": ["src/data/*"],
-      "@services/*": ["src/services/*"],
-      "@sass/*": ["src/sass/*"],
-      "@img/*": ["public/img/*"]
+      "@app/*":      ["src/app/*"],
+      "@widgets/*":  ["src/widgets/*"],
+      "@features/*": ["src/features/*"],
+      "@entities/*": ["src/entities/*"],
+      "@shared/*":   ["src/shared/*"],
+      "@types/*":    ["src/types/*"],
+      "@pages/*":    ["src/pages/*"]
     },
     "moduleResolution": "node"
   }

@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { sendEmail } from "@src/services/mailer";
+import { sendEmail } from "@entities/contact/api/mailer";
 
 const ERROR = {
   EMAIL: "Email is required",
@@ -19,51 +19,27 @@ export const POST: APIRoute = async ({ request }) => {
   const message = (formData.get("message") as string) || undefined;
 
   if (!name) {
-    return new Response(JSON.stringify({ message: ERROR.NAME }), {
-      status: 400,
-    });
+    return new Response(JSON.stringify({ message: ERROR.NAME }), { status: 400 });
   }
 
-  // Email format validation
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return new Response(
-      JSON.stringify({
-        message: `${ERROR.INVALID_MAIL} or ${ERROR.EMAIL}`,
-      }),
+      JSON.stringify({ message: `${ERROR.INVALID_MAIL} or ${ERROR.EMAIL}` }),
       { status: 400 }
     );
   }
 
   if (!message)
-    return new Response(JSON.stringify({ message: ERROR.MESSAGE }), {
-      status: 400,
-    });
+    return new Response(JSON.stringify({ message: ERROR.MESSAGE }), { status: 400 });
 
   if (!subject)
-    return new Response(JSON.stringify({ message: ERROR.SUBJECT }), {
-      status: 400,
-    });
-
-  const data = {
-    name,
-    email,
-    html: message,
-    subject,
-  };
+    return new Response(JSON.stringify({ message: ERROR.SUBJECT }), { status: 400 });
 
   try {
-    await sendEmail(data);
-    return new Response(
-      JSON.stringify({
-        success: true,
-        message: "Message sent successfully",
-      })
-    );
+    await sendEmail({ name, email, html: message, subject });
+    return new Response(JSON.stringify({ success: true, message: "Message sent successfully" }));
   } catch (e) {
     console.error(e);
-    return new Response(
-      JSON.stringify({ message: ERROR.SERVER }),
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ message: ERROR.SERVER }), { status: 500 });
   }
 };

@@ -1,0 +1,57 @@
+---
+import { menuData } from "@entities/navigation/model/menuData";
+import Logo from "@shared/ui/Logo/Logo.astro";
+import HamburgerButton from "@features/nav-menu/ui/HamburgerBtn.astro";
+import SocialIcons from "@entities/social/ui/SocialIcons.astro";
+
+const pagePathname = Astro.url.pathname;
+const { blog } = Astro.props;
+---
+
+<script>
+  import "@features/nav-menu/model/hamburger.js";
+</script>
+
+<header class="header">
+  <div class="header__container blur">
+    <Logo />
+    <nav class="header__menu">
+      <ul class="header__list">
+        {
+          pagePathname !== "/" && (
+            <li class="header__item">
+              <a class="header__link" href="/">
+                Home
+              </a>
+            </li>
+          )
+        }
+        {
+          menuData.map((data) => (
+            <li class="header__item">
+              <a
+                class="header__link"
+                href={data.enlace}
+                target={data.enlace.includes("blog") ? "_blank" : "_self"}
+              >
+                {data.texto}
+                {data.enlace.includes("blog") && (
+                  <iconify-icon
+                    icon="iconamoon:link-external"
+                    width="19"
+                    height="19"
+                    style="color: #00c8f0"
+                  />
+                )}
+              </a>
+            </li>
+          ))
+        }
+        <div class="header__icons">
+          <SocialIcons isAnimated={false} />
+        </div>
+      </ul>
+    </nav>
+    <HamburgerButton />
+  </div>
+</header>

@@ -1,0 +1,20 @@
+@use "@app/sass/_variables" as *;
+@use "@app/sass/_mixins" as *;
+
+.logo {
+  @include centerFlex(space-between);
+  gap: 1rem;
+}
+
+.logo:hover span {
+  color: aqua;
+}
+
+.dark .logo span {
+  color: aqua;
+}
+
+.logo__img {
+  max-width: 4.5rem;
+  flex-basis: 10%;
+}

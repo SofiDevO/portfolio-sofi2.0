@@ -1,16 +1,17 @@
 ---
-import BackgroundGradient from "@src/layouts/BackgroundGradient/BackgroundGradient.astro";
-import Layout from "../layouts/Layout.astro";
-import Hero from "@src/components/organisms/Hero/Hero.astro";
-import DividerBottom from "@src/components/atoms/DividerBottom/DividerBottom.astro";
-import About from "@src/components/organisms/About/About.astro";
-import DividerTop from "@src/components/atoms/DividerTop/DividerTop.astro";
-import Skills from "@src/components/organisms/Skills/Skills.astro";
-import Portfolio from "@src/components/organisms/Portfolio/Portfolio.astro";
-import Social from "@src/components/organisms/Social/Social.astro";
-import Footer from "@molecules/Footer/Footer.astro";
-import ToastNotification from "@src/components/atoms/ToastNotification/ToastNotification.astro";
-import { getData } from "@src/services/data";
+import BackgroundGradient from "@app/layouts/BackgroundGradient/BackgroundGradient.astro";
+import Layout from "@app/layouts/Layout.astro";
+import Hero from "@widgets/hero/ui/Hero.astro";
+import DividerBottom from "@shared/ui/Divider/DividerBottom.astro";
+import About from "@widgets/about/ui/About.astro";
+import DividerTop from "@shared/ui/Divider/DividerTop.astro";
+import Skills from "@widgets/skills/ui/Skills.astro";
+import Portfolio from "@widgets/portfolio/ui/Portfolio.astro";
+import Social from "@widgets/social/ui/Social.astro";
+import Footer from "@widgets/footer/ui/Footer.astro";
+import ToastNotification from "@shared/ui/ToastNotification/ToastNotification.astro";
+import { getData } from "@entities/user/api/getData";
+
 const { user, skills, tools } = await getData();
 
 export const prerender = true;
@@ -23,17 +24,16 @@ export const prerender = true;
   <DividerTop />
   <About data={user} />
   <DividerBottom fill="shape-fill-3" />
-  <Skills data={user} , skills={skills} tools={tools} />
+  <Skills data={user} skills={skills} tools={tools} />
   <DividerTop fill="shape-fill-purple " />
-  <!-- <Portfolio /> -->
   <Portfolio cardsLength={3} server:defer />
   <DividerBottom fill="shape-fill-3" />
-  <Social server:defer/>
+  <Social server:defer />
   <Footer />
 </Layout>
 <ToastNotification />
 <script>
-  import ToastNotification from "@src/controllers/toastAlerts.controller";
+  import ToastNotification from "@features/contact-form/model/toastAlerts.js";
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       ToastNotification("This site is under construction 🚧🏗️", "info");

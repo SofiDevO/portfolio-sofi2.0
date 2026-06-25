@@ -1,0 +1,29 @@
+---
+const { data } = Astro.props;
+---
+
+<script>
+  import { initProfileImage } from "@features/skills-shuffle/model/profileImage";
+  import { initShuffleSkills } from "@features/skills-shuffle/model/shuffleSkills";
+  import { initShuffleCounter } from "@features/skills-shuffle/model/shuffleBtnCounter";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initProfileImage();
+    initShuffleSkills();
+    initShuffleCounter();
+  });
+</script>
+
+<div class="image__container">
+  <button class="image__button">
+    <img
+      src={data}
+      id="profile-picture"
+      class="hero__img hero-profile-img"
+      alt="Profile Picture"
+    />
+  </button>
+  <div class="hero__skills">
+    <!-- Icons rendered dynamically by shuffleSkills -->
+  </div>
+</div>

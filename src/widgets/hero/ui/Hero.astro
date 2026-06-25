@@ -1,0 +1,21 @@
+---
+import BackgroundIconsFloat from "@shared/ui/BackgroundIconsFloat/BackgroundIconsFloat.astro";
+import ProfilePicture from "@entities/user/ui/ProfilePicture.astro";
+import SocialIcons from "@entities/social/ui/SocialIcons.astro";
+
+const { data } = Astro.props;
+---
+
+<section class="hero">
+  <BackgroundIconsFloat />
+  <div class="hero__container">
+    <div class="hero__content">
+      <h1 class="hero__title">Hi! I'm {data.name}<span class="span__blink">{data.lastName}</span></h1>
+      <div class="text__container">
+        <p class="hero__slogan">≥{data.sloganHero1}</p>
+      </div>
+      <SocialIcons />
+    </div>
+    <ProfilePicture data={data.profilePicture} />
+  </div>
+</section>

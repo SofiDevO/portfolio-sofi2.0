@@ -1,0 +1,53 @@
+---
+import Title from "@shared/ui/Title/Title";
+import CarouselSkills from "@entities/skill/ui/CarouselSkills.astro";
+import CarouselTools from "@entities/skill/ui/CarouselTools.astro";
+import CardTerminal from "@shared/ui/CardTerminal/CardTerminal.astro";
+
+const { data, skills, tools } = Astro.props;
+---
+
+<script>
+  import { initTerminalSkills } from "@features/skills-shuffle/model/terminalSkills";
+  document.addEventListener("DOMContentLoaded", initTerminalSkills);
+</script>
+
+<section class="skills" id="skills">
+  <div class="skills__container">
+    <div class="skills__info">
+      <div class="skills__textos">
+        <Title titleDesc="Skills" clase="title-dark" />
+        <p class="skills__description">
+          {data.aboutSkills.intro}
+        </p>
+        <h5 class="skills__description skills__description--subtitle">
+          {data.aboutSkills.highlighted}
+        </h5>
+        <p class="skills__description">
+          {data.aboutSkills.continuation}
+        </p>
+      </div>
+      <div class="skills__avatar__container">
+        <img
+          id="skills__avatar"
+          class="skills__avatar"
+          src="/img/sofi-love.png"
+          alt={`avatar funko of ${data.userName}`}
+          width="300"
+          height="300"
+        />
+        <CardTerminal clase="skills__terminal skills__popup">
+          <p class="skills__terminal__content">
+            {data.terminalInfo}
+            <span class="cursor"></span>
+          </p>
+        </CardTerminal>
+      </div>
+    </div>
+    <CarouselSkills skillsData={skills} />
+    <div class="skills__carousel--tools">
+      <Title titleDesc="Tools" clase="title-dark" />
+      <CarouselTools toolsData={tools} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+@use "base/reset";
+@use "./functions" as *;
+@use "./animations" as *;
+
+// Shared UI
+@use "@shared/ui/Title/_title";
+@use "@shared/ui/Subtitle/_subtitle";
+@use "@shared/ui/Divider/_divider-bottom";
+@use "@shared/ui/Divider/_divider-top";
+@use "@shared/ui/YearButton/_year-button";
+@use "@shared/ui/ToastNotification/_toast-notification";
+@use "@shared/ui/Carousel/carousel";
+@use "@shared/ui/CardTerminal/_card-terminal";
+@use "@shared/ui/CardPortfolio/_card-portfolio";
+@use "@shared/ui/SocialCard/_social-card";
+@use "@shared/ui/Logo/_logo";
+
+// Entities UI
+@use "@entities/social/ui/_social-icons";
+@use "@entities/user/ui/_profile-picture";
+@use "@entities/github/ui/_github-calendar";
+@use "@entities/blog/ui/_post-card";
+
+// Features UI
+@use "@features/contact-form/ui/_contact-form";
+@use "@features/nav-menu/ui/_hamburger";
+
+// Widgets UI
+@use "@widgets/header/ui/_header";
+@use "@widgets/footer/ui/_footer";
+@use "@widgets/hero/ui/_hero";
+@use "@widgets/skills/ui/_skills";
+@use "@widgets/about/ui/_about";
+@use "@widgets/portfolio/ui/_portfolio";
+@use "@widgets/social/ui/_social";
+
+// App layouts
+@use "@app/layouts/BackgroundGradient/background-gradient";
+
+
+:root {
+  --text-color:  rgb(12 12 12);
+  --secundary-color: #F1F1F1;
+  --black:rgb(12 12 12);
+  --white: #F1F1F1;
+  --french-violet: 102, 0, 204;
+}
+
+.dark {
+  --text-color: #F1F1F1;
+  --secundary-color: rgb(10, 10, 10);
+}

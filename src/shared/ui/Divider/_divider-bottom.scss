@@ -1,0 +1,48 @@
+@use "@app/sass/_variables" as *;
+@use "@app/sass/_mixins" as *;
+
+
+.wrapper {
+    position: relative;
+    z-index: 40;
+    min-height: 12rem;
+
+}
+
+.custom-shape-divider-bottom-1723178641 {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1723178641 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 547.3px);
+    height: 179px;
+
+    @include respond-to("medium") {
+        height: 168px;
+        width: calc(100% + 247.3px);
+    }
+}
+
+.custom-shape-divider-bottom-1723178641 .shape-fill {
+    fill: $secundaryColor;
+}
+
+.custom-shape-divider-bottom-1723178641 .shape-fill-2 {
+    fill: #0E0E0E;
+}
+
+.custom-shape-divider-bottom-1723178641 .shape-fill-3 {
+    fill: $cetacean-purple;
+}
+
+
+.dark .custom-shape-divider-bottom-1723178641 .shape-fill {
+    fill: $mainColor;
+}

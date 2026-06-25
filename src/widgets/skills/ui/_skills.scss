@@ -1,0 +1,146 @@
+@use "@app/sass/_variables" as *;
+@use "@app/sass/_mixins" as *;
+
+
+.skills {
+  background: $cetacean-purple;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  writing-mode: horizontal-tb;
+  padding-block: 30rem;
+  min-height: 100dvh;
+
+  @include respond-to("medium") {
+    padding-block: 10rem;
+  }
+
+  &__container {
+    @include centerFlex(center, flex-start);
+    flex-direction: column;
+    max-width: 1300px;
+    width: 100%;
+    padding: 2rem 1rem;
+
+    .skills__info {
+      @include centerFlex();
+      align-self: center;
+      max-width: 950px;
+      gap: 7rem;
+
+      @include respond-to("medium") {
+        flex-wrap: wrap-reverse;
+      }
+
+      .skills__textos {
+        max-width: 62rem;
+        width: 100%;
+      }
+
+      .skills__description {
+        @include font-family("textos");
+        color: #f1f1f1;
+        font-size: 1.7rem;
+        max-width: 52rem;
+        line-height: 1.5;
+        align-self: center;
+        white-space: pre-line;
+        margin-bottom: 1rem;
+      }
+
+      .skills__description--subtitle {
+        font-weight: bold;
+        @include text-gradient("dark");
+      }
+
+      .skills__avatar__container {
+        position: relative;
+        flex-shrink: 1;
+      }
+    }
+  }
+}
+
+.skills__popup {
+  width: max-content;
+  max-width: 54rem;
+  bottom: 97%;
+  left: 60%;
+  z-index: 200;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  @include respond-to("medium") {
+    bottom: 95%;
+    left: 50%;
+    max-width: none;
+    width: 100%;
+  }
+
+  .skills__terminal__content {
+    padding: .4rem;
+    ;
+    white-space: pre-line;
+    @include typography(1.6rem, 1.5, 400);
+    @include font-family("fira-code");
+  }
+
+  @include respond-to("medium") {
+    .skills__popup {
+      bottom: 67%;
+    }
+
+    .skills__terminal__content {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.skills__popup.active {
+  display: block;
+  opacity: 1;
+}
+
+.skills__carousel--tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  margin-top: 5rem;
+
+  h2 {
+    margin-left: 22rem;
+
+    @include respond-to("medium") {
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+.cursor {
+  margin-left: .4rem;
+  border-right: 3px solid;
+  width: 100%;
+  animation:
+
+    cursor .4s step-end infinite alternate;
+
+}
+
+@keyframes cursor {
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+/*  animation typing effect*/
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}

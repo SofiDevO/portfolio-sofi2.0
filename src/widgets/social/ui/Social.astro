@@ -1,0 +1,45 @@
+---
+import Title from "@shared/ui/Title/Title";
+import ContactForm from "@features/contact-form/ui/ContactForm.astro";
+import DiscordCardContent from "@entities/social/ui/DiscordCardContent.astro";
+import SocialCard from "@shared/ui/SocialCard/SocialCard.astro";
+import YoutubeCardContent from "@features/youtube-player/ui/YoutubeCardContent.astro";
+import ToastNotification from "@shared/ui/ToastNotification/ToastNotification.astro";
+import BlogPost from "@entities/blog/ui/BlogPost";
+import YoutubeModal from "@features/youtube-player/ui/YoutubeModal.astro";
+import { cardsData } from "@entities/blog/api/getCards";
+
+const posts = await cardsData();
+---
+
+<section id="social" class="social">
+  <Title
+    titleDesc="Find me on   My social media"
+    clase="title-dark social__title"
+  />
+
+  <div class="social__grid">
+    <div class="social__item social__item-1">
+      <SocialCard>
+        <DiscordCardContent />
+      </SocialCard>
+    </div>
+    <div class="social__item social__item-2">
+      <SocialCard extrClass="youtube__card">
+        <YoutubeCardContent />
+      </SocialCard>
+    </div>
+    <div class="social__item social__item-3">
+      <SocialCard>
+        <ContactForm />
+      </SocialCard>
+    </div>
+    <div class="social__item social__item-4">
+      <SocialCard>
+        <BlogPost posts={posts} client:load />
+      </SocialCard>
+    </div>
+  </div>
+  <YoutubeModal server:defer />
+</section>
+<ToastNotification />

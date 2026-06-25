@@ -1,0 +1,28 @@
+---
+import { portfolioCardsData } from "@entities/project/api/getPortfolioCards";
+import Title from "@shared/ui/Title/Title";
+import CardPortfolio from "@shared/ui/CardPortfolio/CardPortfolio.astro";
+import PortfolioModal from "@widgets/portfolio/ui/PortfolioModal.astro";
+
+const mainData = await portfolioCardsData();
+const { cardsLength = 6 } = Astro.props;
+---
+
+<section class="portfolio" id="portfolio">
+  <Title titleDesc="Portfolio" clase="title-dark portfolio__title" />
+  <div class="card__section">
+    {mainData.slice(0, cardsLength).map((data) => <CardPortfolio {...data} />)}
+  </div>
+  {
+    mainData.length > 3 && (
+      <a class="portfolio__projects-btn" href="/projects">
+        Ver todos
+      </a>
+    )
+  }
+  <PortfolioModal />
+</section>
+
+<script>
+  import "@features/portfolio-modal/model/portfolioModal.js";
+</script>

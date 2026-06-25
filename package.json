@@ -4,9 +4,11 @@
   "description": "Nueva version del portafolio",
   "main": "index.js",
   "scripts": {
-    "dev": "astro dev --port 4322",
+    "dev": "astro dev --port 4321",
+    "dev:vault": "infisical run --env=dev -- astro dev --port 4321",
     "start": "astro dev",
     "build": "astro build",
+    "build:vault": "infisical run --env=prod -- astro build",
     "preview": "astro preview"
   },
   "keywords": [
@@ -17,15 +19,16 @@
   "author": "SofiDev",
   "license": "ISC",
   "dependencies": {
-    "@astrojs/mdx": "^4.3.4",
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/vercel": "^8.2.6",
+    "@astrojs/mdx": "^7.0.0",
+    "@astrojs/react": "^6.0.0",
+    "@astrojs/vercel": "^11.0.0",
+    "@emotion/react": "^11.14.0",
     "@emotion/styled": "11.13.0",
     "@fontsource-variable/fira-code": "5.0.18",
     "@fontsource-variable/montserrat": "5.0.19",
     "@fontsource/questrial": "5.0.13",
     "@mui/material": "5.16.7",
-    "astro": "^5.13.2",
+    "astro": "^7.0.2",
     "astro-embed": "^0.9.0",
     "dotenv": "16.4.5",
     "email-validator": "^2.0.4",

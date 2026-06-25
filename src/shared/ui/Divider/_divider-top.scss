@@ -1,0 +1,19 @@
+@use "@app/sass/_variables" as *;
+@use "@app/sass/_mixins" as *;
+
+.custom-shape-divider-top-1723861291 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.shape-fill {
+  fill: #020202;
+}
+
+.shape-fill-purple {
+  fill: #140030;
+}

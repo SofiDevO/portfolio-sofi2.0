@@ -1,9 +1,10 @@
 ---
-import Title from "@src/components/atoms/Title/Title";
-import CardPortfolio from "@src/components/molecules/CardPortfolio/CardPortfolio.astro";
-import PortfolioModal from "@src/components/organisms/Portfolio/portfolioModal/PortfolioModal.astro";
-import Layout from "@src/layouts/Layout.astro";
-import { portfolioCardsData } from "@src/services/getPortfolioCards";
+import Title from "@shared/ui/Title/Title";
+import CardPortfolio from "@shared/ui/CardPortfolio/CardPortfolio.astro";
+import PortfolioModal from "@widgets/portfolio/ui/PortfolioModal.astro";
+import Layout from "@app/layouts/Layout.astro";
+import { portfolioCardsData } from "@entities/project/api/getPortfolioCards";
+
 const mainData = await portfolioCardsData();
 ---
 
@@ -17,8 +18,8 @@ const mainData = await portfolioCardsData();
   </div>
 </Layout>
 
-<PortfolioModal/>
+<PortfolioModal />
 
-<script >
-import "@controllers/portfolioModal.controller.js";
+<script>
+  import "@features/portfolio-modal/model/portfolioModal.js";
 </script>

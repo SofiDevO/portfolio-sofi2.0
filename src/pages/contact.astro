@@ -1,0 +1,299 @@
+---
+import Layout from "@app/layouts/Layout.astro";
+import BackgroundGradient from "@app/layouts/BackgroundGradient/BackgroundGradient.astro";
+import Title from "@shared/ui/Title/Title";
+import ToastNotification from "@shared/ui/ToastNotification/ToastNotification.astro";
+import DividerBottom from "@shared/ui/Divider/DividerBottom.astro";
+import Footer from "@widgets/footer/ui/Footer.astro";
+---
+
+<Layout
+  pageTitle="Contacto"
+  pageDescription="Formulario de contacto para reclutadores y clientes"
+>
+  <BackgroundGradient>
+    <div class="contact-page">
+      <div class="contact__header">
+        <a
+          href="javascript:history.back()"
+          class="contact__back-btn"
+          aria-label="Volver"
+        >
+          <iconify-icon icon="mdi:arrow-left" width="24" height="24"
+          ></iconify-icon>
+          Volver
+        </a>
+        <Title titleDesc="Contacto" clase="title-dark contact__title" />
+      </div>
+
+      <form class="contact__form" id="contact-form">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Tu nombre completo"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="tu@email.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Asunto</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            placeholder="Propuesta de empleo, Consulta, etc."
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <button type="submit" class="contact__submit-btn" id="submit-btn">
+          <span>Enviar Mensaje</span>
+          <iconify-icon icon="mdi:send" width="20" height="20"></iconify-icon>
+        </button>
+      </form>
+    </div>
+  </BackgroundGradient>
+  <DividerBottom fill="shape-fill-3" />
+  <Footer />
+  <ToastNotification />
+</Layout>
+
+<style lang="scss">
+  @use "@app/sass/_variables" as *;
+  @use "@app/sass/_mixins" as *;
+
+  .contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .contact__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .contact__back-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $mainColor;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-50%) translateX(-5px);
+    }
+  }
+
+  .contact__form {
+    background: rgba($secundaryColor, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    label {
+      color: $mainColor;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1.5rem;
+      color: $mainColor;
+      font-size: 1.6rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #2dcece;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 15px rgba(45, 206, 206, 0.15);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  .contact__submit-btn {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: transparent;
+    color: #2dcece;
+    border: 1px solid #2dcece;
+    padding: 1.5rem 3rem;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+
+    &:hover:not(:disabled) {
+      background: rgba(45, 206, 206, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(45, 206, 206, 0.2);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      border-color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-page {
+      padding: 6rem 1.5rem 3rem;
+    }
+
+    .contact__header {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact__back-btn {
+      position: relative;
+      top: 0;
+      transform: none;
+      align-self: flex-start;
+
+      &:hover {
+        transform: translateX(-5px);
+      }
+    }
+
+    .contact__form {
+      padding: 3rem 2rem;
+    }
+  }
+</style>
+
+<script>
+  import "@features/contact-form/model/toastAlerts.js";
+
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const btnText = submitBtn?.querySelector("span");
+
+  if (form && submitBtn && btnText) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      // Update UI to loading state
+      submitBtn.disabled = true;
+      const originalText = btnText.innerText;
+      btnText.innerText = "Enviando...";
+
+      try {
+        const response = await fetch("/api/email-sender", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          ToastNotification(
+            "¡Mensaje enviado con éxito! Te responderé pronto.",
+            "success",
+          );
+          form.reset();
+        } else {
+          ToastNotification(
+            result.message || "Error al enviar el mensaje. Intenta de nuevo.",
+            "error",
+          );
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        ToastNotification(
+          "Ocurrió un error inesperado. Verifica tu conexión.",
+          "error",
+        );
+      } finally {
+        // Restore UI
+        submitBtn.disabled = false;
+        btnText.innerText = originalText;
+      }
+    });
+  }
+</script>

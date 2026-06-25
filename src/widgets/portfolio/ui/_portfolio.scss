@@ -1,0 +1,45 @@
+@use "@app/sass/_variables" as *;
+@use "@app/sass/_mixins" as *;
+@use "./portfolio-modal";
+
+#portfolio {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding-block: 15rem;
+  writing-mode: horizontal-tb;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  min-height: 654px;
+}
+
+.portfolio__title {
+  margin-bottom: 5rem;
+}
+
+.card__section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  overflow-x: hidden;
+  gap: 1rem;
+  place-content: center;
+  align-content: center;
+  padding: 0 1rem;
+  width: 100%;
+
+  @include respond-to("small") {
+    grid-template-columns: 1fr;
+    width: unset;
+  }
+}
+
+.portfolio__projects-btn {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: rgb($french-violet, 0.17);
+  color: rgb($french-violet, 1);
+  border: 2px solid rgb($french-violet, 1);
+
+  border-radius: 9px;
+}
