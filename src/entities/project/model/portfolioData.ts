@@ -16,7 +16,17 @@ export const skillIcons: Record<SkillIconKey, string> = {
   HTML: "skill-icons:html",
   Vue: "skill-icons:vuejs-dark",
   GraphQL: "skill-icons:graphql-dark",
+  Typescript: "skill-icons:typescript",
+  Nextjs: "logos:nextjs-icon",
+  Bash: "skill-icons:bash-dark",
+  Hono: "logos:hono",
+  MongoDB: "skill-icons:mongodb",
+  Prisma: "skill-icons:prisma",
+  CloudflareWorkers: "skill-icons:cloudflare-dark",
+  Swagger: "devicon:swagger",
+  PHP: "skill-icons:php-dark",
 };
+
 
 export const portafolioData: ProjectItem[] = [
   {

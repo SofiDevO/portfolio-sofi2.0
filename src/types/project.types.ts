@@ -13,7 +13,16 @@ export type SkillIconKey =
   | "Wordpress"
   | "HTML"
   | "Vue"
-  | "GraphQL";
+  | "GraphQL"
+  | "Typescript"
+  | "Nextjs"
+  | "Bash"
+  | "Hono"
+  | "MongoDB"
+  | "Prisma"
+  | "CloudflareWorkers"
+  | "Swagger"
+  | "PHP";
 
 export interface ProjectItem {
   imgSrc: string;
