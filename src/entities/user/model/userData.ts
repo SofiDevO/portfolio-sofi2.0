@@ -5,7 +5,7 @@ export const userData: UserData = {
   name: "Sofi",
   lastName: "Dev",
   userName: "SofiDev",
-  sloganHero1: "Javascript Developer in Mexico",
+  sloganHero1: " Typescript Developer in Mexico",
   profilePicture: "/img/raw.png",
   profilePicture2: "/img/raw.png",
   aboutPicture: "/img/shophi.png",
