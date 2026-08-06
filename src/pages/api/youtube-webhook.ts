@@ -1,4 +1,4 @@
-import type { APIRoute } from "astro";
+import type { APIRoute } from "astro/dist";
 import crypto from "node:crypto";
 
 // GET endpoint to handle the WebSub verification challenge
@@ -25,7 +25,6 @@ export const POST: APIRoute = async ({ request }) => {
     const rawBody = await request.text();
     const secret = import.meta.env.YT_SECRET;
 
-    // Validación de seguridad HMAC usando el secreto de YouTube
     if (secret) {
       const signature = request.headers.get("x-hub-signature");
       if (!signature) {
@@ -33,7 +32,6 @@ export const POST: APIRoute = async ({ request }) => {
         return new Response("Forbidden: Missing signature", { status: 403 });
       }
 
-      // La firma viene en el formato: sha1=...
       const expectedSignature = `sha1=${crypto
         .createHmac("sha1", secret)
         .update(rawBody)
@@ -45,7 +43,6 @@ export const POST: APIRoute = async ({ request }) => {
       }
     }
 
-    // Obtener la URL del webhook de despliegue de Vercel
     const deployHookUrl = import.meta.env.VERCEL_DEPLOY_HOOK_URL;
 
     if (!deployHookUrl) {
@@ -53,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response("Webhook received but Vercel deploy hook is not configured.", { status: 500 });
     }
 
-    // Disparar el build de Vercel
+
     const vercelResponse = await fetch(deployHookUrl, {
       method: "POST",
     });

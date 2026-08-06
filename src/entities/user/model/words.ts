@@ -1,1 +1,1 @@
-export const words: string[] = ["test", "falso", "nick", "puta", "dayanita"];
+export const words: string[] = ["test", "falso"];

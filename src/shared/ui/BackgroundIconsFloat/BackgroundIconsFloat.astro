@@ -1,18 +1,31 @@
-<script>
-  // Select the container where spans will be appended
-  const backgroundContainer = document.getElementById("bg-icons");
+---
+import { skillsData } from "@entities/skill/model/skillsData";
 
-  // Number of spans to be generated
-  const numSpans = 20;
+const floatingIcons = skillsData.map((skill, index) => {
+  const top = ((index * 13 + 7) % 85) + 5;
+  const left = ((index * 23 + 11) % 85) + 5;
+  const duration = 60 + (index % 5) * 15;
+  const delay = -((index * 17) % 50);
+  const originX = (index % 2 === 0 ? 1 : -1) * (10 + (index % 4) * 5);
+  const originY = (index % 3 === 0 ? 1 : -1) * (10 + (index % 3) * 5);
+  const size = 6 + (index % 3) * 2;
 
-  // Dynamically generate spans and append them to the container
-  for (let i = 0; i < numSpans; i++) {
-    const span = document.createElement("span");
-    backgroundContainer.appendChild(span);
-  }
-</script>
-
+  return {
+    ...skill,
+    style: `--top: ${top}%; --left: ${left}%; --duration: ${duration}s; --delay: ${delay}s; --origin-x: ${originX}vw; --origin-y: ${originY}vh; --size: ${size}vmin;`
+  };
+});
+---
 
 <div class="container__icons">
-  <div class="bg-icons" id="bg-icons"></div>
+  <div class="bg-icons" id="bg-icons">
+    {
+      floatingIcons.map((skill) => (
+        <span class="bg-icon-item" style={skill.style}>
+          <iconify-icon icon={skill.icon} />
+        </span>
+      ))
+    }
+  </div>
 </div>
+

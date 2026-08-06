@@ -10,4 +10,8 @@ export const toolsData: Tool[] = [
   { name: "XAMPP", icon: "logos:xampp" },
   { name: "Photoshop", icon: "devicon:photoshop" },
   { name: "Illustrator", icon: "skill-icons:illustrator" },
+  { name: "GitHub Copilot", icon: "simple-icons:githubcopilot" },
+  { name: "Gemini", icon: "logos:google-gemini" },
+  { name: "Antigravity", icon: "simple-icons:googledeepmind" },
 ];
+
