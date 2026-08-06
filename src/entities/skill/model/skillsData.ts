@@ -23,7 +23,6 @@ export const skillsData: Skill[] = [
   { name: "Prisma", icon: "skill-icons:prisma" },
   { name: "GraphQL", icon: "skill-icons:graphql-dark" },
   { name: "Cloudflare Workers", icon: "skill-icons:cloudflare-dark" },
-  { name: "Swagger", icon: "skill-icons:swagger-dark" },
+  { name: "Swagger", icon: "devicon:swagger" },
   { name: "WordPress", icon: "skill-icons:wordpress" },
 ];
-

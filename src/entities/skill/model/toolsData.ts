@@ -14,4 +14,3 @@ export const toolsData: Tool[] = [
   { name: "Gemini", icon: "logos:google-gemini" },
   { name: "Antigravity", icon: "simple-icons:googledeepmind" },
 ];
-

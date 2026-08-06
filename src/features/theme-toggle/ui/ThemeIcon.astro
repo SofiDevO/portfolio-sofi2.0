@@ -5,9 +5,12 @@
 <script>
   const themeToggle = document.getElementById("themeToggle");
   themeToggle?.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
+    const isDark = document.documentElement.classList.toggle("dark");
+    document.documentElement.classList.remove("customScheme");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 </script>
+
 
 <button id="themeToggle">
   <iconify-icon

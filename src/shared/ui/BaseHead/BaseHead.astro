@@ -52,3 +52,17 @@ const {
   is:inline
   src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"
 ></script>
+
+<!-- Theme persistence script -->
+<script is:inline>
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "customScheme") {
+    document.documentElement.classList.add("customScheme");
+  } else if (savedTheme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+
+
