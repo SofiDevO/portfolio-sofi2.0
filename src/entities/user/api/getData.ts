@@ -1,36 +1,30 @@
-const localUrl = import.meta.env.LOCAL_URL;
-const url = import.meta.env.SITE_URL;
+import { skillsData } from "@entities/skill/model/skillsData";
+import { menuData } from "@entities/navigation/model/menuData";
+import { portafolioData } from "@entities/project/model/portfolioData";
+import { socialIconsData } from "@entities/social/model/socialIconsData";
+import { userData } from "@entities/user/model/userData";
+import { toolsData } from "@entities/skill/model/toolsData";
+
+const dataTypes: Record<string, unknown> = {
+  skills: skillsData,
+  menu: menuData,
+  portafolio: portafolioData,
+  socialIcons: socialIconsData,
+  tools: toolsData,
+  user: userData,
+};
 
 /**
- * Fetches data from the site's own API endpoints.
- * Uses LOCAL_URL in development, SITE_URL in production.
- * @param dataType - the API endpoint segment (defaults to "all")
- * @param local - force use of LOCAL_URL
+ * Returns data directly from local model objects without network fetch.
+ * @param dataType - the requested data segment (defaults to "data" for all data)
  */
 export async function getData(
-  dataType: string = "data",
-  local: boolean = false
-): Promise<Record<string, unknown> | null> {
-  const siteUrl = !local ? url : localUrl;
-
-  if (!siteUrl) {
-    console.warn(
-      `${!local ? "SITE_URL" : "LOCAL_URL"} environment variable is not defined`
-    );
-    return null;
+  dataType: string = "data"
+): Promise<any> {
+  if (dataType === "data" || dataType === "all") {
+    return dataTypes;
   }
 
-  const endpoint = dataType !== "data" ? dataType : "all";
-
-  try {
-    const res = await fetch(`${siteUrl}/api/${endpoint}`);
-    if (!res.ok) {
-      throw new Error(`Error fetching data: ${res.status}`);
-    }
-    const data = await res.json();
-    return data[dataType];
-  } catch (error) {
-    console.error(`Failed to fetch ${dataType} from ${url}:`, error);
-    return null;
-  }
+  return dataTypes[dataType] ?? null;
 }
+
