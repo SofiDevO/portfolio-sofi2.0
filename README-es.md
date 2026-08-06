@@ -14,33 +14,23 @@ Este proyecto es una nueva versión del portafolio personal, diseñado y desarro
 
 ---
 
-## Endpoints API
+## Acceso a Datos
 
-El proyecto cuenta con varios endpoints API que permiten acceder a diferentes conjuntos de datos estructurados. Los datos disponibles incluyen información sobre habilidades, portafolio, herramientas, íconos sociales, menú de navegación y detalles del usuario.
+El proyecto utiliza modelos de datos estructurados en TypeScript/JSON ubicados en las carpetas de entidades (`@entities/*/model/*`). Los datos disponibles incluyen información sobre habilidades, portafolio, herramientas, íconos sociales, menú de navegación y detalles del usuario.
 
-### Endpoints Disponibles
+Los datos se importan directamente en los componentes y funciones auxiliares (como `getData()` en `@entities/user/api/getData`) sin depender de peticiones HTTP `fetch` internas ni configuraciones de URL de entorno para el consumo local.
 
-Cada tipo de dato tiene su propio endpoint, y también existe un endpoint para obtener todos los datos a la vez.
+### Tipos de Datos Disponibles
 
-| Endpoint              | Descripción                                            |
-|-----------------------|--------------------------------------------------------|
-| `/api/all`            | Devuelve todos los tipos de datos disponibles.         |
-| `/api/skills`         | Devuelve los datos relacionados con las habilidades.   |
-| `/api/menu`           | Devuelve los datos del menú de navegación.             |
-| `/api/portafolio`     | Devuelve los datos sobre los proyectos del portafolio. |
-| `/api/socialIcons`    | Devuelve los íconos de redes sociales.                 |
-| `/api/tools`          | Devuelve los datos sobre las herramientas del usuario. |
-| `/api/user`           | Devuelve los datos del usuario.                        |
+| Clave de Datos | Descripción                                            | Ubicación en Entidades                       |
+| -------------- | ------------------------------------------------------ | -------------------------------------------- |
+| `skills`       | Devuelve los datos relacionados con las habilidades.   | `@entities/skill/model/skillsData`           |
+| `menu`         | Devuelve los datos del menú de navegación.             | `@entities/navigation/model/menuData`        |
+| `portafolio`   | Devuelve los datos sobre los proyectos del portafolio. | `@entities/project/model/portfolioData`      |
+| `socialIcons`  | Devuelve los íconos de redes sociales.                 | `@entities/social/model/socialIconsData`     |
+| `tools`        | Devuelve los datos sobre las herramientas del usuario. | `@entities/skill/model/toolsData`            |
+| `user`         | Devuelve los datos del perfil de usuario.              | `@entities/user/model/userData`              |
 
-### Manejo de errores
-
-Si se solicita un tipo de dato que no existe, la API devolverá una respuesta 404 con el siguiente formato:
-
-```json
-{
-  "status": 404
-}
-```
 
 ---
 

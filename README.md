@@ -21,49 +21,23 @@ This project is a new version of the personal portfolio, designed and developed 
 
 ---
 
-## API Endpoints
+## Data Access
 
-The project includes several API endpoints that provide access to different sets of structured data. The available data includes information about skills, portfolio, tools, social icons, navigation menu, and user details.
+The project uses structured TypeScript/JSON data models located under entity folders (`@entities/*/model/*`). The data includes information about skills, portfolio, tools, social icons, navigation menu, and user details.
 
-The first thing you will want to do its to create the .ENV archive and sett all the variables needed and documented in [.env.dev](/.env.dev) archive.
+Data is imported directly into components and helper functions (such as `getData()` in `@entities/user/api/getData`) without relying on internal HTTP API fetch calls or environment URL configurations for local data fetching.
 
-Seccond you nedd to go to `src/services/data.ts` to change from the production url to the LOCAL.
+### Data Types Available
 
-```typescript
-local: boolean = true;
-```
+| Data Key      | Description                                            | Entity Location                              |
+| ------------- | ------------------------------------------------------ | -------------------------------------------- |
+| `skills`      | Returns skill-related data.                            | `@entities/skill/model/skillsData`           |
+| `menu`        | Returns navigation menu data.                          | `@entities/navigation/model/menuData`        |
+| `portafolio`  | Returns portfolio project data.                        | `@entities/project/model/portfolioData`      |
+| `socialIcons` | Returns social media icons.                            | `@entities/social/model/socialIconsData`     |
+| `tools`       | Returns user tools data.                               | `@entities/skill/model/toolsData`            |
+| `user`        | Returns user profile data.                             | `@entities/user/model/userData`              |
 
-If we are in a development environment (local), use the localUrl constant.
-
->[!IMPORTANT]
->If we are NOT in development (production), use the 'url' constant.
-
->[!CAUTION]
->This is important because if you dont change variables, you will be fetching the wrong data and wont be able to see the changes you made. Also if you dont change back to false, you will be fetching the wrong data and wont be able to see the changes you made in production.
-
-### Available Endpoints
-
-Each data type has its own endpoint, and there is also an endpoint to retrieve all data at once.
-
-| Endpoint           | Description                       |
-| ------------------ | --------------------------------- |
-| `/api/all`         | Returns all available data types. |
-| `/api/skills`      | Returns skill-related data.       |
-| `/api/menu`        | Returns navigation menu data.     |
-| `/api/portfolio`   | Returns portfolio project data.   |
-| `/api/socialIcons` | Returns social media icons.       |
-| `/api/tools`       | Returns user tools data.          |
-| `/api/user`        | Returns user data.                |
-
-### Error Handling
-
-If a non-existent data type is requested, the API will return a 404 response with the following format:
-
-```json
-{
-  "status": 404
-}
-```
 
 ---
 
