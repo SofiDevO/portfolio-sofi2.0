@@ -3,7 +3,7 @@ import BackgroundIconsFloat from "@shared/ui/BackgroundIconsFloat/BackgroundIcon
 import ProfilePicture from "@entities/user/ui/ProfilePicture.astro";
 import SocialIcons from "@entities/social/ui/SocialIcons.astro";
 
-const { data } = Astro.props;
+const { data, avatar } = Astro.props;
 ---
 
 <section class="hero">
@@ -16,6 +16,6 @@ const { data } = Astro.props;
       </div>
       <SocialIcons />
     </div>
-    <ProfilePicture data={data.profilePicture} />
+    <ProfilePicture data={avatar ? avatar : data.profilePicture} />
   </div>
 </section>

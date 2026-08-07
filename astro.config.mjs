@@ -73,6 +73,7 @@ export default defineConfig({
                   "@shared/": "src/shared/",
                   "@types/": "src/types/",
                   "@pages/": "src/pages/",
+                  "@types/": "src/types/",
                 };
 
                 const match = Object.entries(aliases).find(([alias]) =>

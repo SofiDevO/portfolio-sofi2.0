@@ -1,4 +1,4 @@
-import { wpquery } from "@entities/blog/api/wordpress";
+import { wpquery } from "@shared/services/wordpress";
 
 export const cardsData = async (): Promise<any[]> => {
   try {

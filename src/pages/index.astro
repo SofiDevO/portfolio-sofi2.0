@@ -11,18 +11,22 @@ import Social from "@widgets/social/ui/Social.astro";
 import Footer from "@widgets/footer/ui/Footer.astro";
 import ToastNotification from "@shared/ui/ToastNotification/ToastNotification.astro";
 import { getData } from "@entities/user/api/getData";
+import { getAboutData } from "@entities/user/api/getAboutData";
 
 const { user, skills, tools } = await getData();
 
+const aboutData = await getAboutData();
+const avatar = aboutData?.featuredImage.mediaItemUrl;
+console.log("avatar: ",avatar);
 export const prerender = true;
 ---
 
 <Layout>
   <BackgroundGradient>
-    <Hero data={user} />
+    <Hero data={user} avatar={avatar} />
   </BackgroundGradient>
   <DividerTop />
-  <About data={user} />
+  <About data={aboutData} />
   <DividerBottom fill="shape-fill-3" />
   <Skills data={user} skills={skills} tools={tools} />
   <DividerTop fill="shape-fill-purple " />

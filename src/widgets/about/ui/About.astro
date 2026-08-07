@@ -2,9 +2,8 @@
 import Title from "@shared/ui/Title/Title";
 import ButtonAbout from "@entities/user/ui/ButtonAbout.astro";
 import Calendar from "@entities/github/ui/Calendar";
-import AboutData from "@entities/user/content/about.mdx";
-
-export const prerender = true;
+import { AboutData } from "@types/index";
+import AboutMDX from "src/entities/user/content/about.mdx";
 const { data } = Astro.props;
 ---
 
@@ -13,19 +12,26 @@ const { data } = Astro.props;
     <div class="about__profile">
       <div class="profile__box">
         <img
-          src={data.aboutPicture}
-          alt={`Foto de perfil de ${data.name} ${data.lastName}`}
+          src={data.profilePicture}
+          alt={data.profilePictureAlt}
           class="profile__box__image"
           width="100"
           height="100"
         />
       </div>
       <ButtonAbout typeMail="true" data={data.email} link={data.email} text="email" clase="email" />
-      <ButtonAbout link={data.cv} text="Download cv" clase="cv" />
+      <ButtonAbout link={data.cvURL} text="Download cv" clase="cv" />
     </div>
     <div class="about__content">
-      <Title titleDesc="About Me" clase="title-dark" />
-      <AboutData />
+      <Title titleDesc="About Me " clase="title-dark" tag="h2" />
+
+      <Title titleDesc={data.name} clase="title-dark" tag="h3" />
+
+      {data.content ? (
+        <div class="about__content" set:html={data.content} />
+      ) : (
+        <AboutMDX/>
+      )}
     </div>
   </article>
   <Calendar client:only="react" />

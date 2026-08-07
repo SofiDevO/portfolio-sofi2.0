@@ -1,4 +1,4 @@
-import { wpquery } from "@entities/blog/api/wordpress";
+import { wpquery } from "@shared/services/wordpress";
 import { skillIcons, portafolioData } from "@entities/project/model/portfolioData";
 import type { ProjectCard, SkillIconKey } from "@types/index";
 
