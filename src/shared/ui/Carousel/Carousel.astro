@@ -1,9 +1,9 @@
 ---
-const {clase} = Astro.props;
+const {class:className, ...rest} = Astro.props;
 ---
 
-<div class="slider">
-  <div class={`slide__track ${clase}`} >
+<div class="slider" {...rest}>
+  <div class={`slide__track ${className}`} >
         <slot/>
   </div>
 </div>

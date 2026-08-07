@@ -12,5 +12,5 @@ export const toolsData: Tool[] = [
   { name: "Illustrator", icon: "skill-icons:illustrator" },
   { name: "GitHub Copilot", icon: "simple-icons:githubcopilot" },
   { name: "Gemini", icon: "logos:google-gemini" },
-  { name: "Antigravity", icon: "simple-icons:googledeepmind" },
+  { name: "Antigravity", icon: "material-symbols:antigravity" },
 ];

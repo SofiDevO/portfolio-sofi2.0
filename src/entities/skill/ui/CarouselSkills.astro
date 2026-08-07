@@ -3,11 +3,11 @@ import Carousel from "@shared/ui/Carousel/Carousel.astro";
 const { skillsData } = Astro.props;
 ---
 
-<Carousel clase="slide__track--skills">
+<Carousel class="slide__track--skills" style={`--icons-length: ${skillsData.length};`}>
   {[...skillsData, ...skillsData].map((data) => (
     <div class="slide">
       <div class="tag">{data.name}</div>
-      <iconify-icon icon={data.icon} width="60" height="60" />
+      <iconify-icon icon={data.icon} width="40" height="40" />
     </div>
   ))}
 </Carousel>

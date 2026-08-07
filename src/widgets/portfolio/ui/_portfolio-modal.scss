@@ -11,7 +11,7 @@
     background: rgba(0, 0, 0, 0.75); // Darker backdrop for focus
     backdrop-filter: blur(8px); // Less blur, more focus on modal
     -webkit-backdrop-filter: blur(8px);
-    display: none; // Managed by JS
+    display: none;
     place-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -92,7 +92,381 @@
                 background: rgba(128, 128, 128, 0.5);
             }
         }
+
+        h2 {
+            @include text-gradient("dark");
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            margin-top: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            @include text-gradient("dark");
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        h4 {
+            @include text-gradient("dark");
+
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            font-size: 1.7rem;
+            line-height: 1.8;
+            margin-bottom: 1.4rem;
+        }
+
+        a {
+            color: #7c3aed;
+            font-weight: 600;
+            text-underline-offset: 3px;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            transition:
+                text-decoration-color 0.2s ease,
+                color 0.2s ease;
+
+            &:hover {
+                text-decoration-color: currentColor;
+            }
+        }
+
+        a:is(.wp-block-button__link, .wp-element-button) {
+            color: aquamarine;
+            background-color: #1f1638;
+            padding: 0.8rem 1.4rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background-color: violet;
+            }
+        }
+
+        table {
+            border: 0.1rem solid rgba(0, 0, 0, 0.162);
+            border-radius: 9px;
+            overflow: auto;
+            table-layout: auto;
+            width: 100%;
+            background: rgb(231, 236, 246);
+
+            thead>tr:is(:first-child) {
+                background: rgb(188, 194, 213);
+            }
+
+            tr:nth-of-type(odd) {
+                background: rgb(217, 213, 225);
+            }
+        }
+
+        table th,
+        table td {
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 1rem 0.8rem;
+            // border: 1px solid rgba(61, 61, 61, 0.285);
+        }
+
+
+        .shiki {
+            overflow-x: scroll;
+            max-height: 600px;
+        }
+
+
+        figure {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            min-height: 100%;
+
+            & img {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: 1.2rem;
+                height: 100%;
+                transition: box-shadow 0.3s ease;
+
+                &:hover {
+                    box-shadow: 0 8px 32px rgba(102, 0, 204, 0.3);
+                }
+            }
+
+            figcaption {
+                text-align: center;
+                font-size: 1.3rem;
+                color: rgba(255, 255, 255, 0.5);
+                margin-top: 0.6rem;
+                font-style: italic;
+            }
+        }
+
+        div[data-code-block-pro-font-family] {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            height: auto;
+            min-height: 100%;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 1.2rem;
+            font-size: 2rem;
+
+            @media (max-width: 768px) {
+                max-width: 35rem;
+            }
+
+            // flex-wrap: wrap;
+            kbd,
+            samp,
+            pre {
+                overflow-x: auto;
+                // text-wrap: wrap;
+                width: 100%;
+                height: auto;
+                max-height: 600px;
+                line-height: 1.5;
+                padding: 1.4rem;
+                font-size: 1.4rem;
+            }
+        }
+
+        p:has(> code) code {
+            background-color: #1f1f1f;
+            padding: 0.1rem 0.3rem;
+            color: #34d399;
+            border-radius: 0.3rem;
+            width: 100%;
+        }
+
+        .wp-block-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 2rem;
+            margin-bottom: 1.4rem;
+            gap: 0.4rem;
+
+            li {
+                width: 100%;
+                list-style: disc;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 1.7;
+            }
+        }
+
+        .wp-block-quote,
+        blockquote {
+            border-left: 4px solid #7c3aed;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+            background: rgba(102, 0, 204, 0.08);
+            border-radius: 0 0.6rem 0.6rem 0;
+            font-style: italic;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            cite {
+                display: block;
+                margin-top: 0.8rem;
+                font-size: 1.4rem;
+                font-style: normal;
+                color: #c4b5fd;
+            }
+        }
+
+        .wp-block-image {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 2.4px;
+            height: 4px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgb(89, 88, 88);
+            width: 4px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #34d399;
+            width: 5px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: aqua;
+            height: 5px;
+        }
+
+        .button-copy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            gap: 0.5rem;
+            color: #c4b5fd;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: #34d399;
+            }
+        }
+
+        .line-numbers {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            padding: 1.4rem 0;
+            padding-left: 1rem;
+            padding-right: 0.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            font-family: "JetBrains Mono", "Courier New", monospace;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.5);
+            user-select: none;
+            width: 3.5rem;
+            min-height: 100%;
+            box-sizing: border-box;
+
+            .line-number {
+                display: block;
+                text-align: right;
+                white-space: nowrap;
+                padding-right: 0.5rem;
+                height: 1.5em;
+                font-size: 1.6rem;
+                line-height: 1.5;
+            }
+        }
+
+        // Ajustar el estilo de los bloques pre con números de línea
+        pre.shiki {
+            position: relative;
+
+            &:has(.line-numbers) {
+                padding-left: 4rem;
+            }
+        }
+
+        #container-post {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            img {
+                cursor: pointer;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.88;
+                }
+            }
+        }
+
+        dialog {
+            z-index: 1500;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            background: oklch(0% 0 0 / 0.333);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+
+            transition:
+                opacity 0.3s ease,
+                display 0.3s ease allow-discrete;
+
+            img {
+                width: fit-content;
+                // max-width: 1200px;
+                height: auto;
+                border: solid 1px rgb(255, 255, 255, 0.1);
+                cursor: default;
+                border-radius: 8px;
+            }
+
+            &:open {
+                opacity: 1;
+                transition: opacity 0.3s ease;
+                overflow-y: auto;
+
+                img {
+                    scale: 1;
+                    transition: scale 0.4s ease;
+                    object-fit: contain;
+                    width: fit-content;
+                    height: auto;
+                    z-index: 300;
+                }
+
+                @starting-style {
+                    scale: 0;
+                    opacity: 0;
+
+                    img {
+                        scale: 0.75;
+                    }
+                }
+            }
+        }
     }
+
+    .pinsavepinterest-pin-it-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 11px;
+        overflow: hidden;
+        padding: 0.5rem 1rem;
+    }
+
+    .wp-block-image,
+    .pin-it-container,
+    .pin-it-container>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+
 
     &__banner {
         width: calc(100% + 5rem);
@@ -231,11 +605,11 @@
             display: block;
             margin-top: 2rem;
             padding: 1.2rem 1.5rem;
-            background: rgba(210, 168, 255, 0.1); // subtle purple (like GitHub issues/PRs) or maybe warning yellow
-            border: 1px solid rgba(210, 168, 255, 0.2);
-            border-left: 4px solid #d2a8ff;
+            background: rgb(28 0 58 / 27%);
+            border: 1px solid rgba(40, 39, 42, 0.483);
+            border-left: 4px solid #6d02e0;
             border-radius: 6px;
-            color: #d2a8ff;
+            color: #8513ff;
             font-size: 1.4rem;
             font-family: inherit;
             line-height: 1.5;
@@ -267,8 +641,8 @@
 
     a.modal__demo {
         background: transparent;
-        color: #2dcece;
-        border: 1px solid #2dcece;
+        color: #7a00ed;
+        border: 1px solid #7a00ed;
 
         &:hover {
             background: rgba(45, 206, 206, 0.1);
@@ -276,7 +650,7 @@
         }
 
         iconify-icon {
-            color: #2dcece;
+            color: #7a00ed;
         }
     }
 
@@ -306,4 +680,21 @@
 .pin-it-container {
     width: 100%;
     object-fit: cover;
+}
+
+
+.dark {
+    .modal__content table {
+        background: rgb(28, 34, 47);
+
+        thead>tr:is(:first-child) {
+            background: rgb(42, 55, 93);
+        }
+
+        tr:nth-of-type(odd) {
+            background: rgb(48, 44, 56);
+        }
+
+
+    }
 }

@@ -2,6 +2,7 @@
 @use "@app/sass/_mixins" as *;
 
 .slider {
+  --slider-width: 50rem;
   width: 70%;
   margin: auto;
   height: auto;
@@ -40,13 +41,13 @@
 }
 
 .slide__track--skills {
-  animation: scroll 19s linear infinite;
-  width: calc(9.5rem * 30);
+  animation: scroll 40s linear infinite;
+  width: calc(var(--slider-width) * var(--icons-length));
 }
 
 .slide__track--tools {
-  animation: scroll-reverse 18s linear infinite reverse;
-  width: calc(9.5rem * 18);
+  animation: scroll-reverse 30s linear infinite reverse;
+  width: calc(var(--slider-width) * var(--tools-length));
 }
 
 .slide__track:has(> .slide:hover) {
@@ -54,8 +55,9 @@
 }
 
 .slide {
-  width: 7.5rem;
-  height: 7.5rem;
+  --icon-size:5rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -68,7 +70,7 @@
 }
 
 .slide:hover {
-  background: #ffffff;
+  background: #2d046a96;
   transform: scale(1.1) rotate(10deg);
 }
 
@@ -104,5 +106,27 @@
   .slider::after {
     width: 50px;
     right: 0;
+  }
+}
+
+
+/* Animations for infinite sliders */
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-10rem * var(--icons-length)));
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-10rem * var(--tools-length)));
   }
 }
