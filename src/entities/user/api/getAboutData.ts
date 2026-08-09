@@ -18,6 +18,7 @@ export const getAboutData = async (): Promise<AboutData> => {
                             }
                         }
                         portfolioAboutData {
+                        experienciLaboral
                         cv {
                             node {
                             mediaItemUrl
@@ -41,6 +42,7 @@ export const getAboutData = async (): Promise<AboutData> => {
         const content = about.content as string;
         const name = about.title as string;
         const portfolioAboutData = {
+            experienciLaboral: about.portfolioAboutData.experienciLaboral as string,
             cvURL: (about.portfolioAboutData.cv.node as Record<string, string>).mediaItemUrl ?? "",
             profilePicture: (about.portfolioAboutData.profilepicture.node as Record<string, string>).mediaItemUrl ?? "",
             profilePictureAlt: (about.portfolioAboutData.profilepicture.node as Record<string, string>).altText ?? "",
@@ -52,7 +54,6 @@ export const getAboutData = async (): Promise<AboutData> => {
                 srcSet: (about.featuredImage.node as Record<string, string>).srcSet ?? "",
             }
         }
-
         return {
             content,
             name,

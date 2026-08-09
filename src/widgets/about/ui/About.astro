@@ -19,7 +19,13 @@ const { data } = Astro.props;
           height="100"
         />
       </div>
-      <ButtonAbout typeMail="true" data={data.email} link={data.email} text="email" clase="email" />
+      <ButtonAbout
+        typeMail="true"
+        data={data.email}
+        link={data.email}
+        text="email"
+        clase="email"
+      />
       <ButtonAbout link={data.cvURL} text="Download cv" clase="cv" />
     </div>
     <div class="about__content">
@@ -27,12 +33,25 @@ const { data } = Astro.props;
 
       <Title titleDesc={data.name} clase="title-dark" tag="h3" />
 
-      {data.content ? (
-        <div class="about__content" set:html={data.content} />
-      ) : (
-        <AboutMDX/>
-      )}
+      {
+        data.content ? (
+          <div class="about__content" set:html={data.content} />
+        ) : (
+          <AboutMDX />
+        )
+      }
     </div>
   </article>
-  <Calendar client:only="react" />
+  <div class="about__experience">
+    <Title titleDesc="Job Experience" clase="title-dark " tag="h3" />
+    <div class="about__experience__content" set:html={data.experienciLaboral} />
+  </div>
+  <div class="about__calendar">
+    <Title
+      titleDesc="My Github contributions"
+      clase="title-dark about__calendar-title"
+      tag="h3"
+    />
+    <Calendar client:only="react" />
+  </div>
 </section>
