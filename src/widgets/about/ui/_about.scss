@@ -2,20 +2,27 @@
 @use "@app/sass/_mixins" as *;
 
 .about {
+  @include centerFlex();
+  width: 100%;
+  padding-block: 10rem;
+  writing-mode: horizontal-tb;
+  flex-direction: column;
+  color: $mainColor;
+
   &__calendar {
+    padding: 0 2rem;
     margin-top: 5rem;
+
     &-title {
       text-align: left;
       align-self: flex-start;
     }
+
+    @include respond-to("medium") {
+      width: 100%;
+    }
   }
 
-  width: 100%;
-  padding-block: 10rem;
-  writing-mode: horizontal-tb;
-  @include centerFlex();
-  flex-direction: column;
-  color: $mainColor;
 
   &__container {
     max-width: 1300px;
@@ -94,11 +101,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 60vw;
+    max-width: 76vw;
     width: 100%;
     margin-top: 3rem;
     @include typography(1.6rem, normal, 400);
     @include font-family("textos");
+
+    @include respond-to("medium") {
+      max-width: 100%;
+      padding: 0 2rem;
+    }
 
     &__content {
       @include centerFlex(start, start);

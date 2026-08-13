@@ -1,0 +1,59 @@
+@use "@app/sass/_variables" as *;
+@use "@app/sass/_mixins" as *;
+
+
+main {
+    @include centerFlex(center, center);
+    flex-direction: column;
+    margin: 10rem 1rem;
+}
+
+.projects__skills-filter {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+
+    .skills-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.5rem 1.2rem;
+        background: rgba(20, 0, 48, 0.6);
+        border: 1px solid rgba(88, 236, 255, 0.2);
+        border-radius: 20px;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-family: inherit;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        user-select: none;
+
+        iconify-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover {
+            border-color: $ufo-green;
+            background: rgba(40, 10, 80, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(51, 255, 118, 0.15);
+        }
+
+        &.active {
+            background: linear-gradient(135deg, rgba(102, 0, 204, 0.8), rgba(0, 153, 144, 0.8));
+            border-color: $ufo-green;
+            color: #ffffff;
+            font-weight: 600;
+            box-shadow: 0 0 12px rgba(51, 255, 118, 0.3);
+        }
+    }
+}
