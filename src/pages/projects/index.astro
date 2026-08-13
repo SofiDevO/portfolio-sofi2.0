@@ -7,6 +7,7 @@ import { portfolioCardsData } from "@entities/project/api/getPortfolioCards";
 import { skillIcons } from "@entities/project/model/portfolioData";
 import type { SkillIconKey } from "@types/index";
 import "@pages/projects/_projects.scss";
+import ProjectsFilter from "./components/ProjectsFilter.astro";
 
 const mainData = await portfolioCardsData();
 
@@ -15,14 +16,18 @@ mainData.forEach((project) => {
   if (Array.isArray(project.skills)) {
     project.skills.forEach((skill, idx) => {
       if (skill && !skillsMap.has(skill)) {
-        const icon = project.skillIcons?.[idx] || skillIcons[skill as SkillIconKey] || "";
+        const icon =
+          project.skillIcons?.[idx] || skillIcons[skill as SkillIconKey] || "";
         skillsMap.set(skill, icon);
       }
     });
   }
 });
 
-const uniqueSkills = Array.from(skillsMap.entries()).map(([name, icon]) => ({ name, icon }));
+const uniqueSkills = Array.from(skillsMap.entries()).map(([name, icon]) => ({
+  name,
+  icon,
+}));
 ---
 
 <Layout
@@ -30,17 +35,8 @@ const uniqueSkills = Array.from(skillsMap.entries()).map(([name, icon]) => ({ na
   pageDescription="Proyectos realizados por Sofía Dev."
 >
   <Title titleDesc="Portfolio" clase="title-dark portfolio__title" />
-  <div class="projects__skills-filter">
-    <button class="skills-pill active" data-skill="all" type="button">
-      <span>Todos</span>
-    </button>
-    {uniqueSkills.map(({ name, icon }) => (
-      <button class="skills-pill" data-skill={name} type="button">
-        {icon && <iconify-icon icon={icon} width="18" height="18" />}
-        <span>{name}</span>
-      </button>
-    ))}
-  </div>
+  <ProjectsFilter uniqueSkills={uniqueSkills} />
+
   <div class="card__section">
     {mainData.map((data) => <CardPortfolio {...data} />)}
   </div>
@@ -50,65 +46,4 @@ const uniqueSkills = Array.from(skillsMap.entries()).map(([name, icon]) => ({ na
 
 <script>
   import "@features/portfolio-modal/model/portfolioModal.js";
-</script>
-
-<script is:inline>
-  (function () {
-    function initSkillsFilter() {
-      const pills = document.querySelectorAll('.skills-pill');
-      const cards = document.querySelectorAll('.card');
-
-      if (!pills.length || !cards.length) return;
-
-      function filterCards(selectedSkill) {
-        cards.forEach((card) => {
-          if (selectedSkill === 'all') {
-            card.style.display = '';
-            return;
-          }
-
-          let skills = [];
-          const rawSkills = card.getAttribute('data-skills');
-          if (rawSkills) {
-            try {
-              skills = JSON.parse(rawSkills);
-            } catch (e) {
-              skills = [];
-            }
-          }
-
-          if (Array.isArray(skills) && skills.includes(selectedSkill)) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      }
-
-      pills.forEach((pill) => {
-        pill.addEventListener('click', () => {
-          const currentActive = pill.classList.contains('active');
-          let selectedSkill = pill.getAttribute('data-skill');
-
-          if (currentActive && selectedSkill !== 'all') {
-            selectedSkill = 'all';
-            pills.forEach((p) => p.classList.remove('active'));
-            const allPill = document.querySelector('.skills-pill[data-skill="all"]');
-            if (allPill) allPill.classList.add('active');
-          } else {
-            pills.forEach((p) => p.classList.remove('active'));
-            pill.classList.add('active');
-          }
-
-          filterCards(selectedSkill);
-        });
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initSkillsFilter);
-    } else {
-      initSkillsFilter();
-    }
-  })();
 </script>
